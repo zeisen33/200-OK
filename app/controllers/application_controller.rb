@@ -1,32 +1,21 @@
 class ApplicationController < ActionController::API
+
     # rescue_from StandardError, with: :unhandled_error
     # rescue_from ActionController::InvalidAuthenticityToken,
     #     with: :invalid_authenticity_token
     
   
-    # include ActionController::RequestForgeryProtection
-    # protect_from_forgery with: :exception
+    include ActionController::RequestForgeryProtection
+    protect_from_forgery with: :exception
+    skip_before_action :verify_authenticity_token
+
 
     before_action :snake_case_params, #:attach_authenticity_token
+    # skip_forgery_protection
 
-
-
-    def test
-        if params.has_key?(:login)
-            # debugger
-            login!(User.first)
-        elsif params.has_key?(:logout)
-            logout!
-        end
-
-        if current_user
-            render json: {user: current_user.slice('id', 'display_name', 'session_token') }
-        else
-            render json: ['No current user']
-        end
-    end
 
     def current_user
+        debugger
         @current_user ||= User.find_by(session_token: session[:session_token])
         @current_user
     end

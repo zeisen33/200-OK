@@ -14,6 +14,7 @@ class Api::SessionsController < ApplicationController
     password = params[:password]
 
     @user = User.find_by_credentials(email, password)
+    debugger
     if @user
       login!(@user)
       render json: @user
