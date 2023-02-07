@@ -1327,3 +1327,56 @@ Processing by ApplicationController#test as */*
 Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 3.8ms | Allocations: 915)
 
 
+Started POST "/api/test" for ::1 at 2023-02-07 11:08:56 -0500
+Processing by ApplicationController#test as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 72ms (Views: 0.3ms | ActiveRecord: 12.9ms | Allocations: 5924)
+
+
+Started GET "/" for ::1 at 2023-02-07 11:09:40 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.0ms | Allocations: 337)
+Completed 200 OK in 14ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 2010)
+
+
+Started POST "/api/test" for ::1 at 2023-02-07 11:10:18 -0500
+Processing by ApplicationController#test as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started POST "/api/test" for ::1 at 2023-02-07 11:13:33 -0500
+Processing by ApplicationController#test as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 635)
+
+
+Started GET "/" for ::1 at 2023-02-07 11:14:01 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 284)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 919)
+
+
+Started POST "/api/test" for ::1 at 2023-02-07 11:14:26 -0500
+Processing by ApplicationController#test as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | Allocations: 671)
+
+
+Started GET "/api/session" for ::1 at 2023-02-07 11:14:52 -0500
+Processing by Api::SessionsController#show as JSON
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.6ms | Allocations: 221)
+
+NameError - undefined local variable or method `banana' for #<Api::SessionsController:0x000000000104f0>
+
+    banana
+    ^^^^^^:
+	app/controllers/api/sessions_controller.rb:6:in `show'
+
+Completed 500 Internal Server Error in 10ms (Views: 2.5ms | Allocations: 4521)
+
+
