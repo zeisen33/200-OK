@@ -868,3 +868,122 @@ Processing by Api::SessionsController#show as JSON
 Completed 200 OK in 3765ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 222888)
 
 
+Started GET "/" for ::1 at 2023-02-06 22:28:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.7ms | Allocations: 476)
+Completed 200 OK in 48ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 3166)
+
+
+Started POST "/api/users" for ::1 at 2023-02-06 22:28:37 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"coolemail@hotmail.net", "display_name"=>"cooluser", "password"=>"[FILTERED]", "user"=>{"display_name"=>"cooluser", "email"=>"coolemail@hotmail.net", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."display_name" = $1 LIMIT $2[0m  [["display_name", "cooluser"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "coolemail@hotmail.net"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Create (49.7ms)[0m  [1m[32mINSERT INTO "users" ("display_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["display_name", "cooluser"], ["email", "coolemail@hotmail.net"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2023-02-07 03:28:38.700194"], ["updated_at", "2023-02-07 03:28:38.700194"]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Exists? (21.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."display_name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["display_name", "cooluser"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Exists? (4.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "coolemail@hotmail.net"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Exists? (6.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "[FILTERED]"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Update (48.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "[FILTERED]"], ["updated_at", "2023-02-07 03:28:38.817749"], ["id", 12]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+Completed 200 OK in 789ms (Views: 2.0ms | ActiveRecord: 223.4ms | Allocations: 19360)
+
+
+Started POST "/api/users" for ::1 at 2023-02-06 22:29:28 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"coolemail@hotmail.net", "display_name"=>"cooluser", "password"=>"[FILTERED]", "user"=>{"display_name"=>"cooluser", "email"=>"coolemail@hotmail.net", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (41.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mUser Exists? (29.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."display_name" = $1 LIMIT $2[0m  [["display_name", "cooluser"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "coolemail@hotmail.net"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 772ms (Views: 0.2ms | ActiveRecord: 82.3ms | Allocations: 285110)
+
+
+Started GET "/" for ::1 at 2023-02-06 22:29:41 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.0ms | Allocations: 286)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 924)
+
+
+Started POST "/api/users" for ::1 at 2023-02-06 22:29:56 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"coolemail@hotmail.net", "display_name"=>"cooluser", "password"=>"[FILTERED]", "user"=>{"display_name"=>"cooluser", "email"=>"coolemail@hotmail.net", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."display_name" = $1 LIMIT $2[0m  [["display_name", "cooluser"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "coolemail@hotmail.net"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 367ms (Views: 0.2ms | ActiveRecord: 10.1ms | Allocations: 6210)
+
+
+Started POST "/api/sessions" for ::1 at 2023-02-06 22:30:49 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/sessions"):
+  
+Started POST "/api/session" for ::1 at 2023-02-06 22:30:54 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"coolemail@hotmail.net", "display_name"=>"cooluser", "password"=>"[FILTERED]", "session"=>{"email"=>"coolemail@hotmail.net", "display_name"=>"cooluser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "coolemail@hotmail.net"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21:in `find_by_credentials'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37:in `generate_unique_session_token'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."display_name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["display_name", "cooluser"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "coolemail@hotmail.net"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "[FILTERED]"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mUser Update (12.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "[FILTERED]"], ["updated_at", "2023-02-07 03:31:15.391296"], ["id", 12]]
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:16:in `reset_session_token!'
+Completed 200 OK in 20487ms (Views: 2.9ms | ActiveRecord: 34.9ms | Allocations: 267669)
+
+

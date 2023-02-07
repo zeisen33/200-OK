@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
 
 
     def current_user
-        debugger
+        # debugger
         @current_user ||= User.find_by(session_token: session[:session_token])
         @current_user
     end
