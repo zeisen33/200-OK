@@ -5,7 +5,7 @@ const rootReducer = combineReducers({
 
 })
 
-let enhancer
+let enhancer;
 
 if (process.env.NODE_ENV === 'production') {
     enhancer = applyMiddleware(thunk);
