@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
   
     include ActionController::RequestForgeryProtection
     protect_from_forgery with: :exception
-    skip_before_action :verify_authenticity_token
+    # skip_before_action :verify_authenticity_token
 
 
     before_action :snake_case_params, :attach_authenticity_token
@@ -17,13 +17,13 @@ class ApplicationController < ActionController::API
     def current_user
         # debugger
         @current_user ||= User.find_by(session_token: session[:session_token])
-        @current_user
+        # @current_user
     end
 
     def login!(user)
         # debugger
         session[:session_token] = user.reset_session_token!
-        @current_user = user
+        # @current_user = user
     end
 
     def logout!  ## might need to be logout!(user)
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::API
 
     def require_logged_in
         if !logged_in?
-            render json: { errors: ['Unauthorized'] }, status: 401
+            render json: { errors: ['Must be logged in'] }, status: 401
         end
     end
 
@@ -48,6 +48,19 @@ class ApplicationController < ActionController::API
         end
     end
     
+    def test
+        if params.has_key?(:login)
+          login!(User.first)
+        elsif params.has_key?(:logout)
+          logout!
+        end
+      
+        if current_user
+          render json: { user: current_user.slice('id', 'email', 'session_token') }
+        else
+          render json: ['No current user']
+        end
+      end
 
 
     private
