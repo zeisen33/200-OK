@@ -987,3 +987,96 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 20487ms (Views: 2.9ms | ActiveRecord: 34.9ms | Allocations: 267669)
 
 
+Started GET "/" for ::1 at 2023-02-06 22:36:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 22)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/api/session" for ::1 at 2023-02-06 22:36:38 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 1.2ms | Allocations: 396)
+Completed 200 OK in 25ms (Views: 2.9ms | ActiveRecord: 8.2ms | Allocations: 5682)
+
+
+Started POST "/api/test" for ::1 at 2023-02-06 22:37:03 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/test"):
+  
+Started GET "/" for ::1 at 2023-02-06 22:37:23 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 22)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 276)
+
+
+Started GET "/api/session" for ::1 at 2023-02-06 22:37:31 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 0.5ms | Allocations: 278)
+Completed 200 OK in 43ms (Views: 3.8ms | ActiveRecord: 4.4ms | Allocations: 5153)
+
+
+Started POST "/api/test" for ::1 at 2023-02-06 22:37:45 -0500
+
+AbstractController::ActionNotFound - The action 'test' could not be found for ApplicationController:
+
+Started POST "/api/test" for ::1 at 2023-02-06 22:37:58 -0500
+
+AbstractController::ActionNotFound - The action 'test' could not be found for ApplicationController:
+
+Started GET "/" for ::1 at 2023-02-06 22:44:46 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 285)
+Completed 200 OK in 4ms (Views: 2.7ms | Allocations: 930)
+
+
+Started GET "/api/session" for ::1 at 2023-02-06 22:45:07 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 1.1ms | Allocations: 358)
+Completed 200 OK in 175ms (Views: 2.9ms | ActiveRecord: 13.4ms | Allocations: 8148)
+
+
+Started POST "/api/test" for ::1 at 2023-02-06 22:45:24 -0500
+
+AbstractController::ActionNotFound - The action 'test' could not be found for ApplicationController:
+
+Started GET "/" for ::1 at 2023-02-06 22:46:54 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/api/session" for ::1 at 2023-02-06 22:47:00 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 0.5ms | Allocations: 281)
+Completed 200 OK in 79ms (Views: 1.6ms | ActiveRecord: 57.9ms | Allocations: 5187)
+
+
+Started GET "/api/session" for ::1 at 2023-02-06 22:47:33 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 0.4ms | Allocations: 199)
+Completed 200 OK in 32ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 1218)
+
+
+Started POST "/api/test" for ::1 at 2023-02-06 22:47:47 -0500
+
+AbstractController::ActionNotFound - The action 'test' could not be found for ApplicationController:
+
