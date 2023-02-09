@@ -1,5 +1,7 @@
 import csrfFetch from "./csrf"
 
+const SET_CURRENT_USER = 'session/setCurrentUser'
+const REMOVE_CURRENT_USER = 'session/removeCurrentUser'
 const RECEIVE_USER = 'users/RECEIVE_USER'
 const REMOVE_USER = 'users/REMOVE_USER'
 
@@ -19,6 +21,19 @@ export const removeUser = (userId) => {
     }
 }
 
+const setCurrentUser = (user) => {
+    return {
+      type: SET_CURRENT_USER,
+      payload: user
+    };
+  };
+  
+  const removeCurrentUser = () => {
+    return {
+      type: REMOVE_CURRENT_USER
+    };
+  };
+
 // Thunk Action
 export const loginUser = (user) => async (dispatch) => {
     const response = await csrfFetch('/api/session', {
@@ -27,9 +42,35 @@ export const loginUser = (user) => async (dispatch) => {
     })
 
     const res = await response.json()
-    sessionStorage.setItem('currentUser', JSON.stringify(res.user))
+    storeCurrentUser(res.user)
+    dispatch(setCurrentUser(res.user))
+    return response
+    // sessionStorage.setItem('currentUser', JSON.stringify(res.user))
     // debugger
-    dispatch(receiveUser(res.user))
+    // dispatch(receiveUser(res.user))
+}
+
+const initialState = {
+    user: JSON.parse(sessionStorage.getItem("currentUser"))
+}
+
+const storeCSRFToken = (response) => {
+    const csrfToken = response.headers.get("X-CSRF-Token")
+    if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken)
+}
+
+const storeCurrentUser = (user) => {
+    if (user) sessionStorage.setItem("currentUser", JSON.stringify(user))
+    else sessionStorage.removeItem("currentUser")
+}
+
+export const restoreSession = () => async (dispatch) => {
+    const response = await csrfFetch("/api/session")
+    storeCSRFToken(response)
+    const data = await response.json()
+    storeCurrentUser(data.user)
+    dispatch(setCurrentUser(data.user))
+    return response
 }
 
 export const logoutUser = (userId) => async (dispatch) => {
