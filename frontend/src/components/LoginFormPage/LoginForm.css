@@ -6,6 +6,14 @@ body {
     height: 100vh;
 }
 
+.DisplayBoxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
 .LoginBox {
     display: flex;
     font-family: Arial;
@@ -34,7 +42,7 @@ form label {
 }
 
 form button {
-    background-color: #0074CC;
+    background-color: #0074ccd0;
     color: white;
     align-items: center;
     justify-content: center;
@@ -43,4 +51,22 @@ form button {
     width: 80%;
     border: 1px solid rgb(7, 134, 231);
     border-radius: 2px;
+}
+
+#LogInButton:hover {
+    background-color: #0074CC;
+}
+
+#ForgotPassword {
+    color: #0074CC;
+    font-size: xx-small;
+    display: inline-flex;
+    align-items: right;
+    justify-content: right;
+    text-align: right;
+    text-decoration: none;
+}
+
+#ForgotPassword:hover {
+    color:rgb(7, 134, 231);
 }

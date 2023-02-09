@@ -3,6 +3,7 @@ import { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { Redirect } from 'react-router-dom'
 import './LoginForm.css'
+import { Link } from 'react-router-dom'
 
 
 const LoginFormPage = () => {
@@ -43,8 +44,8 @@ const LoginFormPage = () => {
     }
 
     return (
-        <div class ='DisplayBoxes'>
-            <div class='LoginBox'>
+        <div className='DisplayBoxes'>
+            <div className='LoginBox'>
                 <form onSubmit={handleSubmit}>
                     <ul>
                         {errors.map(error => <li key={error}>{error}</li>)}
@@ -59,6 +60,7 @@ const LoginFormPage = () => {
                     <br>
                     </br>
                     <label id='LoginPasswordLabel'>Password
+                    <Link to='/' id='ForgotPassword'>Forgot Password?</Link>
                         <br/> 
                         <input
                             type="password" value={password} onChange={handlePassword}
