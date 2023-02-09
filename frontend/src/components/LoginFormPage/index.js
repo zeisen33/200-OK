@@ -54,7 +54,6 @@ const LoginFormPage = () => {
                         <br />
                         <input
                             type="text" value={email} onChange={handleEmail}
-                            required
                         ></input>
                     </label>
                     <br>
@@ -64,7 +63,6 @@ const LoginFormPage = () => {
                         <br/> 
                         <input
                             type="password" value={password} onChange={handlePassword}
-                            required
                         ></input>
                     </label>
                     <br/>

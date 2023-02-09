@@ -36,23 +36,20 @@ const setCurrentUser = (user) => {
 
 // Thunk Action
 export const loginUser = (user) => async (dispatch) => {
+    const { email, password } = user;
     const response = await csrfFetch('/api/session', {
-        method: 'POST',
-        body: JSON.stringify(user)
-    })
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        password
+      })
+    });
+    const data = await response.json();
+    dispatch(setCurrentUser(data.user));
+    return response;
+};
 
-    const res = await response.json()
-    storeCurrentUser(res.user)
-    dispatch(setCurrentUser(res.user))
-    return response
-    // sessionStorage.setItem('currentUser', JSON.stringify(res.user))
-    // debugger
-    // dispatch(receiveUser(res.user))
-}
-
-const initialState = {
-    user: JSON.parse(sessionStorage.getItem("currentUser"))
-}
+const initialState = { user: null }
 
 const storeCSRFToken = (response) => {
     const csrfToken = response.headers.get("X-CSRF-Token")
@@ -79,24 +76,19 @@ export const logoutUser = (userId) => async (dispatch) => {
     })
 
     sessionStorage.setItem('currentUser', null)
-    dispatch(removeUser(userId))
+    dispatch(removeCurrentUser(userId))
 }
 
 // Reducer
-const sessionReducer = (state={ user: null }, action) => {
-    // debugger
-    let newState = { ...state }
-
+const sessionReducer = (state = initialState, action) => {
     switch (action.type) {
-        case RECEIVE_USER:
-            newState.user = action.user
-            return newState
-        case REMOVE_USER:
-            newState.user = null
-            return newState
-        default:
-            return state
+      case SET_CURRENT_USER:
+        return { ...state, user: action.payload };
+      case REMOVE_CURRENT_USER:
+        return { ...state, user: null };
+      default:
+        return state;
     }
-}
+  };
 
 export default sessionReducer
