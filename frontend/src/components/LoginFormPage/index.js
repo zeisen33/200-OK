@@ -43,26 +43,31 @@ const LoginFormPage = () => {
     }
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                <label id='LoginEmailLabel'>Email
-                    <input
-                        type="text" value={email} onChange={handleEmail}
-                        required
-                    ></input>
-                </label>
-                <label id='LoginPasswordLabel'>Password 
-                    <input
-                        type="password" value={password} onChange={handlePassword}
-                        required
-                    ></input>
-                </label>
-                <button type="submit" id='LogInButton'>Log In</button>
-            </form>
-        </>
+        <div class ='DisplayBoxes'>
+            <div class='LoginBox'>
+                <form onSubmit={handleSubmit}>
+                    <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                    <label id='LoginEmailLabel'>Email
+                        <input
+                            type="text" value={email} onChange={handleEmail}
+                            required
+                        ></input>
+                    </label>
+                    <br>
+                    </br>
+                    <label id='LoginPasswordLabel'>Password 
+                        <input
+                            type="password" value={password} onChange={handlePassword}
+                            required
+                        ></input>
+                    </label>
+                    <br></br>
+                    <button type="submit" id='LogInButton'>Log In</button>
+                </form>
+            </div>
+        </div>
     )
 }
 
