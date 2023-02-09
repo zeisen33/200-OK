@@ -88,7 +88,7 @@ const sessionReducer = (state={ user: null }, action) => {
     let newState = { ...state }
 
     switch (action.type) {
-        case RECEIVE_USER:
+        case SET_CURRENT_USER:
             newState.user = action.user
             return newState
         case REMOVE_USER:
