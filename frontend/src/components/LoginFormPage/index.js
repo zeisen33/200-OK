@@ -50,6 +50,7 @@ const LoginFormPage = () => {
                         {errors.map(error => <li key={error}>{error}</li>)}
                     </ul>
                     <label id='LoginEmailLabel'>Email
+                        <br />
                         <input
                             type="text" value={email} onChange={handleEmail}
                             required
@@ -57,14 +58,15 @@ const LoginFormPage = () => {
                     </label>
                     <br>
                     </br>
-                    <label id='LoginPasswordLabel'>Password 
+                    <label id='LoginPasswordLabel'>Password
+                        <br/> 
                         <input
                             type="password" value={password} onChange={handlePassword}
                             required
                         ></input>
                     </label>
-                    <br></br>
-                    <button type="submit" id='LogInButton'>Log In</button>
+                    <br/>
+                    <button type="submit" id='LogInButton'>Log in</button>
                 </form>
             </div>
         </div>

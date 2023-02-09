@@ -10,6 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 .LoginBox {
@@ -17,4 +19,14 @@ body {
     background-color: white;
     text-align: left;
     display: flex;
+}
+
+form input {
+    border: 1px solid rgba(113, 113, 113, 0.405);
+    border-radius: 2px;
+    width: 80%;
+    text-align: center;
+}
+
+form input:focus {
 }
