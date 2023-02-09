@@ -15,18 +15,38 @@ body {
 }
 
 .LoginBox {
+    display: flex;
     font-family: Arial;
     background-color: white;
     text-align: left;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form input {
+    display: flex;
     border: 1px solid rgba(113, 113, 113, 0.405);
     border-radius: 2px;
     width: 80%;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
-form input:focus {
+form label {
+    font: 15px;
+    color: #0C0D0E;
+    font-weight: less bold;
+    font-size: x-small;
+    align-items: start;
+}
+
+form button {
+    background-color: #0074CC;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-color: #0074CC;
+    font-size: xx-small;
+    width: 80%;
 }
