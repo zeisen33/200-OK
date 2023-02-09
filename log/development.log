@@ -2001,3 +2001,10 @@ Processing by Api::SessionsController#show as JSON
 Completed 200 OK in 361ms (Views: 3.5ms | ActiveRecord: 142.2ms | Allocations: 3803)
 
 
+Started GET "/api/session" for 127.0.0.1 at 2023-02-09 08:16:02 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (124.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 638ms (Views: 2.2ms | ActiveRecord: 250.1ms | Allocations: 3596)
+
+
