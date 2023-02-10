@@ -115,8 +115,8 @@
     background-color: var(--ForgotPasswordBlue);   
     cursor: pointer;
 }
-#LogInButton:active {
-    outline: 3px solid var(--light-blue);
+#LogInButton:focus {
+    outline: 3px solid var(--FocusShadow);
 }
 
 
@@ -159,8 +159,20 @@
     border-radius: 4px;
 }
 .ErrorsLoginInput:focus {
-    outline: none !important;
+    outline: 3px solid var(--ErrorShadow) !important;
     /* background-color: red; */
     border: 1px solid var(--Error);
-    box-shadow: 0 0 8px var(--ErrorShadow);
+    /* box-shadow: 0 0 8px var(--ErrorShadow); */
+}
+
+#ErrorsPasswordContainer {
+    display: flex;
+    width: 100%
+
+}
+
+.ErrorImg {
+    height: 22px;
+    width: 22px;
+    
 }

@@ -4,6 +4,7 @@ import * as sessionActions from '../../store/session'
 import { Redirect } from 'react-router-dom'
 import './LoginForm.css'
 import { Link } from 'react-router-dom'
+import logo from"../../assets/Exclam.png"
 
 
 const LoginFormPage = () => {
@@ -69,9 +70,12 @@ const LoginFormPage = () => {
 
     const ErrorsPasswordInput = () => {
         return (
+            <div id='ErrorsPasswordContainer'>
             <input name='password' id='ErrorsPasswordInput' className='ErrorsLoginInput'
             type="password" value={password} onChange={handlePassword}
             ></input>
+            <img className='ErrorImg' src={logo}></img>
+            </div>
         )
     }
 
