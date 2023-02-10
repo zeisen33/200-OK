@@ -44,7 +44,52 @@ const LoginFormPage = () => {
     }
 
     return (
-        <div className='DisplayBoxes'>
+        <div id='LoginWindow'>
+        <div className='ColumnContainer'>
+            <div id='FormContainer'>
+                <form onSubmit={handleSubmit} className='LoginForm'>
+                    {/* <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul> */}
+                    <div id='EmailContainer'>
+                    <label id='EmailLabel'>Email
+                        <br />
+                        <input className="LoginInput"
+                            type="text" value={email} onChange={handleEmail}
+                        ></input>
+                    </label>
+                    </div>
+                    <br>
+                    </br>
+                    <div id='Password Container'>
+                        <div id='PasswordForgotPassword'>
+                        <label id='LoginPasswordLabel' for='password'>Password
+                        </label>
+                        <Link to='/' id='ForgotPassword'>Forgot Password?</Link>
+                        </div>
+                        <br/>
+                        <input name='password' id='password'
+                            type="password" value={password} onChange={handlePassword}
+                        ></input>
+                    </div>
+                    <br/>
+                    <button type="submit" id='LogInButton'>Log in</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    )
+}
+
+export default LoginFormPage
+
+
+
+
+
+
+
+{/* <div className='DisplayBoxes'>
             <div className='LoginBox'>
                 <form onSubmit={handleSubmit}>
                     <ul>
@@ -70,7 +115,4 @@ const LoginFormPage = () => {
                 </form>
             </div>
         </div>
-    )
-}
-
-export default LoginFormPage
+        <div>Don't have an account?</div><Link to='/' id='SignUp'>Sign up</Link> */}

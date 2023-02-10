@@ -1,72 +1,78 @@
-body {
-    background-color:rgba(201, 200, 200, 0.183);
+:root {
+    --hover-blue: #0074CC;
+    --light-blue: rgb(7, 134, 231); 
+    --bigBground: rgb(239, 240, 241);
+   --border-gray: rgba(113, 113, 113, 0.405);
+}
+
+
+
+#LoginWindow {
+    background-color: var(--bigBground);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
 }
 
-.DisplayBoxes {
+.ColumnContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border: 1px solid white;
-    border-radius: 5px;
+    width: 316px;
 }
 
-.LoginBox {
-    display: flex;
-    font-family: Arial;
+#FormContainer {
     background-color: white;
-    text-align: left;
+    width: 100%;
+    height: 236px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-form input {
+.LoginForm {
     display: flex;
-    border: 1px solid rgba(113, 113, 113, 0.405);
-    border-radius: 2px;
-    width: 80%;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: 268px;
+    height: 236px;
 }
 
-form label {
-    font: 15px;
-    color: #0C0D0E;
-    font-weight: less bold;
-    font-size: x-small;
-    align-items: start;
-}
-
-form button {
-    background-color: #0074ccd0;
-    color: white;
-    align-items: center;
+#EmailContainer {
+    width: 268px;
+    height: 61.2px;
+    display: flex;
+    flex-direction: center;
     justify-content: center;
-    border-color: #0074CC;
-    font-size: xx-small;
-    width: 80%;
-    border: 1px solid rgb(7, 134, 231);
-    border-radius: 2px;
 }
 
-#LogInButton:hover {
-    background-color: #0074CC;
+#EmailLabel {
+    width: 100%;
+    height: 19.61px;
 }
 
-#ForgotPassword {
-    color: #0074CC;
-    font-size: xx-small;
-    display: inline-flex;
-    align-items: right;
-    justify-content: right;
-    text-align: right;
-    text-decoration: none;
+.LoginInput {
+    width: 268px;
+    height: 33.59px;
 }
 
-#ForgotPassword:hover {
-    color:rgb(7, 134, 231);
+#PasswordContainer {
+    width: 268px;
+    height: 61.3px;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+}
+
+#PasswordForgotPassword {
+    display: flex;
+    justify-content: space-between;
+}
+
+#password {
+    height: 33.59px;
+    width: 100%;
 }
