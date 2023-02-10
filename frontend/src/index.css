@@ -54,4 +54,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-input{box-sizing:border-box} 
+input{
+	box-sizing:border-box;
+	/* border: none; */
+} 

@@ -1,8 +1,15 @@
 :root {
     --hover-blue: #0074CC;
     --light-blue: rgb(7, 134, 231); 
+    --dark-blue: rgb(5, 89, 154); 
     --bigBground: rgb(239, 240, 241);
-   --border-gray: rgba(113, 113, 113, 0.405);
+    --ForgotPasswordBlue: rgb(0,105,195);
+    --ForgotPasswordHover: rgb(15,139,255);
+    --InputBorder: rgb(177, 183, 188);
+    --FocusBorder: rgb(79, 154, 217);
+    --FocusShadow: rgb(212, 231, 247);
+    --Error: rgb(208,73,77);
+    --ErrorShadow: rgb(245,219,220);
 }
 
 
@@ -27,10 +34,11 @@
 #FormContainer {
     background-color: white;
     width: 100%;
-    height: 236px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 10px;
 }
 
 .LoginForm {
@@ -38,41 +46,121 @@
     flex-direction: column;
     justify-content: center;
     width: 268px;
-    height: 236px;
+    height: fit-content;
 }
 
 #EmailContainer {
     width: 268px;
     height: 61.2px;
     display: flex;
-    flex-direction: center;
+    flex-direction: column;
     justify-content: center;
+    gap: 0px;
+    margin-top: 24px;
+    margin-bottom: 4px;
 }
 
 #EmailLabel {
     width: 100%;
     height: 19.61px;
+    font-weight: 500;
+    margin-left: 3px;
 }
 
 .LoginInput {
     width: 268px;
     height: 33.59px;
+    border: 1px solid var(--InputBorder);
+    border-radius: 4px;
+}
+.LoginInput:focus {
+    outline: none !important;
+    /* background-color: red; */
+    border: 1px solid var(--FocusBorder);
+    box-shadow: 0 0 8px var(--FocusShadow);
 }
 
 #PasswordContainer {
     width: 268px;
     height: 61.3px;
     display: flex;
-    flex-direction: center;
+    flex-direction: column;
     justify-content: center;
 }
 
 #PasswordForgotPassword {
     display: flex;
     justify-content: space-between;
+    height: 19.61px;
+    margin-top: 10px;
 }
 
 #password {
     height: 33.59px;
     width: 100%;
+    margin-bottom: 4px;
+}
+
+#LogInButton {
+    border-radius: 5px;
+    outline: 1px solid transparent;
+    border: 1px solid var(--light-blue);
+    height: 37.78px;
+    color: white;
+    background-color: var(--ForgotPasswordHover); 
+    margin-bottom: 24px; 
+}
+#LogInButton:hover {
+    border: 1px solid var(--dark-blue);
+    background-color: var(--ForgotPasswordBlue);   
+    cursor: pointer;
+}
+#LogInButton:active {
+    outline: 3px solid var(--light-blue);
+}
+
+
+#ForgotPassword {
+    font-size: small;
+    text-decoration: none;
+    color: var(--ForgotPasswordBlue);
+}
+#ForgotPassword:hover {
+    color: var(--ForgotPasswordHover)
+}
+
+#LoginPasswordLabel {
+    font-weight: 500;
+    margin-left: 3px;
+}
+
+.Buttons {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--light-blue)
+}
+
+.Error {
+    color: var(--Error);
+    font-size: small;
+    margin-left: 2px;
+    margin-bottom: 20px;
+}
+
+#Error2 {
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.ErrorsLoginInput {
+    width: 268px;
+    height: 33.59px;
+    border: 1px solid var(--Error);
+    border-radius: 4px;
+}
+.ErrorsLoginInput:focus {
+    outline: none !important;
+    /* background-color: red; */
+    border: 1px solid var(--Error);
+    box-shadow: 0 0 8px var(--ErrorShadow);
 }

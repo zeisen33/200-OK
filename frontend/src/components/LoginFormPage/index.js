@@ -43,37 +43,70 @@ const LoginFormPage = () => {
             });
     }
 
+    const LoginInput = () => {
+        return (
+            <input className="LoginInput" id="EmailInput"
+            type="text" value={email} onChange={handleEmail}
+            ></input>
+        )
+    }
+
+    const ErrorsLoginInput = () => {
+        return (
+            <input className="ErrorsLoginInput" id="ErrorsEmailInput"
+            type="text" value={email} onChange={handleEmail}
+            ></input>
+        )
+    }
+
+    const PasswordInput = () => {
+        return (
+            <input name='password' id='PasswordInput' className='LoginInput'
+            type="password" value={password} onChange={handlePassword}
+            ></input>
+        )
+    }
+
+    const ErrorsPasswordInput = () => {
+        return (
+            <input name='password' id='ErrorsPasswordInput' className='ErrorsLoginInput'
+            type="password" value={password} onChange={handlePassword}
+            ></input>
+        )
+    }
+
+
     return (
         <div id='LoginWindow'>
         <div className='ColumnContainer'>
-            <div id='FormContainer'>
+            <div id='FormContainer' >
                 <form onSubmit={handleSubmit} className='LoginForm'>
-                    {/* <ul>
-                        {errors.map(error => <li key={error}>{error}</li>)}
-                    </ul> */}
                     <div id='EmailContainer'>
-                    <label id='EmailLabel'>Email
-                        <br />
-                        <input className="LoginInput"
-                            type="text" value={email} onChange={handleEmail}
-                        ></input>
+                    <label for='EmailInput' id='EmailLabel'>Email
                     </label>
+                    
+                        {errors.length > 0 ? ErrorsLoginInput() : LoginInput()}
+                    
                     </div>
-                    <br>
-                    </br>
+                    <ul className='Error'>
+                        {errors.length > 0 ? 'Invalid Credentials.' : null}
+                    </ul>
+                  
                     <div id='Password Container'>
                         <div id='PasswordForgotPassword'>
                         <label id='LoginPasswordLabel' for='password'>Password
                         </label>
                         <Link to='/' id='ForgotPassword'>Forgot Password?</Link>
                         </div>
-                        <br/>
-                        <input name='password' id='password'
-                            type="password" value={password} onChange={handlePassword}
-                        ></input>
+                    
+                            {errors.length > 0 ? ErrorsPasswordInput(): PasswordInput()}
+                        
+                    <ul className='Error' id='Error2'>
+                        {errors.length > 0 ? 'Invalid Credentials.' : null}
+                    </ul>
                     </div>
                     <br/>
-                    <button type="submit" id='LogInButton'>Log in</button>
+                    <button className='Buttons' type="submit" id='LogInButton'>Log in</button>
                 </form>
             </div>
         </div>
