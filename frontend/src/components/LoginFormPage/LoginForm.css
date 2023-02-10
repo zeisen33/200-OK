@@ -151,6 +151,8 @@
     justify-content: center;
     height: 37.78px;
     margin-top: 10px;
+    text-decoration: none;
+    font-size: small;
 }
 .Buttons:hover {
     cursor: pointer;
@@ -197,7 +199,7 @@
     height: 22px;
     width: 22px;
     align-self: center;
-    margin-right: 8px
+    margin-right: 6px
 }
 
 #ButtonsContainer {
@@ -211,6 +213,7 @@
     background-color: white;
     color: var(--LinkedInBlue);
     border-color: var(--InputBorder)
+
 }
 #LinkedIn:hover {
     background-color: rgb(247,248,248);

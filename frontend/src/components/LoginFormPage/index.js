@@ -8,6 +8,8 @@ import ErrorLogo from "../../assets/Exclam.png"
 import WellfoundLogo from "../../assets/Wellfound.png"
 import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
+import { BrowserRouter, Route } from "react-router-dom"
+
 
 const LoginFormPage = () => {
     const dispatch = useDispatch()
@@ -88,18 +90,18 @@ const LoginFormPage = () => {
         <div id='LoginWindow'>
         <div className='ColumnContainer'>
             <div id='ButtonsContainer'>
-                <button className="Buttons" onClick="window.location.href='https://www.linkedin.com/in/zane-eisen-121856bb/';" type="button" id='LinkedIn'>
+                <a href='https://angel.co/' className="Buttons" id ='LinkedIn'>
                     <img src={LinkedInLogo} className='logos'></img>
                     My LinkedIn
-                </button>
-                <button className="Buttons" onClick="location.href='https://github.com/zeisen33;" type="button" id='GitHub'>
+                </a>
+                <a href='https://github.com/zeisen33' className="Buttons" id='GitHub'>
                     <img src={GitHubLogo} className='logos'></img>
                     My GitHub
-                </button>
-                <button className="Buttons" onClick="location.href='https://angel.co/';" type="button" id='Wellfound'>
+                </a>
+                <a href='https://angel.co/' className="Buttons" id='Wellfound'>
                     <img src={WellfoundLogo} className='logos'></img>
                     My Wellfound
-                </button>
+                </a>
             </div>
             <div id='FormContainer' >
                 <form onSubmit={handleSubmit} className='LoginForm'>
@@ -137,37 +139,3 @@ const LoginFormPage = () => {
 }
 
 export default LoginFormPage
-
-
-
-
-
-
-
-{/* <div className='DisplayBoxes'>
-            <div className='LoginBox'>
-                <form onSubmit={handleSubmit}>
-                    <ul>
-                        {errors.map(error => <li key={error}>{error}</li>)}
-                    </ul>
-                    <label id='LoginEmailLabel'>Email
-                        <br />
-                        <input
-                            type="text" value={email} onChange={handleEmail}
-                        ></input>
-                    </label>
-                    <br>
-                    </br>
-                    <label id='LoginPasswordLabel'>Password
-                    <Link to='/' id='ForgotPassword'>Forgot Password?</Link>
-                        <br/> 
-                        <input
-                            type="password" value={password} onChange={handlePassword}
-                        ></input>
-                    </label>
-                    <br/>
-                    <button type="submit" id='LogInButton'>Log in</button>
-                </form>
-            </div>
-        </div>
-        <div>Don't have an account?</div><Link to='/' id='SignUp'>Sign up</Link> */}
