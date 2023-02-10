@@ -4,8 +4,10 @@ import * as sessionActions from '../../store/session'
 import { Redirect } from 'react-router-dom'
 import './LoginForm.css'
 import { Link } from 'react-router-dom'
-import logo from"../../assets/Exclam.png"
-
+import ErrorLogo from "../../assets/Exclam.png"
+import WellfoundLogo from "../../assets/Wellfound.png"
+import LinkedInLogo from "../../assets/LinkedInLogo.png"
+import GitHubLogo from "../../assets/GitHubLogo.png"
 
 const LoginFormPage = () => {
     const dispatch = useDispatch()
@@ -58,7 +60,7 @@ const LoginFormPage = () => {
             <input name='password' id='ErrorsEmailInput' className='ErrorsLoginInput'
             type="password" value={password} onChange={handlePassword}
             ></input>
-            <img className='ErrorImg' src={logo}></img>
+            <img className='ErrorImg' src={ErrorLogo}></img>
             </div>
         )
     }
@@ -77,15 +79,28 @@ const LoginFormPage = () => {
             <input name='password' id='ErrorsPasswordInput' className='ErrorsLoginInput'
             type="password" value={password} onChange={handlePassword}
             ></input>
-            <img className='ErrorImg' src={logo}></img>
+            <img className='ErrorImg' src={ErrorLogo}></img>
             </div>
         )
     }
 
-
     return (
         <div id='LoginWindow'>
         <div className='ColumnContainer'>
+            <div id='ButtonsContainer'>
+                <button className="Buttons" onClick="window.location.href='https://www.linkedin.com/in/zane-eisen-121856bb/';" type="button" id='LinkedIn'>
+                    <img src={LinkedInLogo} className='logos'></img>
+                    My LinkedIn
+                </button>
+                <button className="Buttons" onClick="location.href='https://github.com/zeisen33;" type="button" id='GitHub'>
+                    <img src={GitHubLogo} className='logos'></img>
+                    My GitHub
+                </button>
+                <button className="Buttons" onClick="location.href='https://angel.co/';" type="button" id='Wellfound'>
+                    <img src={WellfoundLogo} className='logos'></img>
+                    My Wellfound
+                </button>
+            </div>
             <div id='FormContainer' >
                 <form onSubmit={handleSubmit} className='LoginForm'>
                     <div id='EmailContainer'>

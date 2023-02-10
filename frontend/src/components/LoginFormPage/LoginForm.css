@@ -10,6 +10,10 @@
     --FocusShadow: rgb(212, 231, 247);
     --Error: rgb(208,73,77);
     --ErrorShadow: rgb(245,219,220);
+    --LinkedInBlue: rgb(3, 105, 170);
+    --GitHubBlack: rgb(22, 26, 31);
+    --WellfoundBlue: rgb(20, 55, 198);
+    --WellfoundHover: rgb(43, 65, 123)
 }
 
 
@@ -110,14 +114,17 @@
     color: white;
     background-color: var(--ForgotPasswordHover); 
     margin-bottom: 24px; 
+    margin-top: 0px;
 }
 #LogInButton:hover {
     border: 1px solid var(--dark-blue);
     background-color: var(--ForgotPasswordBlue);   
     cursor: pointer;
+    margin-top: 0px;
 }
 #LogInButton:focus {
     outline: 3px solid var(--FocusShadow);
+    margin-top: 0px;
 }
 
 
@@ -138,7 +145,15 @@
 .Buttons {
     border-radius: 5px;
     outline: none;
-    border: 1px solid var(--light-blue)
+    border: 1px solid var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37.78px;
+    margin-top: 10px;
+}
+.Buttons:hover {
+    cursor: pointer;
 }
 
 .Error {
@@ -169,7 +184,6 @@
 #ErrorsPasswordContainer {
     display: flex;
     width: 100%
-
 }
 
 .ErrorImg {
@@ -177,5 +191,55 @@
     width: 22px;
     align-self: center;
     margin-left: 8px;
-    
 }
+
+.logos {
+    height: 22px;
+    width: 22px;
+    align-self: center;
+    margin-right: 8px
+}
+
+#ButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#LinkedIn {
+    background-color: white;
+    color: var(--LinkedInBlue);
+    border-color: var(--InputBorder)
+}
+#LinkedIn:hover {
+    background-color: rgb(247,248,248);
+}
+#LinkedIn:focus {
+    outline: 3px solid rgb(215,216,217)
+}
+
+#GitHub {
+    background-color: var(--GitHubBlack);
+    color: white;
+    border: 1px solid transparent
+}
+#GitHub:hover {
+    background-color: black;
+}
+#GitHub:focus {
+    outline: 3px solid rgb(215,216,217)
+}
+
+#Wellfound {
+    background-color: var(--WellfoundBlue);
+    color: white;
+    border: 1px solid transparent
+}
+#Wellfound:hover {
+    background-color: var(--WellfoundHover);
+}
+#Wellfound:focus {
+    outline: 3px solid rgb(198,218,235)
+}
+
