@@ -54,9 +54,12 @@ const LoginFormPage = () => {
 
     const ErrorsLoginInput = () => {
         return (
-            <input className="ErrorsLoginInput" id="ErrorsEmailInput"
-            type="text" value={email} onChange={handleEmail}
+            <div id='ErrorsPasswordContainer'>
+            <input name='password' id='ErrorsEmailInput' className='ErrorsLoginInput'
+            type="password" value={password} onChange={handlePassword}
             ></input>
+            <img className='ErrorImg' src={logo}></img>
+            </div>
         )
     }
 
