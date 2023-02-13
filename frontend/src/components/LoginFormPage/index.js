@@ -93,7 +93,7 @@ const LoginFormPage = () => {
                 <Link to='/' id='Logo200'>200 OK</Link>
             </h1>
             <div id='ButtonsContainer'>
-                <a href='https://angel.co/' className="Buttons" id ='LinkedIn'>
+                <a href='https://www.linkedin.com/in/zane-eisen-121856bb/' className="Buttons" id ='LinkedIn'>
                     <img src={LinkedInLogo} className='logos'></img>
                     My LinkedIn
                 </a>
@@ -135,6 +135,15 @@ const LoginFormPage = () => {
                     <br/>
                     <button className='Buttons' type="submit" id='LogInButton'>Log in</button>
                 </form>
+            </div>
+            <div id='TextContainer'>
+            <span id='NoAccount' >Don't have an account? <a href='users/new' id='NewUser'>Sign up</a></span>
+            <br/>
+            <p id="TextParagraph">Are you a recruiter? Check out my links!
+                <a className='parLinks' href='https://www.linkedin.com/in/zane-eisen-121856bb/'>My LinkedIn</a>
+                <a className='parLinks' href='https://github.com/zeisen33'>My GitHub</a>
+                <a className='parLinks' href='https://angel.co/'>My Wellfound</a>
+            </p>
             </div>
         </div>
         </div>

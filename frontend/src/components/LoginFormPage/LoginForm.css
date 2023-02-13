@@ -259,3 +259,41 @@
     margin-bottom: 10px;
     margin-top: 20px;
 }
+
+#TextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: x-small;
+    font-weight: 375;
+    text-decoration: none;
+}
+#NoAccount {
+
+}
+
+#TextParagraph {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+}
+
+#NewUser {
+    text-decoration: none;
+    color: var(--ForgotPasswordBlue);
+}
+#NewUser:hover {
+    color: var(--ForgotPasswordHover)
+}
+
+.parLinks {
+    text-decoration: none;
+    color: var(--ForgotPasswordBlue);
+}
+.parLinks:hover {
+    color: var(--ForgotPasswordHover)
+}
