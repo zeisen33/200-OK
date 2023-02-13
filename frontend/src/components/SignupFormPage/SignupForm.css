@@ -115,8 +115,9 @@
     width: 268px;
     margin-top: 24px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
 }
 
 .input {
@@ -128,5 +129,53 @@
 }
 
 #label {
-    /* margin-left: 3px; */
+    margin-left: 3px;
+}
+
+#linkA {
+    max-width: fit-content;
+}
+
+#passwordinput {
+    margin-bottom: 8px;
+}
+
+#CaptchaOuter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bigBground);
+    align-items: center;
+    height: 50px;
+    border: 1px solid var(--InputBorder);
+    border-radius: 4px;
+}
+
+#CaptchaInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(249,249,249);
+    border: 1px solid var(--InputBorder);
+    border-radius: 4px;
+    height: 40px;
+    width: fit-content;
+}
+
+#imnotarobot {
+    width: 20px;
+}
+#robotlabel {
+}
+#captchaline {
+    display: flex;
+    margin: 10px;
+    align-items: center
+}
+
+#optin {
+    display: flex;
+    align-items: left;
+    justify-content: top;
 }

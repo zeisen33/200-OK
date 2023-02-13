@@ -17,26 +17,73 @@ function SignupFormPage() {
   const [displayName, setDisplayName] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  // const [displayErrors, setDisplayErrors] = useState([])
+  const [emailErrors, setEmailErrors] = useState([])
+  const [passwordErrors, setPasswordErrors] = useState([])
+  const [robot, setRobot] = useState()
 
   if (sessionUser) return <Redirect to="/" />;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
       e.preventDefault();
-      setErrors([]);
-      return dispatch(sessionActions.signup({ email, displayName, password }))
+      await setErrors([]);
+      await dispatch(sessionActions.signup({ email, displayName, password }))
         .catch(async (res) => {
+          // debugger
         let data;
         try {
           // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
         } catch {
           data = await res.text(); // Will hit this case if the server is down
+          // debugger
         }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
+        // debugger
+        if (data?.errors) {
+          // debugger
+          setErrors(data.errors);
+        } else if (data) {
+          // debugger
+          setErrors([data]);
+        } else {
+          // debugger
+          setErrors([res.statusText]);
+        }
+        // console.log(errors)
+        // debugger
+        // errors.forEach((error) => {
+        //   if (error.includes('Display')) {
+        //     debugger
+        //     setDisplayErrors(error)
+        //   } else if (error.includes('Email')) {
+        //     debugger
+        //     setEmailErrors(error)
+        //   } else if (error.includes('Password')) {
+        //     debugger
+        //     setPasswordErrors(error)
+        //   }
+        //   return null
+        // })
       });
     }
+
+    const showErrors = (inputType) => {
+      // debugger
+      let errorEl;
+     
+      errors.forEach((error) => {
+        if (error.includes(inputType)) {
+          // debugger
+          errorEl = <ul className='Error'>{error}</ul>
+
+        }
+      })
+      // debugger
+      return errorEl;
+    }
+  
+
+
 
   return (
     <div id='SignupWindow'>
@@ -69,42 +116,53 @@ function SignupFormPage() {
           <div className='SignupFormContainer'>
             <form onSubmit={handleSubmit} className='SignupForm'>
               <div className='InputContainer' id='DisplayNameContainer'>
-                <label id='label'>
+                <label id='label' htmlFor='displayinput'>
                   Display Name
-                  <br/>
-                  <input className='input'
+                  </label >
+                  <input className='input' id='displayinput'
                     type="text"
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                   />
-                </label >
+                  <br/>
+                  {showErrors('Display')}
               </div>
               <div className='InputContainer' id='ContainerEmail'>
-              <label id='label'>
-                Email
-                <br/>
-                <input className='input'
+              <label id='label' htmlFor='emailinput'>
+                Email</label>
+                <input className='input' id='emailinput'
                   type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-              </label>
+                <br/>
+              {showErrors('Email')}
               </div>
               <div className='InputContainer' id='ContainerPassword'>
-              <label id='label'>
-                Password
-                <br/>
-                <input className='input'
+              <label id='label' htmlFor='passwordinput'>
+                Password</label>
+                <input className='input' id='passwordinput'
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-              </label>
+              {showErrors('Password')}
               </div>
-              <br/>
-              <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-              </ul>
+              <span id='SubText'>
+              Passwords must contain at least six characters. At least 1 letter and 1 number are recommended.
+              </span>
+              <div id="CaptchaOuter">
+                <div id="CaptchaInner">
+                  <div id='captchaline'>
+                  <input type='checkbox' id='imnotarobot' />
+                  <label htmlFor='imnotarobot' id='robotLabel'>I'm not a robot</label>
+                  </div>
+                </div>
+              </div>
+              <div id="optin">
+                <input type='checkbox' id='optinbox'/>
+                <label htmlFor='optinbox' id='optinlabel'>Opt-in to receive occasional product updates, user research invitations, announcements, and disgests.</label>
+              </div>
               <button type="submit">Sign Up</button>
             </form>
           </div>
