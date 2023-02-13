@@ -6,18 +6,19 @@ import SignupFormPage from './components/SignupFormPage/SignupForm'
 
 function App() {
   return (
+    <>
+    <NavBar />
     <Switch>
       <Route path='/login'>
-        <NavBar />
         <LoginFormPage />
       </Route>
-      <Route path='/'>
-        <NavBar />
+      <Route exact path='/'>
       </Route>
       <Route path='/signup' >
         <SignupFormPage />
       </Route>
     </Switch>
+    </>
   );
 }
 

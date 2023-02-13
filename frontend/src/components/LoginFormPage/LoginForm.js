@@ -8,7 +8,6 @@ import ErrorLogo from "../../assets/Exclam.png"
 import WellfoundLogo from "../../assets/Wellfound.png"
 import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
-import { BrowserRouter, Route } from "react-router-dom"
 
 
 const LoginFormPage = () => {

@@ -12,7 +12,7 @@ import { BrowserRouter, Route } from "react-router-dom"
 
 
 const NavBar = () => {
-return <></>
+return <h1>Hello From NavBar</h1>
 
 
 
