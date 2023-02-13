@@ -1,0 +1,132 @@
+:root {
+    --hover-blue: #0074CC;
+    --light-blue: rgb(7, 134, 231); 
+    --dark-blue: rgb(5, 89, 154); 
+    --bigBground: rgb(239, 240, 241);
+    --ForgotPasswordBlue: rgb(0,105,195);
+    --ForgotPasswordHover: rgb(15,139,255);
+    --InputBorder: rgb(177, 183, 188);
+    --FocusBorder: rgb(79, 154, 217);
+    --FocusShadow: rgb(212, 231, 247);
+    --Error: rgb(208,73,77);
+    --ErrorShadow: rgb(245,219,220);
+    --LinkedInBlue: rgb(3, 105, 170);
+    --GitHubBlack: rgb(22, 26, 31);
+    --WellfoundBlue: rgb(20, 55, 198);
+    --WellfoundHover: rgb(43, 65, 123);
+    --TextGrey: rgb(95, 104, 113);
+}
+
+
+#SignupWindow {
+    background-color: var(--bigBground);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#ContentContainer {
+    width: 774.89px;
+    height: 1038.17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#RightColumnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 316px;
+    height: fit-content;
+    align-items: right;
+}
+
+#LeftColumnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: left;
+    margin-left: 32px;
+    width: 410.89px;
+    height: 285px;
+}
+
+#JoinTitle {
+    font-size: xx-large;
+    margin-bottom: 32px;
+    height: 24px;
+}
+
+.Features {
+    height: 24px;
+    margin-bottom: 24px;
+}
+
+#Title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+#SubText {
+    color: var(--TextGrey);
+    font-size: small;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Link {
+    text-decoration: none;
+    color: var(--ForgotPasswordBlue);
+    margin-top: 5px;
+    
+}
+.Link:hover {
+    color: var(--ForgotPasswordHover)
+}
+
+.SignupFormContainer {
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.SignupForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 268px;
+    height: fit-content;
+}
+
+.InputContainer {
+    font-weight: 400;
+    width: 268px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 268px;
+    height: 33.59px;
+    border: 1px solid var(--InputBorder);
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+#label {
+    /* margin-left: 3px; */
+}
