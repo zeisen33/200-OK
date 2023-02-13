@@ -89,6 +89,9 @@ const LoginFormPage = () => {
     return (
         <div id='LoginWindow'>
         <div className='ColumnContainer'>
+            <h1 id="Container200">
+                <Link to='/' id='Logo200'>200 OK</Link>
+            </h1>
             <div id='ButtonsContainer'>
                 <a href='https://angel.co/' className="Buttons" id ='LinkedIn'>
                     <img src={LinkedInLogo} className='logos'></img>
