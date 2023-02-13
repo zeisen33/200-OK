@@ -79,6 +79,22 @@ export const logoutUser = (userId) => async (dispatch) => {
     dispatch(removeCurrentUser(userId))
 }
 
+export const signup = (user) => async (dispatch) => {
+  const { display_name, email, password } = user;
+  const response = await csrfFetch("/api/users", {
+    method: "POST",
+    body: JSON.stringify({
+      display_name,
+      email,
+      password
+    })
+  });
+  const data = await response.json();
+  storeCurrentUser(data.user);
+  dispatch(setCurrentUser(data.user));
+  return response;
+};
+
 // Reducer
 const sessionReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -90,5 +106,6 @@ const sessionReducer = (state = initialState, action) => {
         return state;
     }
   };
-
+  
+  
 export default sessionReducer
