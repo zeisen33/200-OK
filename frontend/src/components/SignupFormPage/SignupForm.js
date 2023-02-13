@@ -10,14 +10,12 @@ function SignupFormPage() {
   const [email, setEmail] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password === confirmPassword) {
+      e.preventDefault();
       setErrors([]);
       return dispatch(sessionActions.signup({ email, displayName, password }))
         .catch(async (res) => {
@@ -33,8 +31,6 @@ function SignupFormPage() {
         else setErrors([res.statusText]);
       });
     }
-    return setErrors(['Confirm Password field must be the same as the Password field']);
-  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -47,7 +43,6 @@ function SignupFormPage() {
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
       </label>
       <label>
@@ -56,7 +51,6 @@ function SignupFormPage() {
           type="text"
           value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
-          required
         />
       </label>
       <label>
@@ -65,16 +59,6 @@ function SignupFormPage() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
         />
       </label>
       <button type="submit">Sign Up</button>
