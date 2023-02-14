@@ -227,7 +227,7 @@
     color: var(--ForgotPasswordBlue);
 }
 .blue:hover {
-    color: var(--hover-blue);
+    color: var(--ForgotPasswordHover);
     cursor: pointer;
 }
 
