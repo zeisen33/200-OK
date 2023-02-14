@@ -68,10 +68,11 @@ function SignupFormPage() {
       return errorEl;
     }
   
-  const handleDemo = () => {
-    // debugger
-    dispatch(loginUser({email: 'demo@user.io', password: 'password'}));
-    window.location.replace("/");
+  const handleDemo = async (e) => {
+    e.preventDefault()
+    debugger
+    await dispatch(sessionActions.loginUser({email: 'demo@user.io', password: 'password'}));
+    // window.location.replace("/");
   }
 
 

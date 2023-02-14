@@ -1,5 +1,5 @@
 async function csrfFetch(url, options = {}) {
-  // debugger
+  debugger
     // debugger
     // set options.method to 'GET' if there is no method
     options.method = options.method || 'GET';
