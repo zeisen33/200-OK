@@ -50,21 +50,6 @@ function SignupFormPage() {
           // debugger
           setErrors([res.statusText]);
         }
-        // console.log(errors)
-        // debugger
-        // errors.forEach((error) => {
-        //   if (error.includes('Display')) {
-        //     debugger
-        //     setDisplayErrors(error)
-        //   } else if (error.includes('Email')) {
-        //     debugger
-        //     setEmailErrors(error)
-        //   } else if (error.includes('Password')) {
-        //     debugger
-        //     setPasswordErrors(error)
-        //   }
-        //   return null
-        // })
       });
     }
 

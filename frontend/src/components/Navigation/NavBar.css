@@ -11,6 +11,7 @@
     width: 100%;
 }
 
+
 .NavBarItem:hover {
     background-color: rgb(227,230,232);
     height: 100%;
@@ -65,3 +66,52 @@
     outline: none;
     width: 100%;
 }
+
+#loginoutsignupContainer {
+    width: fit-content;
+}
+
+#NavLoginButton {
+    background-color: rgb(225, 236 ,244);
+    border: 1px solid rgb(174, 201, 221);
+    color: rgb(77, 128, 164);
+
+}
+
+#NavSignUpButton {
+    color: white;
+    background-color: rgb(30, 151, 255) !important;
+    border: none;
+}
+#NavSignUpButton:hover {
+    background-color: rgb(18,118,201) !important;   
+    cursor: pointer;
+    margin-top: 0px; 
+}
+
+#RightButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 35.58px;
+}
+
+.RightButton {
+    height: 35.58px;
+    border-radius: 2px;
+    margin-left: 10px;
+}
+.RightButton:focus {
+    outline: 3px solid var(--FocusShadow);
+    margin-top: 0px;
+}
+
+#NavLoginButton:hover {
+    border: 1px solid var(--dark-blue);
+    background-color: rgb(180 211 233);
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+
