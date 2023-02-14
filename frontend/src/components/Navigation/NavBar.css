@@ -154,11 +154,11 @@
 #NavLogoutButton {
     margin-right: 10px;
     border-radius: 5px;
-    background-color: rgb(225, 236 ,244);
+    background-color: rgba(227, 230, 232, 0.197);
     border: 1px solid var(--InputBorder);
 }
 #NavLogoutButton:hover {
-    background-color: rgb(227,230,232);
+    background-color: rgb(225,236,244);
 }
 #NavLogoutButton:focus {
     border: 1px solid var(--dark-blue);
