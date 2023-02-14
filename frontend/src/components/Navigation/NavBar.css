@@ -1,0 +1,67 @@
+#OuterContainer {
+    background-color: rgb(248,249,249);
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid rgb(21,200,21);
+    height: 50px !important;
+    width: 100%;
+}
+
+.NavBarItem:hover {
+    background-color: rgb(227,230,232);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0
+}
+
+#NavBarLogo200 {
+    text-decoration: none;
+    font-size: xx-large;
+    color: rgb(21, 200, 21);
+    margin: 5px;
+}
+
+#GitLink {
+    text-decoration: none;
+    color: rgb(82 89 96);
+    margin: 8px;
+}
+#GitLinkContainer:hover {
+    height: 29px;
+    border-radius: 15px;
+}
+
+#SearchContainer {
+    width: 60%;
+    max-width: 745px;
+    background-color: white;
+    height: 33.59px;
+    border: 1px solid var(--InputBorder);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+#SearchContainer:focus {
+    outline: none !important;
+    /* background-color: red; */
+    border: 1px solid var(--FocusBorder);
+    box-shadow: 0 0 8px var(--FocusShadow);
+}
+#SearchContainer:focus-within {
+    outline: none !important;
+    /* background-color: red; */
+    border: 1px solid var(--FocusBorder);
+    box-shadow: 0 0 8px var(--FocusShadow);
+}
+
+#NavSearchBar {
+    background-color: none;
+    border: none;
+    outline: none;
+    width: 100%;
+}

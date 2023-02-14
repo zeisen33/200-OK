@@ -131,6 +131,12 @@
     border-radius: 4px;
     margin-top: 5px;
 }
+.input:focus {
+    outline: none !important;
+    /* background-color: red; */
+    border: 1px solid var(--FocusBorder);
+    box-shadow: 0 0 8px var(--FocusShadow);
+}
 
 #label {
     margin-left: 3px;

@@ -1,7 +1,7 @@
 import LoginFormPage from "./components/LoginFormPage/LoginForm";
 import { Route, Switch } from 'react-router-dom' 
 import React from 'react'
-import NavBar from './components/NavBar/NavBar.js'
+import NavBar from './components/Navigation/NavBar.js'
 import SignupFormPage from './components/SignupFormPage/SignupForm'
 
 function App() {
