@@ -22,7 +22,7 @@ export const removeUser = (userId) => {
 }
 
 const setCurrentUser = (user) => {
-  debugger
+  // debugger
     return {
       type: SET_CURRENT_USER,
       payload: user
@@ -37,7 +37,7 @@ const setCurrentUser = (user) => {
 
 // Thunk Action
 export const loginUser = (user) => async (dispatch) => {
-    debugger
+    // debugger
     const { email, password } = user;
     const response = await csrfFetch('/api/session', {
       method: 'POST',

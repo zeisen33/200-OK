@@ -38,12 +38,16 @@ const NavBar = () => {
     const loginout = () => {
         if (sessionUser) {
             return (
-                <>
-                <a href='https://www.linkedin.com/in/zane-eisen-121856bb/' className="Buttons" id ='LinkedIn'>
-                    <img src={LinkedInLogo} className='logos'></img>
-                    My LinkedIn
-                </a>
-                <button className='Buttons' id='LogoutButton' onClick={handleLogout}>Log out</button>
+                <> 
+                <div id='RightButtonsContainerLoggedIn'>
+                    <div id='RightButtonLinkedInContainer'>
+                        <a href='https://www.linkedin.com/in/zane-eisen-121856bb/' className="RightButton" id ='LinkedInRight'>
+                            <img src={LinkedInLogo} className='logos'></img>
+                        My LinkedIn
+                        </a>
+                    </div>
+                    <button className='RightButton' id='NavLogoutButton' onClick={handleLogout}>Log out</button>
+                </div> 
                 </>
             )
         } else {

@@ -69,6 +69,10 @@
 
 #loginoutsignupContainer {
     width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #NavLoginButton {
@@ -94,7 +98,28 @@
     flex-direction: row;
     align-items: center;
     width: fit-content;
-    height: 35.58px;
+    height: 35.58px !important;
+}
+
+#RightButtonsContainerLoggedIn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 35.58px !important;
+}
+
+#RightButtonLinkedInContainer {
+    background-color: white;
+    border: 1px solid var(--InputBorder);
+    border-radius: 3px;
+    margin-left: 8px;
+}
+#RightButtonLinkedInContainer:focus-within {
+    outline: 3px solid var(--FocusShadow);
+}
+#RightButtonLinkedInContainer:hover {
+    background-color: rgb(225, 236 ,244);
 }
 
 .RightButton {
@@ -114,4 +139,27 @@
     margin-top: 0px;
 }
 
+#LinkedInRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--ForgotPasswordBlue);
+    margin-right: 8px;
+}
+#LinkedInRight:focus {
+    outline: none !important;
+}
 
+#NavLogoutButton {
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: rgb(225, 236 ,244);
+    border: 1px solid var(--InputBorder);
+}
+#NavLogoutButton:hover {
+    background-color: rgb(227,230,232);
+}
+#NavLogoutButton:focus {
+    border: 1px solid var(--dark-blue);
+}

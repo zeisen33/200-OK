@@ -70,7 +70,7 @@ function SignupFormPage() {
   
   const handleDemo = async (e) => {
     e.preventDefault()
-    debugger
+    // debugger
     await dispatch(sessionActions.loginUser({email: 'demo@user.io', password: 'password'}));
     // window.location.replace("/");
   }
