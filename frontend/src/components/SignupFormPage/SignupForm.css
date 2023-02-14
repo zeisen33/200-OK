@@ -24,7 +24,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
 }
 
@@ -44,6 +44,7 @@
     width: 316px;
     height: fit-content;
     align-items: right;
+    margin-bottom: 24px;
 }
 
 #LeftColumnContainer {
@@ -113,11 +114,14 @@
 .InputContainer {
     font-weight: 400;
     width: 268px;
-    margin-top: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
+}
+
+#displaylabel {
+    margin-top: 24px
 }
 
 .input {
@@ -149,6 +153,7 @@
     height: 50px;
     border: 1px solid var(--InputBorder);
     border-radius: 4px;
+    margin-bottom: 12px;
 }
 
 #CaptchaInner {
@@ -163,6 +168,10 @@
     width: fit-content;
 }
 
+#SubText {
+    margin-bottom: 15px;
+}
+
 #imnotarobot {
     width: 20px;
 }
@@ -173,9 +182,59 @@
     margin: 10px;
     align-items: center
 }
-
 #optin {
+    font-size: small;
+    font-weight: 375;
     display: flex;
-    align-items: left;
+    flex-direction: row;
+    align-items: top;
     justify-content: top;
+    font-size: small;
+    margin-bottom: 15px;
+}
+#optinlabel {
+    line-height: 16px;
+}
+
+#spancontainer {
+    font-size: small;
+    color: var(--TextGrey);
+}
+
+
+#signupButton {
+    border-radius: 5px;
+    outline: 1px solid transparent;
+    border: 1px solid var(--light-blue);
+    height: 37.78px;
+    color: white;
+    background-color: var(--ForgotPasswordHover); 
+    margin-bottom: 24px; 
+    margin-top: 0px;
+}
+#signupButton:hover {
+    border: 1px solid var(--dark-blue);
+    background-color: var(--ForgotPasswordBlue);   
+    cursor: pointer;
+    margin-top: 0px;
+}
+#signupButton:focus {
+    outline: 3px solid var(--FocusShadow);
+    margin-top: 0px;
+}
+
+.blue {
+    color: var(--ForgotPasswordBlue);
+}
+.blue:hover {
+    color: var(--hover-blue);
+    cursor: pointer;
+}
+
+#loginlink {
+    text-decoration: none;
+}
+
+#spancontainer {
+    margin-bottom: 24px;
 }

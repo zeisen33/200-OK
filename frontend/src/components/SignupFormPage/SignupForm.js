@@ -7,6 +7,7 @@ import ErrorLogo from "../../assets/Exclam.png"
 import WellfoundLogo from "../../assets/Wellfound.png"
 import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
+import { loginUser } from "../../store/session";
 
 
 
@@ -82,7 +83,11 @@ function SignupFormPage() {
       return errorEl;
     }
   
-
+  const handleDemo = () => {
+    // debugger
+    dispatch(loginUser({email: 'demo@user.io', password: 'password'}));
+    window.location.replace("/");
+  }
 
 
   return (
@@ -116,7 +121,7 @@ function SignupFormPage() {
           <div className='SignupFormContainer'>
             <form onSubmit={handleSubmit} className='SignupForm'>
               <div className='InputContainer' id='DisplayNameContainer'>
-                <label id='label' htmlFor='displayinput'>
+                <label id='displaylabel' htmlFor='displayinput'>
                   Display Name
                   </label >
                   <input className='input' id='displayinput'
@@ -163,8 +168,22 @@ function SignupFormPage() {
                 <input type='checkbox' id='optinbox'/>
                 <label htmlFor='optinbox' id='optinlabel'>Opt-in to receive occasional product updates, user research invitations, announcements, and disgests.</label>
               </div>
-              <button type="submit">Sign Up</button>
+              <button id='signupButton' type="submit">Sign Up</button>
+              <button id='signupButton' type='submit' onClick={handleDemo}>Sign in as Demo User</button>
+              <div id='spancontainer'>
+              <span id='byclicking'>By clicking “Sign up”, you agree to our </span><span className='blue'>terms of service, privacy policy</span> and <span className='blue'>cookie policy.</span>             
+              </div>
             </form>
+            
+            </div>
+            <div id='TextContainer'>
+            <span id='NoAccount' >Already have an account? <a href='/login' className="blue" id='loginlink'>Log in</a></span>
+            <br/>
+            <p id="TextParagraph">Are you a recruiter? Check out my links!
+                <a className='parLinks' href='https://www.linkedin.com/in/zane-eisen-121856bb/'>My LinkedIn</a>
+                <a className='parLinks' href='https://github.com/zeisen33'>My GitHub</a>
+                <a className='parLinks' href='https://angel.co/'>My Wellfound</a>
+            </p>
           </div>
         </div>
       </div>

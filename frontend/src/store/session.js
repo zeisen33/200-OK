@@ -36,6 +36,7 @@ const setCurrentUser = (user) => {
 
 // Thunk Action
 export const loginUser = (user) => async (dispatch) => {
+    // debugger
     const { email, password } = user;
     const response = await csrfFetch('/api/session', {
       method: 'POST',
