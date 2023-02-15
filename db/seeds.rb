@@ -30,6 +30,30 @@ ApplicationRecord.transaction do
         password: 'password'
       }) 
     end
+
+    Question.create!({
+      asker_id: 1,
+      title: 'How do you String Interpolate in Ruby'
+      body: "Please help me learn how to string interpolate in Ruby. I tried `${}` but that didn't work."
+    })
+    Question.create!({
+      asker_id: 2,
+      title: 'Commenting in JavaScript',
+      body: "How do you do a multi-line comment in JavaScript?"
+    })
+    Question.create!({
+      asker_id: 1,
+      title: 'What is Big-O Notation?'
+    })
+    Question.create!({
+      asker_id: 7,
+      title: 'Is CSS a programming language?',
+      body: 'If not, then what is it?'
+    })
+    Question.create!({
+      asker_id: 9,
+      title: "Should I learn Python or Ruby?"
+    })
   
     puts "Done!"
   end
