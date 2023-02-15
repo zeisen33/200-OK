@@ -11,18 +11,21 @@
     justify-content: center;
     align-items: center;
     border-top: 3px solid rgb(21,200,21);
-    height: 50px !important;
+    height: fit-content;
     width: 100vw;
     right: 0px;
     margin-right: 0px;
 }
 
+.NavBarItem {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
 
 .NavBarItem:hover {
     background-color: rgb(227,230,232);
     height: 100%;
-    display: flex;
-    align-items: center;
     margin: 0
 }
 

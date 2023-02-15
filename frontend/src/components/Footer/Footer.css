@@ -1,7 +1,39 @@
 #FooterOuterContainer {
-    height: 800px;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin-top: 32px;
+    background-color: rgb(35, 38, 41);
+    border: none;
+}
+
+.FooterLine1 {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.FooterLine1Item {
+    font-size: 12pt;
+    text-decoration: none;
+    color: rgb(186,191,196);
+    margin-top: 10px;
+}
+
+#logo200okFooter {
+    color: rgb(21, 185, 21);
+}
+
+.Line3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#tinyGreyText {
+    font-size: 10pt;
+    color: rgb(129,136,144)
 }
