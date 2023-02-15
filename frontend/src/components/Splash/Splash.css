@@ -1,0 +1,185 @@
+#root {
+    width: 100vw
+}
+
+#wholeWindow {
+    height: 100vh;
+    width: 100vw;
+}
+
+#ContentContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 32px !important;
+}
+
+#BlackBackground {
+    width: 80%;
+    height: 1000px;
+    background-color: rgb(49, 53, 57);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    border: 1px transparent;
+    border-radius: 10px;
+}
+
+#BubbleContainer {
+    height: 284px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.SplashBubble {
+    width: 437px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px transparent;
+    border-radius: 10px;
+}
+
+#leftBubble {
+    background-color: rgb(253 227 206);
+    margin-right: 24px;
+}
+
+#rightBubble {
+    background-color: rgb(206,233,253);
+}
+
+#SearchIcon {
+    height: 40px;
+    width: 40px;
+}
+
+.leftBubbleItem {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rightBubbleItem {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#Item2 {
+    line-height: 20px;
+}
+
+#JoinButton {
+    background-color: rgb(240, 116, 37);
+    color: white;
+    border: 1px transparent;
+    height: 43px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    text-justify: center;
+}
+#JoinButton:hover {
+    background-color: rgb(238 105 33);
+}
+#JoinButton:focus {
+    outline: 3px solid rgb(216, 210, 206)
+}
+
+#JoinSpan {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#orDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#searchLink {
+    margin-left: 3px;
+    color: black
+}
+#searchLink:hover {
+    color: rgb(216, 117, 35)
+}
+
+#questionIcon {
+    color: rgb(30, 151, 252);
+    font-size: 60px;
+}
+
+#QuestionButton {
+    background-color: rgb(30, 151, 252);
+    color: white;
+    border: 1px transparent;
+    height: 43px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    text-justify: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+#QuestionButton:hover {
+    background-color: rgb(18 118 201);
+}
+#QuestionButton:focus {
+    outline: 3px solid rgb(176, 215, 246)
+}
+
+#questionLink {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#bigText {
+    color: white;
+    font-size: 48pt;
+}
+
+#logo200ok {
+    color: rgb(21, 193, 21);
+    font-size: 100pt;
+}
+
+#TextContainer {
+    line-height: 110px;
+    margin-top: 0;
+}
+
+#SubtitleContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.Subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+    margin-top: 72px;
+}
+
+.largeWhite {
+    color: white;
+    font-size: 18pt;
+}
+
+.smallGrey {
+    color: rgb(149, 155, 162);
+    font-size: 14pt;
+}

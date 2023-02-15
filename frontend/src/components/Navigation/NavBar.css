@@ -1,3 +1,7 @@
+#root {
+    width: 100vw;
+}
+
 #OuterContainer {
     background-color: rgb(248,249,249);
     top: 0;
@@ -8,7 +12,9 @@
     align-items: center;
     border-top: 3px solid rgb(21,200,21);
     height: 50px !important;
-    width: 100%;
+    width: 100vw;
+    right: 0px;
+    margin-right: 0px;
 }
 
 
@@ -154,7 +160,7 @@
 #NavLogoutButton {
     margin-right: 10px;
     border-radius: 5px;
-    background-color: rgba(227, 230, 232, 0.197);
+    background-color: rgba(227, 230, 232, 0.64);
     border: 1px solid var(--InputBorder);
 }
 #NavLogoutButton:hover {

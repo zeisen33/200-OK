@@ -64,7 +64,7 @@ const NavBar = () => {
 
 
 return (
-    <div id='OuterContainer' className='NavContainer' >
+    <div id='OuterContainer' >
         <h1 className='NavBarItem' id="NavBarContainer200">
             <Link to='/' id='NavBarLogo200'>200 OK</Link>
         </h1>

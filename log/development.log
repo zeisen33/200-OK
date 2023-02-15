@@ -9494,3 +9494,12 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 366ms (Views: 3.3ms | ActiveRecord: 6.7ms | Allocations: 6380)
 
 
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 10:01:42 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (216.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 39.2ms | Allocations: 201)
+Completed 200 OK in 1405ms (Views: 69.3ms | ActiveRecord: 677.8ms | Allocations: 3955)
+
+
