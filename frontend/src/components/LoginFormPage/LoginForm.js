@@ -8,7 +8,7 @@ import ErrorLogo from "../../assets/Exclam.png"
 import WellfoundLogo from "../../assets/Wellfound.png"
 import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
-
+import NavBar from "../Navigation/NavBar"
 
 const LoginFormPage = () => {
     const dispatch = useDispatch()
@@ -86,6 +86,8 @@ const LoginFormPage = () => {
     }
 
     return (
+        <>
+        <NavBar />
         <div id='LoginWindow'>
         <div className='ColumnContainer'>
             <h1 id="Container200">
@@ -137,7 +139,7 @@ const LoginFormPage = () => {
             </div>
             <div id='TextContainer'>
             <span id='NoAccount' >Don't have an account? <a href='users/new' id='NewUser'>Sign up</a></span>
-            <br/>
+            {/* <br/> */}
             <p id="TextParagraph">Are you a recruiter? Check out my links!
                 <a className='parLinks' href='https://www.linkedin.com/in/zane-eisen-121856bb/'>My LinkedIn</a>
                 <a className='parLinks' href='https://github.com/zeisen33'>My GitHub</a>
@@ -146,6 +148,7 @@ const LoginFormPage = () => {
             </div>
         </div>
         </div>
+        </>
     )
 }
 

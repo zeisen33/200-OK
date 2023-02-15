@@ -11,7 +11,6 @@ function App() {
     <>
     <Switch>
       <Route path='/login'>
-        <NavBar />
         <LoginFormPage />
       </Route>
       <Route exact path='/'>

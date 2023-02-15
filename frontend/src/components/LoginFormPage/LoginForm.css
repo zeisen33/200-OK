@@ -266,13 +266,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
     font-size: small;
     font-weight: 375;
     text-decoration: none;
-}
-#NoAccount {
-
+    line-height: 20px;
 }
 
 #TextParagraph {
@@ -281,6 +278,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 3px;
+    line-height: 20px;
 }
 
 #NewUser {
@@ -297,4 +295,11 @@
 }
 .parLinks:hover {
     color: var(--ForgotPasswordHover)
+}
+
+#NoAccount {
+    line-height: 20px;
+    margin-bottom: -40px;
+    margin-top: 20px;
+    height: 72px !important;
 }

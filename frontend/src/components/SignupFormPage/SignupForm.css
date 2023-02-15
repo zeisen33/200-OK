@@ -244,3 +244,12 @@
 #spancontainer {
     margin-bottom: 24px;
 }
+
+#TextContainerSignup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+    margin-top: 40px;
+}
