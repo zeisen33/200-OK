@@ -2,6 +2,7 @@ class Api::QuestionsController < ApplicationController
     wrap_parameters include: Question.attribute_names + ['askerId']
 
     def index
+        debugger
         @questions = Question.all
         render json: @questions
     end

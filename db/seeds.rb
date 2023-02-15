@@ -33,7 +33,7 @@ ApplicationRecord.transaction do
 
     Question.create!({
       asker_id: 1,
-      title: 'How do you String Interpolate in Ruby'
+      title: 'How do you String Interpolate in Ruby',
       body: "Please help me learn how to string interpolate in Ruby. I tried `${}` but that didn't work."
     })
     Question.create!({
