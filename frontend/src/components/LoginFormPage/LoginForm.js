@@ -138,7 +138,7 @@ const LoginFormPage = () => {
                 </form>
             </div>
             <div id='TextContainer'>
-            <span id='NoAccount' >Don't have an account? <a href='users/new' id='NewUser'>Sign up</a></span>
+            <span id='NoAccount' >Don't have an account? <a href='/signup' id='NewUser'>Sign up</a></span>
             {/* <br/> */}
             <p id="TextParagraph">Are you a recruiter? Check out my links!
                 <a className='parLinks' href='https://www.linkedin.com/in/zane-eisen-121856bb/'>My LinkedIn</a>

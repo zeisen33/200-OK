@@ -8,7 +8,7 @@ const Splash = () => {
     return (
     <div id='wholeWindow'>
         <NavBar />
-        <div id='ContentContainer'>
+        <div id='ContentContainerSplash'>
             <div id='BlackBackground'>
                 <div id='BubbleContainer'>
                     <div className='SplashBubble' id='leftBubble'>
