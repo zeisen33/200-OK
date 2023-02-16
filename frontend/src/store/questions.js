@@ -25,16 +25,16 @@ export const getQuestions = (state) => {
     return state?.questions ? Object.values(state.questions) : []
 }
 
-export const fetchAllQuestions = () => async (dispatch, getState) => {
-    debugger
+export const fetchAllQuestions = () => async (dispatch) => {
+    // debugger
     const response = await csrfFetch('/api/questions', {
         method: 'GET'
         // debugger
         })
     
     const data = await response.json()
-    debugger
-    dispatch(receiveQuestions(data))
+    // debugger
+    dispatch(receiveQuestions(data.questions))
 }
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
@@ -43,7 +43,10 @@ export const fetchQuestion = (questionId) => async (dispatch) => {
     })
 
     const data = await response.json()
+    // debugger
+    // data.question maybe
     dispatch(receiveQuestion(data))
+
 }
 
 

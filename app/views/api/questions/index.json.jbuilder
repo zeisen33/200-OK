@@ -1,6 +1,6 @@
-debugger
+# debugger
 json.questions do 
-    debugger
+    # debugger
     @questions.each do |question|
         json.set! question.id do 
             json.extract! question, :id, :title, :body, :asker_id, :created_at, :updated_at
@@ -9,9 +9,9 @@ json.questions do
 end
 
 json.users do 
-    debugger
+    # debugger
     @users.each do |user|
-        debugger
+        # debugger
         json.extract! user, :id, :email, :display_name, :created_at, :updated_at
     end
 end

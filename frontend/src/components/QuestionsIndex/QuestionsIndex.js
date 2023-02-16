@@ -5,11 +5,13 @@ import { Link } from "react-router-dom"
 
 const QuestionsIndex = () => {
     const dispatch = useDispatch()
-    const questions = useSelector(questionActions.getQuestions)
-
+    // debugger
     useEffect(() => {
         dispatch(questionActions.fetchAllQuestions())
     }, [dispatch])
+
+    const questions = useSelector(questionActions.getQuestions)
+    // debugger
 
     // const handleClick - go to show
 
