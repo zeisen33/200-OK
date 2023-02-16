@@ -5,6 +5,9 @@ import NavBar from './components/Navigation/NavBar.js'
 import SignupFormPage from './components/SignupFormPage/SignupForm'
 import Footer from './components/Footer/Footer.js'
 import Splash from './components/Splash/Splash.js'
+import QuestionsIndex from './components/QuestionsIndex/QuestionsIndex.js'
+import QuestionsShow from './components/QuestionsShow/QuestionsShow'
+import QuestionsCreate from "./components/QuestionsCreate/QuestionsCreate";
 
 function App() {
   return (
@@ -18,10 +21,15 @@ function App() {
         <Splash />
       </Route>
       <Route exact path='/questions'>
-
+        <QuestionsIndex />
+      </Route>
+      <Route path='/questions/new'>
+        <QuestionsCreate />
+      </Route>
+      <Route exact path = '/questions/:id'>
+        <QuestionsShow />
       </Route>
       <Route path='/signup' >
-        <NavBar />
         <SignupFormPage />
       </Route>
     </Switch>

@@ -14,7 +14,7 @@ const Splash = () => {
                         <img className='leftBubbleItem' id='SearchIcon' src={SearchIcon}></img>
                         <span className='leftBubbleItem' id='Item2'>Find the best answer to your technical question, help others answer theirs</span>
                         <Link className='leftBubbleItem' id='JoinButton' to='/signup'><span id='JoinSpan'>Join the community</span></Link>
-                    <div className='leftBubbleItem' id='orDiv'>or <Link to='/' id='searchLink'>search content</Link></div>
+                    <div className='leftBubbleItem' id='orDiv'>or <Link to='/questions' id='searchLink'>search content</Link></div>
                     </div>
                     <div className='SplashBubble' id='rightBubble'>
                         <span id='questionIcon' className='rightBubbleItem'>?</span>

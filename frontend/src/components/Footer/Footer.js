@@ -7,7 +7,7 @@ const Footer = () =>{
             <footer id='footer'>
                 <div className='FooterLine1'>
                 <Link className='FooterLine1Item' id='logo200okFooter' to='/'>200 OK</Link>
-                <Link className='FooterLine1Item' id='SearchQuestions'to='/'>Search Questions</Link>
+                <Link className='FooterLine1Item' id='SearchQuestions'to='/questions'>Search Questions</Link>
                 <Link className='FooterLine1Item' id='AskQuestionFooter' to='/'>Ask a Question</Link>
                 <span className='FooterLine1Item' id='Me' >Site by Zane Eisen</span>
                 </div>

@@ -1,6 +1,14 @@
 import csrfFetch from "./csrf"
 
 const RECEIVE_QUESTIONS = '/api/RECEIVE_QUESTIONS'
+const RECEIVE_QUESTION = '/api/RECEIVE_QUESTION'
+
+export const receiveQuestion = (question) => {
+    return {
+        type: RECEIVE_QUESTION,
+        question: question
+    }
+}
 
 export const receiveQuestions = (questions) => {
     return {
@@ -9,16 +17,33 @@ export const receiveQuestions = (questions) => {
     }
 }
 
+export const getQuestion = (questionId) => (state) => {
+    return state?.questions ? state.questions[questionId] : null;
+}
+
+export const getQuestions = (state) => {
+    return state?.questions ? Object.values(state.questions) : []
+}
+
 export const fetchAllQuestions = () => async (dispatch, getState) => {
-    debugger
+    // debugger
     const response = await csrfFetch('/api/questions', {
         method: 'GET'
         // debugger
         })
     
     const data = await response.json()
-    debugger
+    // debugger
     dispatch(receiveQuestions(data))
+}
+
+export const fetchQuestion = (questionId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/questions/${questionId}`, {
+        method: 'GET'
+    })
+
+    const data = await response.json()
+    dispatch(receiveQuestion(data))
 }
 
 
@@ -30,6 +55,9 @@ const questionsReducer = (state={}, action) => {
     switch (action.type) {
         case RECEIVE_QUESTIONS:
             nextState = { ...state, ...action.questions} 
+            return nextState
+        case RECEIVE_QUESTION:
+            nextState[action.question.id] = action.question
             return nextState
         default:
             return state

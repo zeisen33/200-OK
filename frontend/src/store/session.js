@@ -52,7 +52,7 @@ export const loginUser = (user) => async (dispatch) => {
     return response;
 };
 
-const initialState = { user: null }
+const initialState = { user: JSON.parse(sessionStorage.getItem('currentUser')) }
 
 const storeCSRFToken = (response) => {
     const csrfToken = response.headers.get("X-CSRF-Token")
@@ -60,6 +60,7 @@ const storeCSRFToken = (response) => {
 }
 
 const storeCurrentUser = (user) => {
+  // debugger
     if (user) sessionStorage.setItem("currentUser", JSON.stringify(user))
     else sessionStorage.removeItem("currentUser")
 }

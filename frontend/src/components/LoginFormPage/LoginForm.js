@@ -10,7 +10,18 @@ import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
 import NavBar from "../Navigation/NavBar"
 
-const LoginFormPage = () => {
+const LoginFormPage = (props) => {
+    // const mustBeLoggedIn = props.location.mustBeLoggedIn
+    // const loggedInError = () => {
+    //     // debugger
+    //     if (mustBeLoggedIn) {
+    //         // debugger
+    //         return <div><h1>Must Be Logged In</h1></div>
+    //     } else {
+    //         return null
+    //     }
+    // }
+
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user)
     const [email, setEmail] = useState('')
@@ -89,6 +100,7 @@ const LoginFormPage = () => {
         <>
         <div id='LoginWindow'>
         <div className='ColumnContainer'>
+            {/* {loggedInError()} */}
             <h1 id="Container200">
                 <Link to='/' id='Logo200'>200 OK</Link>
             </h1>

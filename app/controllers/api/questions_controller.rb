@@ -4,6 +4,7 @@ class Api::QuestionsController < ApplicationController
     def index
         # debugger
         @questions = Question.all
+        @users = User.all
         render :index
     end
 
@@ -12,29 +13,29 @@ class Api::QuestionsController < ApplicationController
         render json: @question
     end
 
-    def new
-        @question = Question.new(question_params)
-        @question.asker_id = current_user
-        render json: @question
-    end
+    # def new
+    #     @question = Question.new
+    #     @question.asker_id = current_user
+    #     render json: :new
+    # end
 
     def create
         @question = Question.new(question_params)
         @question.asker_id = current_user
         if @question.save 
-            render json: @question
+            render :create
         else 
             render json: { errors: @question.errors.full_messages}
         end
     end
 
-    def edit
-        @question = Question.find_by(id: params[:id])
-        @current_user = current_user
-        if @question.asker.id == @current_user.id
-            render json: @question
-        end
-    end
+    # def edit
+    #     @question = Question.find_by(id: params[:id])
+    #     @current_user = current_user
+    #     if @question.asker.id == @current_user.id
+    #         render json: @question
+    #     end
+    # end
 
     def update
         @question = Question.find_by(id: params[:id])
