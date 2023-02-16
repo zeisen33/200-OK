@@ -9834,3 +9834,188 @@ Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 16:50:22 -0500
 SyntaxError - syntax error, unexpected end-of-input, expecting `end':
   app/controllers/api/questions_controller.rb:62:in `'
 
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:10:50 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 273ms (Views: 1.5ms | ActiveRecord: 71.6ms | Allocations: 3920)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:11:10 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 907)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:11:19 -0500
+
+SyntaxError - syntax error, unexpected end-of-input, expecting `end':
+  app/controllers/api/questions_controller.rb:62:in `'
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:13:16 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 153ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 908)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:21:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (43.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 64ms (Views: 0.4ms | ActiveRecord: 45.8ms | Allocations: 5040)
+
+
+Started GET "/main.8137f2aed8ac8df40532.hot-update.json" for 127.0.0.1 at 2023-02-15 17:21:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/main.8137f2aed8ac8df40532.hot-update.json"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:22:03 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 6.4ms | Allocations: 989)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:22:21 -0500
+
+SyntaxError - syntax error, unexpected end-of-input, expecting `end':
+  app/controllers/api/questions_controller.rb:62:in `'
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:42:27 -0500
+
+SyntaxError - syntax error, unexpected end-of-input, expecting `end':
+  app/controllers/api/questions_controller.rb:62:in `'
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:42:47 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 1475ms (Views: 4.2ms | ActiveRecord: 619.5ms | Allocations: 3895)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:43:20 -0500
+
+SyntaxError - syntax error, unexpected end-of-input, expecting `end':
+  app/controllers/api/questions_controller.rb:62:in `'
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:46:21 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 81ms (Views: 0.5ms | ActiveRecord: 51.5ms | Allocations: 3233)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:46:43 -0500
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mQuestion Load (29.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/api/questions_controller.rb:7:in `index'
+Completed 200 OK in 81036ms (Views: 0.7ms | ActiveRecord: 161.3ms | Allocations: 200283)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:48:04 -0500
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/api/questions_controller.rb:7:in `index'
+Completed 200 OK in 3042ms (Views: 18.2ms | ActiveRecord: 0.4ms | Allocations: 117052)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:49:09 -0500
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mQuestion Load (20.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/api/questions_controller.rb:7:in `index'
+Completed 200 OK in 20086ms (Views: 5.4ms | ActiveRecord: 20.1ms | Allocations: 107572)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:50:07 -0500
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/api/questions_controller.rb:7:in `index'
+Completed 200 OK in 7644ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 116786)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 17:52:10 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 41ms (Views: 0.6ms | ActiveRecord: 2.9ms | Allocations: 3142)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 17:52:29 -0500
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/api/questions_controller.rb:7:in `index'
+Completed 200 OK in 37ms (Views: 28.3ms | ActiveRecord: 6.1ms | Allocations: 3103)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 18:04:50 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (34.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (Duration: 55.9ms | Allocations: 2694)
+Completed 200 OK in 91ms (Views: 51.2ms | ActiveRecord: 34.8ms | Allocations: 4795)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 18:05:16 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (Duration: 13.5ms | Allocations: 926)
+Completed 200 OK in 31ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 1415)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 18:08:30 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 229ms (Views: 0.3ms | ActiveRecord: 43.8ms | Allocations: 2641)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 18:08:41 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 959)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-15 18:08:55 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (Duration: 36.5ms | Allocations: 949)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.5ms | Allocations: 1382)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 21:46:37 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 627ms (Views: 5.3ms | ActiveRecord: 182.4ms | Allocations: 3823)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 21:46:41 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 892)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 21:46:53 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 907)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-15 21:46:58 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 886)
+
+

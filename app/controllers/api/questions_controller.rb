@@ -2,9 +2,9 @@ class Api::QuestionsController < ApplicationController
     wrap_parameters include: Question.attribute_names + ['askerId']
 
     def index
-        debugger
+        # debugger
         @questions = Question.all
-        render json: @questions
+        render :index
     end
 
     def show
@@ -54,6 +54,7 @@ class Api::QuestionsController < ApplicationController
         if @question.asker.id == @current_user.id
             @question.delete
         end
+    end
 
     private
     def question_params

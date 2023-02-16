@@ -9,12 +9,16 @@ import Splash from './components/Splash/Splash.js'
 function App() {
   return (
     <>
+    <NavBar />
     <Switch>
       <Route path='/login'>
         <LoginFormPage />
       </Route>
       <Route exact path='/'>
         <Splash />
+      </Route>
+      <Route exact path='/questions'>
+
       </Route>
       <Route path='/signup' >
         <NavBar />

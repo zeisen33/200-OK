@@ -7,7 +7,6 @@ import Footer from "../Footer/Footer.js"
 const Splash = () => {
     return (
     <div id='wholeWindow'>
-        <NavBar />
         <div id='ContentContainerSplash'>
             <div id='BlackBackground'>
                 <div id='BubbleContainer'>

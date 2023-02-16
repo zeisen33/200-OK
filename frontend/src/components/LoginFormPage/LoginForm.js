@@ -87,7 +87,6 @@ const LoginFormPage = () => {
 
     return (
         <>
-        <NavBar />
         <div id='LoginWindow'>
         <div className='ColumnContainer'>
             <h1 id="Container200">
