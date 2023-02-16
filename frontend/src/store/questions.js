@@ -26,14 +26,14 @@ export const getQuestions = (state) => {
 }
 
 export const fetchAllQuestions = () => async (dispatch, getState) => {
-    // debugger
+    debugger
     const response = await csrfFetch('/api/questions', {
         method: 'GET'
         // debugger
         })
     
     const data = await response.json()
-    // debugger
+    debugger
     dispatch(receiveQuestions(data))
 }
 

@@ -19,7 +19,7 @@ const Footer = () =>{
                 </div>
                 <br/>
                 <div className='Line3'>
-                <span id='tinyGreyText'>Site to be copyrighted by Zane Eisen; user contributions may eventually be licensed under CC BY-SA. rev 2023.2.15.43240</span>
+                <span id='tinyGreyText'>Site to be copyrighted by Zane Eisen; user contributions may eventually be licensed under CC BY-SA. rev 2023.2.16.43240</span>
                 </div>
             </footer>
         </div>

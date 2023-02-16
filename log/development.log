@@ -11146,3 +11146,162 @@ ActionView::Template::Error - undefined method `each' for nil:NilClass
 Completed 500 Internal Server Error in 318ms (Views: 4.9ms | ActiveRecord: 45.1ms | Allocations: 8363)
 
 
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:20:52 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 91ms (Views: 0.7ms | ActiveRecord: 69.1ms | Allocations: 3462)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-16 16:21:09 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:2
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  Rendered api/questions/index.json.jbuilder (Duration: 88.3ms | Allocations: 7782)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.3ms | Allocations: 136)
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass
+
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+	app/views/api/questions/index.json.jbuilder:11
+	app/views/api/questions/index.json.jbuilder:10
+	app/views/api/questions/index.json.jbuilder:9
+	app/controllers/api/questions_controller.rb:8:in `index'
+
+Completed 500 Internal Server Error in 96ms (Views: 0.9ms | ActiveRecord: 63.4ms | Allocations: 9522)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:22:32 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 8.3ms | Allocations: 1017)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:24:15 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 1.7ms | Allocations: 3396)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-16 16:24:38 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 3229.0ms | Allocations: 445140)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 1.2ms | Allocations: 196)
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass
+
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+	app/views/api/questions/index.json.jbuilder:15
+	app/views/api/questions/index.json.jbuilder:13
+	app/views/api/questions/index.json.jbuilder:11
+	app/controllers/api/questions_controller.rb:8:in `index'
+
+Completed 500 Internal Server Error in 48365ms (Views: 3.0ms | ActiveRecord: 14.2ms | Allocations: 601625)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:25:26 -0500
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:25:26 -0500
+Processing by Api::SessionsController#show as JSON
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3034)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 132ms (Views: 0.5ms | ActiveRecord: 18.5ms | Allocations: 4890)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:25:35 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 895)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-16 16:25:35 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (3.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:26:29 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (9109.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 17862ms (Views: 0.2ms | ActiveRecord: 9109.2ms | Allocations: 253672)
+
+
+  Rendered api/questions/index.json.jbuilder (Duration: 102874.9ms | Allocations: 651711)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.8ms | Allocations: 191)
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass
+
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+	app/views/api/questions/index.json.jbuilder:15
+	app/views/api/questions/index.json.jbuilder:13
+	app/views/api/questions/index.json.jbuilder:11
+	app/controllers/api/questions_controller.rb:8:in `index'
+
+Completed 500 Internal Server Error in 131651ms (Views: 2.9ms | ActiveRecord: 4.3ms | Allocations: 769550)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-16 16:27:47 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 8914.6ms | Allocations: 441514)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.2ms | Allocations: 114)
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass
+
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+	app/views/api/questions/index.json.jbuilder:15
+	app/views/api/questions/index.json.jbuilder:13
+	app/views/api/questions/index.json.jbuilder:11
+	app/controllers/api/questions_controller.rb:8:in `index'
+
+Completed 500 Internal Server Error in 20428ms (Views: 0.9ms | ActiveRecord: 9.0ms | Allocations: 557988)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-02-16 16:29:15 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 895)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-02-16 16:29:15 -0500
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 8361.4ms | Allocations: 1531291)
+Completed 200 OK in 17059ms (Views: 8362.2ms | ActiveRecord: 1.7ms | Allocations: 1647415)
+
+
