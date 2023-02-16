@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+200 OK is a forum for asking and answering coding questions. Anyone can search for and view user submitted questions and their answers.
 
-Things you may want to cover:
+Creating a 200 OK account is free. Once you've created an account, you can ask questions, answer questions, and upvote or downvote answers to show others if the answer was helpful.
 
-* Ruby version
+For each question, higher voted answers are shown first. 
 
-* System dependencies
+Once submitted, questions, answers, and votes can all be changed or deleted.
 
-* Configuration
+Currently, user authentication is working, and the remaining features are in progress.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+200 OK was built using Ruby on Rails, React, and Redux, with postgresql for the database.
