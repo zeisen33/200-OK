@@ -26,7 +26,7 @@ function App() {
       <Route path='/questions/new'>
         <QuestionsCreate />
       </Route>
-      <Route exact path = '/questions/:id'>
+      <Route exact path = '/questions/:questionId'>
         <QuestionsShow />
       </Route>
       <Route path='/signup' >

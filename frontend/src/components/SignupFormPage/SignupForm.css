@@ -121,7 +121,8 @@
 }
 
 #displaylabel {
-    margin-top: 24px
+    margin-top: 24px;
+    margin-left: 3px;
 }
 
 .input {

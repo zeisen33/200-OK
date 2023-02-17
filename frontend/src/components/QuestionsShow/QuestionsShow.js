@@ -10,13 +10,13 @@ const QuestionsShow = () => {
     const { questionId } = useParams() 
     const question = useSelector(questionActions.getQuestion(questionId))
     // const question = questionActions.fetchQuestion(questionId)
-
+    // debugger
     useEffect(() => {
-        if (question) {
+        if (questionId) {
             dispatch(questionActions.fetchQuestion(questionId))
         }
     }, [dispatch, questionId])    
-
+    // debugger
     if (question) {
         return (
             <div className="ShowQuestionContainer">
