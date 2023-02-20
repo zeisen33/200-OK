@@ -4,6 +4,7 @@ const RECEIVE_QUESTIONS = '/api/RECEIVE_QUESTIONS'
 const RECEIVE_QUESTION = '/api/RECEIVE_QUESTION'
 
 export const receiveQuestion = (question) => {
+    // debugger
     return {
         type: RECEIVE_QUESTION,
         question: question
@@ -14,6 +15,7 @@ export const receiveQuestions = (questions) => {
     return {
         type: RECEIVE_QUESTIONS,
         questions: questions
+        // users: data.users
     }
 }
 
@@ -34,7 +36,7 @@ export const fetchAllQuestions = () => async (dispatch) => {
     
     const data = await response.json()
     // debugger
-    dispatch(receiveQuestions(data.questions))
+    dispatch(receiveQuestions(data))
 }
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
@@ -45,7 +47,7 @@ export const fetchQuestion = (questionId) => async (dispatch) => {
     const data = await response.json()
     // debugger
     // data.question maybe
-    dispatch(receiveQuestion(data))
+    dispatch(receiveQuestion(data.questions))
 
 }
 

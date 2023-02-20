@@ -2,16 +2,20 @@ import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import * as questionActions from '../../store/questions.js'
 import { Link } from "react-router-dom"
+import * as userActions from '../../store/users'
 
 const QuestionsIndex = () => {
     const dispatch = useDispatch()
-    // debugger
+    const questions = useSelector(questionActions.getQuestions)
+    // const users = useSelector(userActions.getUsers)
+
+    debugger
     useEffect(() => {
         dispatch(questionActions.fetchAllQuestions())
+        // dispatch(userActions.fetchAllUsers())
     }, [dispatch])
 
-    const questions = useSelector(questionActions.getQuestions)
-    // debugger
+    debugger
 
     // const handleClick - go to show
 
@@ -25,7 +29,7 @@ const QuestionsIndex = () => {
                         </h1>
                     </li>
                     <li>
-                        Asked by: {question.asker}
+                        Asked by: {question.askerId}
                     </li>
                 </ul>
             </div>

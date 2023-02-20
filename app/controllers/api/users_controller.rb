@@ -1,6 +1,11 @@
 class Api::UsersController < ApplicationController
   wrap_parameters include: User.attribute_names + ['password', "displayName"]
 
+  def index 
+    @users = User.all 
+    render :index
+  end
+
   def create
     # debugger
     @user = User.new(user_params)
