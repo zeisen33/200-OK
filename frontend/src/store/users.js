@@ -11,7 +11,7 @@ const receiveUser = (user) => {
 }
 
 const receiveUsers = (users) => {
-    debugger
+    // debugger
     return {
     type: RECEIVE_USERS, 
     users: users
@@ -37,7 +37,7 @@ export const fetchAllUsers = () => async dispatch => {
     const res = csrfFetch(`/api/users`, {
         method: "GET"
     })
-    debugger
+    // debugger
     if (res.ok) {
         const data = await res.json()
         debugger
@@ -48,15 +48,15 @@ export const fetchAllUsers = () => async dispatch => {
 const usersReducer = (state={}, action) => {
     Object.freeze(state)
     let nextState = { ...state }
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_USER:
             nextState[action.user.id] = action.user
             return nextState
         case RECEIVE_USERS:
-            debugger
+            // debugger
             nextState = { ...state, ...action.users}
-            debugger
+            // debugger
             return nextState
         default: 
             return state

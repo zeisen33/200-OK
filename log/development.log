@@ -12339,3 +12339,271 @@ Processing by Api::QuestionsController#index as JSON
 Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 1.4ms | Allocations: 3329)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-03-31 13:43:19 -0400
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 13:43:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 172ms (Views: 0.6ms | ActiveRecord: 132.4ms | Allocations: 21796)
+
+
+Started GET "/" for ::1 at 2023-03-31 13:43:22 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 288)
+Completed 200 OK in 12ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1957)
+
+
+Started GET "/" for ::1 at 2023-03-31 13:44:18 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/zane/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 281)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 924)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 13:44:23 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (10.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 81.9ms | Allocations: 9797)
+Completed 200 OK in 87ms (Views: 38.0ms | ActiveRecord: 46.8ms | Allocations: 11012)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-03-31 13:44:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 13:45:37 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (3.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 16.2ms | Allocations: 2924)
+Completed 200 OK in 19ms (Views: 11.9ms | ActiveRecord: 5.5ms | Allocations: 3413)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 13:46:41 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1020)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 13:46:41 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 11.8ms | Allocations: 2911)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.7ms | Allocations: 3381)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 13:47:03 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 974)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 13:47:03 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 7.1ms | Allocations: 2911)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 3393)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 13:51:13 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 13:51:41 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:13
+  Rendered api/questions/index.json.jbuilder (Duration: 13.7ms | Allocations: 2911)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.8ms | Allocations: 3393)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 13:53:50 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 960)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 13:53:55 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (2.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  Rendered api/questions/index.json.jbuilder (Duration: 11.0ms | Allocations: 1487)
+Completed 200 OK in 33ms (Views: 13.4ms | ActiveRecord: 2.6ms | Allocations: 2408)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 13:54:52 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 3.7ms | Allocations: 1435)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 2457)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 13:55:00 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 1086)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 13:55:05 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 11.3ms | Allocations: 1186)
+Completed 200 OK in 41ms (Views: 19.5ms | ActiveRecord: 0.4ms | Allocations: 1666)
+
+
+Started GET "/api/questions/3" for 127.0.0.1 at 2023-03-31 13:56:53 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (5.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 39ms (Views: 4.3ms | ActiveRecord: 5.6ms | Allocations: 2506)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 13:57:25 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 954)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 13:57:25 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 4.0ms | Allocations: 1186)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 1659)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:01:19 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 951)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 14:01:48 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 3.0ms | Allocations: 1186)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:02:17 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 963)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 14:02:26 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (3.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 8.7ms | Allocations: 1187)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 3.4ms | Allocations: 1658)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:03:25 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:04:20 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 958)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-03-31 14:04:26 -0400
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 14:04:26 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 5.9ms | Allocations: 1315)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.7ms | Allocations: 1837)
+
+
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/index.json.jbuilder (Duration: 10.5ms | Allocations: 2090)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.8ms | Allocations: 3036)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:06:19 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1080)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:06:31 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 957)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 14:06:38 -0400
+Started GET "/api/users" for 127.0.0.1 at 2023-03-31 14:06:38 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (5.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 14.6ms | Allocations: 1496)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 5.4ms | Allocations: 1980)
+
+
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/index.json.jbuilder (Duration: 20.3ms | Allocations: 1828)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 4.3ms | Allocations: 2281)
+
+

@@ -7,15 +7,16 @@ import * as userActions from '../../store/users'
 const QuestionsIndex = () => {
     const dispatch = useDispatch()
     const questions = useSelector(questionActions.getQuestions)
-    // const users = useSelector(userActions.getUsers)
+    const users = useSelector(userActions.getUsers)
+    // const user = users[question.akerId]
 
     debugger
     useEffect(() => {
         dispatch(questionActions.fetchAllQuestions())
-        // dispatch(userActions.fetchAllUsers())
+        dispatch(userActions.fetchAllUsers())
     }, [dispatch])
 
-    debugger
+    // debugger
 
     // const handleClick - go to show
 

@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf"
+import { fetchAllUsers } from "./users"
 
 const RECEIVE_QUESTIONS = '/api/RECEIVE_QUESTIONS'
 const RECEIVE_QUESTION = '/api/RECEIVE_QUESTION'
@@ -37,6 +38,7 @@ export const fetchAllQuestions = () => async (dispatch) => {
     const data = await response.json()
     // debugger
     dispatch(receiveQuestions(data))
+    dispatch(fetchAllUsers)
 }
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
