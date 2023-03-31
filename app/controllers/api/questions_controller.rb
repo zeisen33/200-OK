@@ -3,14 +3,17 @@ class Api::QuestionsController < ApplicationController
 
     def index
         # debugger
-        @questions = Question.all
-        @users = User.all
+        @questions = Question.all.includes(:asker)
+        # @users = User.all
         render :index
     end
 
     def show
         @question = Question.find_by(id: params[:id])
-        render json: @question
+        # debugger
+        # @user = User.find_by(id: @question.asker_id)
+
+        render :show
     end
 
     # def new

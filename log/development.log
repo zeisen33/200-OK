@@ -12607,3 +12607,1745 @@ Processing by Api::UsersController#index as JSON
 Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 4.3ms | Allocations: 2281)
 
 
+Started GET "/api/questions" for ::1 at 2023-03-31 14:18:11 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (Duration: 54.9ms | Allocations: 6784)
+  Rendered api/questions/index.json.jbuilder (Duration: 113.6ms | Allocations: 11763)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 18.5ms | Allocations: 12810)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:2
+  app/views/api/users/_user.json.jbuilder:1
+  app/views/api/questions/index.json.jbuilder:10
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started POST "/__better_errors/dc39cb34d75901ae/variables" for ::1 at 2023-03-31 14:18:12 -0400
+Started GET "/api/user/4" for ::1 at 2023-03-31 14:19:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/user/4"):
+  
+Started GET "/api/users/4" for ::1 at 2023-03-31 14:19:15 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"4"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 5.3ms | Allocations: 3456)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4263)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/dfee881df6632674/variables" for ::1 at 2023-03-31 14:19:15 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:20:08 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/index.json.jbuilder (Duration: 6.8ms | Allocations: 2049)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 1.3ms | Allocations: 2748)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:20:48 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (Duration: 34.2ms | Allocations: 3862)
+  Rendered api/users/index.json.jbuilder (Duration: 40.2ms | Allocations: 5005)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.4ms | Allocations: 5982)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:2
+  app/views/api/users/_user.json.jbuilder:1
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/47601069611d47c2/variables" for ::1 at 2023-03-31 14:20:49 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:20:50 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (Duration: 5.7ms | Allocations: 3785)
+  Rendered api/users/index.json.jbuilder (Duration: 15.2ms | Allocations: 4674)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.9ms | Allocations: 5321)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:2
+  app/views/api/users/_user.json.jbuilder:1
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/3cbfb39c6eaea606/variables" for ::1 at 2023-03-31 14:20:50 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:21:52 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/index.json.jbuilder (Duration: 1.8ms | Allocations: 1436)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2509)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check json.users do 
+    # debugger
+    @users.each do |user|
+        # debugger
+        json.partial! '/api/users/user', @user: user
+    end
+end:
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/709977d4a2576338/variables" for ::1 at 2023-03-31 14:21:52 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/users" for ::1 at 2023-03-31 14:22:00 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (Duration: 3.8ms | Allocations: 3862)
+  Rendered api/users/index.json.jbuilder (Duration: 32.3ms | Allocations: 5012)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.3ms | Allocations: 6069)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:2
+  app/views/api/users/_user.json.jbuilder:1
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/d4873eec4d0aadc6/variables" for ::1 at 2023-03-31 14:22:00 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:23:18 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (Duration: 65281.3ms | Allocations: 116363)
+  Rendered api/users/index.json.jbuilder (Duration: 87023.8ms | Allocations: 269389)
+Completed 500 Internal Server Error in 87028ms (ActiveRecord: 0.4ms | Allocations: 270455)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/_user.json.jbuilder:2
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:24:45 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (Duration: 1009.5ms | Allocations: 111369)
+  Rendered api/users/index.json.jbuilder (Duration: 2655.2ms | Allocations: 220502)
+Completed 500 Internal Server Error in 2658ms (ActiveRecord: 0.3ms | Allocations: 221557)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/_user.json.jbuilder:2
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/fd39b4fa22a47466/variables" for ::1 at 2023-03-31 14:24:48 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:24:53 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (Duration: 100512.7ms | Allocations: 134102)
+  Rendered api/users/index.json.jbuilder (Duration: 107173.4ms | Allocations: 248304)
+Completed 500 Internal Server Error in 107188ms (ActiveRecord: 1.4ms | Allocations: 248948)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/_user.json.jbuilder:2
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:26:40 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 598.0ms | Allocations: 111121)
+  Rendered api/users/index.json.jbuilder (Duration: 1691.1ms | Allocations: 219495)
+Completed 500 Internal Server Error in 1711ms (ActiveRecord: 0.0ms | Allocations: 220480)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/03f413421d276c26/variables" for ::1 at 2023-03-31 14:26:42 -0400
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/users" for ::1 at 2023-03-31 14:26:44 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 4199.0ms | Allocations: 111184)
+  Rendered api/users/index.json.jbuilder (Duration: 11153.7ms | Allocations: 222360)
+Completed 500 Internal Server Error in 11163ms (ActiveRecord: 0.0ms | Allocations: 222999)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/4a3ce96fc510ef18/variables" for ::1 at 2023-03-31 14:26:56 -0400
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/users" for ::1 at 2023-03-31 14:26:59 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 449.4ms | Allocations: 111083)
+  Rendered api/users/index.json.jbuilder (Duration: 53818.8ms | Allocations: 223793)
+Completed 500 Internal Server Error in 53830ms (ActiveRecord: 0.0ms | Allocations: 224431)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:27:53 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 574.3ms | Allocations: 107709)
+  Rendered api/users/index.json.jbuilder (Duration: 1851.1ms | Allocations: 216227)
+Completed 200 OK in 1854ms (Views: 1853.4ms | ActiveRecord: 0.0ms | Allocations: 217148)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:29:10 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 17.7ms | Allocations: 3734)
+  Rendered api/users/index.json.jbuilder (Duration: 151657.6ms | Allocations: 115534)
+Completed 500 Internal Server Error in 151663ms (ActiveRecord: 0.0ms | Allocations: 116587)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:5
+  app/views/api/users/index.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:1
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:31:42 -0400
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:31:42 -0400
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 14:31:42 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+Started GET "/api/users" for ::1 at 2023-03-31 14:31:42 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+Started GET "/api/users" for ::1 at 2023-03-31 14:31:42 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+Processing by Api::SessionsController#show as JSON
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (23.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 62ms (Views: 0.5ms | ActiveRecord: 16.6ms | Allocations: 8349)
+
+
+  [1m[36mUser Load (28.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 69ms (Views: 0.3ms | ActiveRecord: 45.5ms | Allocations: 9302)
+
+
+  Rendered api/users/_user.json.jbuilder (Duration: 170.8ms | Allocations: 6712)
+  Rendered api/users/index.json.jbuilder (Duration: 390.3ms | Allocations: 20864)
+Completed 500 Internal Server Error in 398ms (ActiveRecord: 23.2ms | Allocations: 21902)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:31:43 -0400
+
+NoMethodError - undefined method `id' for 1:Integer
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^
+Did you mean?  i:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:4
+  app/views/api/users/index.json.jbuilder:2
+  app/controllers/api/users_controller.rb:6:in `index'
+
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 12.0ms | Allocations: 4167)
+  Rendered api/users/index.json.jbuilder (Duration: 419.1ms | Allocations: 42542)
+Completed 500 Internal Server Error in 425ms (ActiveRecord: 298.5ms | Allocations: 43139)
+
+
+
+NoMethodError - undefined method `id' for 1:Integer
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^
+Did you mean?  i:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:4
+  app/views/api/users/index.json.jbuilder:2
+  app/controllers/api/users_controller.rb:6:in `index'
+
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 59.1ms | Allocations: 4029)
+  Rendered api/users/index.json.jbuilder (Duration: 450.9ms | Allocations: 62240)
+Completed 500 Internal Server Error in 452ms (ActiveRecord: 49.7ms | Allocations: 62757)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:31:43 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 9.5ms | Allocations: 4029)
+  Rendered api/users/index.json.jbuilder (Duration: 20.3ms | Allocations: 4809)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.4ms | Allocations: 5384)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:31:43 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 6.0ms | Allocations: 4029)
+  Rendered api/users/index.json.jbuilder (Duration: 13.4ms | Allocations: 4809)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 5326)
+
+
+
+NoMethodError - undefined method `id' for 1:Integer
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^
+Did you mean?  i:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:4
+  app/views/api/users/index.json.jbuilder:2
+  app/controllers/api/users_controller.rb:6:in `index'
+
+
+NoMethodError - undefined method `id' for 1:Integer
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^
+Did you mean?  i:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:4
+  app/views/api/users/index.json.jbuilder:2
+  app/controllers/api/users_controller.rb:6:in `index'
+
+
+NoMethodError - undefined method `id' for 1:Integer
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^
+Did you mean?  i:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:4
+  app/views/api/users/index.json.jbuilder:2
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 4.1ms | Allocations: 4029)
+  Rendered api/users/index.json.jbuilder (Duration: 7.9ms | Allocations: 4809)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms | Allocations: 5326)
+
+
+
+NoMethodError - undefined method `id' for 1:Integer
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^
+Did you mean?  i:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/index.json.jbuilder:4
+  app/views/api/users/index.json.jbuilder:2
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/359dd012340fbc54/variables" for ::1 at 2023-03-31 14:31:44 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:31:56 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 1.1ms | Allocations: 189)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 2.5ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.6ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 1.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 2.0ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/index.json.jbuilder (Duration: 125.9ms | Allocations: 2397)
+Completed 200 OK in 142ms (Views: 127.0ms | ActiveRecord: 3.4ms | Allocations: 3398)
+
+
+Started GET "/api/users/6" for ::1 at 2023-03-31 14:34:13 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"6"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 5.8ms | Allocations: 3427)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4035)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/e2d0ab07744646f4/variables" for ::1 at 2023-03-31 14:34:14 -0400
+Started GET "/api/users/new" for ::1 at 2023-03-31 14:37:01 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"new"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 49.2ms | Allocations: 3409)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.0ms | Allocations: 4441)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/6d78bb6e23899d0b/variables" for ::1 at 2023-03-31 14:37:03 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:37:50 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 2.5ms | Allocations: 194)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/index.json.jbuilder (Duration: 52.5ms | Allocations: 3943)
+Completed 200 OK in 55ms (Views: 25.5ms | ActiveRecord: 28.3ms | Allocations: 4702)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:39:28 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/index.json.jbuilder (Duration: 1.6ms | Allocations: 1414)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2400)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check # debugger
+json.@users do |user|
+    # debugger
+    json.partial! '/api/users/user', user: user
+end:
+  app/controllers/api/users_controller.rb:6:in `index'
+
+Started POST "/__better_errors/0bbadf9c5f37480a/variables" for ::1 at 2023-03-31 14:39:28 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/users" for ::1 at 2023-03-31 14:39:38 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 1.5ms | Allocations: 200)
+  Rendered api/users/index.json.jbuilder (Duration: 4.8ms | Allocations: 646)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 1642)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:40:11 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 1.4ms | Allocations: 189)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/index.json.jbuilder (Duration: 7.7ms | Allocations: 2396)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 3380)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:40:35 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 2.5ms | Allocations: 183)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.6ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 2.3ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.5ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 42.0ms | Allocations: 3325)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.5ms | Allocations: 4317)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:40:46 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 1.9ms | Allocations: 183)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 42.9ms | Allocations: 3232)
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.4ms | Allocations: 4203)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 14:41:50 -0400
+Started GET "/api/users" for 127.0.0.1 at 2023-03-31 14:41:50 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 3.2ms | Allocations: 107)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 1.0ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 43)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 126.0ms | Allocations: 5922)
+Completed 200 OK in 155ms (Views: 129.4ms | ActiveRecord: 2.8ms | Allocations: 6592)
+
+
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (Duration: 21.0ms | Allocations: 4753)
+  Rendered api/questions/index.json.jbuilder (Duration: 60.4ms | Allocations: 7988)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 4.3ms | Allocations: 208)
+
+ActionView::Template::Error - undefined local variable or method `user' for #<ActionView::Base:0x00000000016cd8>
+
+json.extract! user, :id, :email, :display_name, :created_at, :updated_at
+              ^^^^
+Did you mean?  @users:
+	app/views/api/users/_user.json.jbuilder:3
+	app/views/api/questions/index.json.jbuilder:10
+	app/views/api/questions/index.json.jbuilder:9
+	app/controllers/api/questions_controller.rb:8:in `index'
+
+Completed 500 Internal Server Error in 100ms (Views: 8.2ms | ActiveRecord: 9.5ms | Allocations: 10514)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 14:42:40 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (2.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (Duration: 71.7ms | Allocations: 4762)
+  Rendered api/questions/index.json.jbuilder (Duration: 165.7ms | Allocations: 6723)
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 3.3ms | Allocations: 7765)
+
+
+
+NameError - undefined local variable or method `user' for #<ActionView::Base:0x00000000016dc8>
+json.extract! user, :id, :email, :display_name, :created_at, :updated_at
+              ^^^^
+Did you mean?  @users:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/questions/index.json.jbuilder:10
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started POST "/__better_errors/99948375a0e5850b/variables" for ::1 at 2023-03-31 14:42:40 -0400
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:42:49 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (4.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 8.4ms | Allocations: 2021)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:18 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 898)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:35 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (3.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 14ms (Views: 1.3ms | ActiveRecord: 3.1ms | Allocations: 874)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:36 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 1.2ms | Allocations: 895)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:39 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (8.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 16ms (Views: 2.3ms | ActiveRecord: 8.1ms | Allocations: 881)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:52 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 904)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:54 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 868)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:55 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (3.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 889)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:55 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 871)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:56 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 880)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:56 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 895)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:47:56 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 880)
+
+
+Started GET "/api/questions/5" for ::1 at 2023-03-31 14:48:02 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 892)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 14:48:40 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (Duration: 210.0ms | Allocations: 4761)
+  Rendered api/questions/index.json.jbuilder (Duration: 248.9ms | Allocations: 6723)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 2.4ms | Allocations: 7721)
+
+
+
+NameError - undefined local variable or method `user' for #<ActionView::Base:0x00000000017160>
+json.extract! user, :id, :email, :display_name, :created_at, :updated_at
+              ^^^^
+Did you mean?  @users:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/questions/index.json.jbuilder:10
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started POST "/__better_errors/02af66c0471d4bfa/variables" for ::1 at 2023-03-31 14:48:41 -0400
+Started GET "/api/questions" for ::1 at 2023-03-31 14:49:17 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/questions/index.json.jbuilder (Duration: 14.3ms | Allocations: 3817)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.2ms | Allocations: 4893)
+
+
+
+NoMethodError - undefined method `asker' for nil:NilClass
+    json.partial! '/api/users/user', user: @question.asker
+                                                    ^^^^^^:
+  app/views/api/questions/index.json.jbuilder:10
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started POST "/__better_errors/8105934ad256d3c2/variables" for ::1 at 2023-03-31 14:49:17 -0400
+Started GET "/api/questions" for ::1 at 2023-03-31 14:49:27 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/questions/index.json.jbuilder (Duration: 108.4ms | Allocations: 6195)
+Completed 500 Internal Server Error in 324ms (ActiveRecord: 4.8ms | Allocations: 7272)
+
+
+
+NameError - undefined local variable or method `question' for #<ActionView::Base:0x000000000172f0>
+    json.partial! '/api/users/user', user: question.asker
+                                           ^^^^^^^^
+Did you mean?  @questions:
+  app/views/api/questions/index.json.jbuilder:10
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started POST "/__better_errors/fcd74e99be9cde35/variables" for ::1 at 2023-03-31 14:49:28 -0400
+Started GET "/api/questions" for ::1 at 2023-03-31 14:49:53 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/questions/index.json.jbuilder (Duration: 66.6ms | Allocations: 3813)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 2.1ms | Allocations: 4889)
+
+
+
+NoMethodError - undefined method `asker' for nil:NilClass
+    json.partial! '/api/users/user', user: @question.asker
+                                                    ^^^^^^:
+  app/views/api/questions/index.json.jbuilder:10
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started POST "/__better_errors/ca7586cbce9928c9/variables" for ::1 at 2023-03-31 14:49:53 -0400
+Started GET "/api/questions" for ::1 at 2023-03-31 14:50:11 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/questions/index.json.jbuilder (Duration: 154173.8ms | Allocations: 121889)
+Completed 500 Internal Server Error in 154185ms (ActiveRecord: 1.7ms | Allocations: 123246)
+
+
+
+NoMethodError - undefined method `asker' for nil:NilClass
+    json.partial! '/api/users/user', user: @question.asker
+                                                    ^^^^^^:
+  app/views/api/questions/index.json.jbuilder:11
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started GET "/api/users" for ::1 at 2023-03-31 14:52:45 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 2.6ms | Allocations: 183)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 21.1ms | Allocations: 3232)
+Completed 200 OK in 28ms (Views: 22.1ms | ActiveRecord: 3.1ms | Allocations: 4222)
+
+
+Started GET "/api/question/6" for ::1 at 2023-03-31 14:53:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/question/6"):
+  
+Started GET "/api/questions/6" for ::1 at 2023-03-31 14:53:36 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (2.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 16ms (Views: 1.4ms | ActiveRecord: 2.4ms | Allocations: 946)
+
+
+Started GET "/api/users/6" for ::1 at 2023-03-31 14:53:44 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"6"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 8.9ms | Allocations: 3678)
+  Rendered api/users/show.json.jbuilder (Duration: 15.2ms | Allocations: 3860)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 4412)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/847cefcf7f8e5d25/variables" for ::1 at 2023-03-31 14:53:44 -0400
+Started GET "/api/users" for ::1 at 2023-03-31 14:53:47 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 119)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.7ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.7ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 33.9ms | Allocations: 2909)
+Completed 200 OK in 37ms (Views: 30.6ms | ActiveRecord: 5.3ms | Allocations: 3487)
+
+
+Started GET "/api/users/3" for ::1 at 2023-03-31 14:53:55 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 6.0ms | Allocations: 3674)
+  Rendered api/users/show.json.jbuilder (Duration: 64.8ms | Allocations: 3784)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms | Allocations: 4335)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/c2c8fa758e4d2a75/variables" for ::1 at 2023-03-31 14:53:55 -0400
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/api/users/3" for ::1 at 2023-03-31 14:55:54 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 176.0ms | Allocations: 4564)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.0ms | Allocations: 5467)
+
+
+
+NameError - undefined local variable or method `user' for #<ActionView::Base:0x00000000019280>
+    json.partial! '/api/users/user', user: user
+                                           ^^^^
+Did you mean?  super:
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/fe5d91c08d9b385f/variables" for ::1 at 2023-03-31 14:55:55 -0400
+Started GET "/api/users/3" for ::1 at 2023-03-31 14:56:06 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (Duration: 5.2ms | Allocations: 3742)
+  Rendered api/users/show.json.jbuilder (Duration: 10.4ms | Allocations: 4119)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 5020)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/_user.json.jbuilder:3
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/52e001003f87a9a8/variables" for ::1 at 2023-03-31 14:56:06 -0400
+Started GET "/api/users/3" for ::1 at 2023-03-31 15:15:15 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 72.9ms | Allocations: 4526)
+Completed 500 Internal Server Error in 136ms (Allocations: 5420)
+
+
+
+NameError - undefined local variable or method `user' for #<ActionView::Base:0x00000000019410>
+    json.extract! user, :id, :email, :display_name, :created_at, :updated_at
+                  ^^^^
+Did you mean?  super:
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/cc5e54f3952628d8/variables" for ::1 at 2023-03-31 15:15:16 -0400
+Started GET "/api/users/3" for ::1 at 2023-03-31 15:15:37 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 19.7ms | Allocations: 3457)
+Completed 500 Internal Server Error in 56ms (Allocations: 4351)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/users/show.json.jbuilder:2
+  app/views/api/users/show.json.jbuilder:1
+
+Started POST "/__better_errors/ecab57c982ebc42d/variables" for ::1 at 2023-03-31 15:15:37 -0400
+Started GET "/api/users/3" for ::1 at 2023-03-31 15:17:13 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:10:in `show'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 5.0ms | Allocations: 279)
+Completed 200 OK in 35ms (Views: 11.2ms | ActiveRecord: 1.5ms | Allocations: 4224)
+
+
+Started GET "/api/users/3" for ::1 at 2023-03-31 15:17:43 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:10:in `show'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 1.9ms | Allocations: 309)
+Completed 200 OK in 21ms (Views: 7.1ms | ActiveRecord: 1.4ms | Allocations: 1852)
+
+
+Started GET "/api/users/3" for ::1 at 2023-03-31 15:18:16 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:10:in `show'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 1.4ms | Allocations: 344)
+Completed 200 OK in 69ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 1876)
+
+
+Started GET "/api/users/3" for ::1 at 2023-03-31 15:18:19 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:10:in `show'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 0.4ms | Allocations: 199)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 2.2ms | Allocations: 1280)
+
+
+Started GET "/api/users" for ::1 at 2023-03-31 15:18:37 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 0.9ms | Allocations: 168)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 2.8ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 21.2ms | Allocations: 3114)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 3.2ms | Allocations: 3654)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:20:47 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 136ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 3366)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:22:17 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (4.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 4.8ms | Allocations: 903)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:22:22 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 882)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:23:09 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (4.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 4.3ms | Allocations: 909)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 15:23:12 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/questions/index.json.jbuilder (Duration: 164372.5ms | Allocations: 116993)
+Completed 500 Internal Server Error in 164385ms (ActiveRecord: 2.2ms | Allocations: 118245)
+
+
+
+NoMethodError - undefined method `asker' for nil:NilClass
+    json.partial! '/api/users/user', user: @question.asker
+                                                    ^^^^^^:
+  app/views/api/questions/index.json.jbuilder:11
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started GET "/api/questions" for ::1 at 2023-03-31 15:25:56 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:25:56 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:25:56 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:25:56 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+Processing by Api::QuestionsController#index as JSON
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (23.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/index.json.jbuilder
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 32.4ms | Allocations: 9291)
+
+
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 81ms (Views: 0.1ms | ActiveRecord: 38.5ms | Allocations: 9056)
+
+
+  [1m[36mQuestion Load (4.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/questions/index.json.jbuilder (Duration: 348.7ms | Allocations: 13861)
+Completed 500 Internal Server Error in 397ms (ActiveRecord: 161.5ms | Allocations: 19767)
+
+
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+Completed 200 OK in 410ms (Views: 0.4ms | ActiveRecord: 373.8ms | Allocations: 18388)
+
+
+
+NoMethodError - undefined method `asker' for nil:NilClass
+    json.partial! '/api/users/user', user: @question.asker
+                                                    ^^^^^^:
+  app/views/api/questions/index.json.jbuilder:11
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:26:15 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (38.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 87.0ms | Allocations: 4440)
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 48.1ms | Allocations: 8260)
+
+
+
+NameError - undefined local variable or method `asdfads' for #<ActionView::Base:0x00000000026c50>
+            @virtual_path = "api/questions/show";;__already_defined = defined?(json); json||=JbuilderTemplate.new(self); json.set! asdfads.id do
+                                                                                                                                   ^^^^^^^:
+  app/views/api/questions/show.json.jbuilder:1
+  app/controllers/api/questions_controller.rb:13:in `show'
+
+Started POST "/__better_errors/4f7c1bdcfc6e33f3/variables" for ::1 at 2023-03-31 15:26:16 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:26:44 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 132.2ms | Allocations: 4539)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.4ms | Allocations: 6139)
+
+
+
+NameError - undefined local variable or method `question' for #<ActionView::Base:0x00000000026d40>
+            @virtual_path = "api/questions/show";;__already_defined = defined?(json); json||=JbuilderTemplate.new(self); json.set! question.id do
+                                                                                                                                   ^^^^^^^^
+Did you mean?  @question:
+  app/views/api/questions/show.json.jbuilder:1
+  app/controllers/api/questions_controller.rb:13:in `show'
+
+Started POST "/__better_errors/1f4af22f0f09870a/variables" for ::1 at 2023-03-31 15:26:45 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:27:02 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 19.8ms | Allocations: 4385)
+Completed 500 Internal Server Error in 13049ms (ActiveRecord: 2.0ms | Allocations: 134335)
+
+
+
+NameError - undefined local variable or method `question' for #<ActionView::Base:0x0000000002f3c8>
+            @virtual_path = "api/questions/show";;__already_defined = defined?(json); json||=JbuilderTemplate.new(self); json.set! question.id do
+                                                                                                                                   ^^^^^^^^
+Did you mean?  @question:
+  app/views/api/questions/show.json.jbuilder:1
+  app/controllers/api/questions_controller.rb:14:in `show'
+
+Started POST "/__better_errors/674a60482f0ddfbd/variables" for ::1 at 2023-03-31 15:27:17 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:27:32 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 16.3ms | Allocations: 4455)
+Completed 500 Internal Server Error in 2144ms (ActiveRecord: 0.5ms | Allocations: 114693)
+
+
+
+NameError - undefined local variable or method `question' for #<ActionView::Base:0x0000000002f4b8>
+    json.extract! question, :id, :title, :body, :asker_id
+                  ^^^^^^^^
+Did you mean?  @question:
+  app/views/api/questions/show.json.jbuilder:2
+  app/views/api/questions/show.json.jbuilder:1
+  app/controllers/api/questions_controller.rb:14:in `show'
+
+Started POST "/__better_errors/53237ba1bc8a9b95/variables" for ::1 at 2023-03-31 15:27:34 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:27:52 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 35050.6ms | Allocations: 248085)
+Completed 500 Internal Server Error in 48537ms (ActiveRecord: 1.5ms | Allocations: 384780)
+
+
+
+NameError - undefined local variable or method `question' for #<ActionView::Base:0x000000000364c0>
+    json.extract! question, :id, :title, :body, :asker_id
+                  ^^^^^^^^
+Did you mean?  @question:
+  app/views/api/questions/show.json.jbuilder:4
+  app/views/api/questions/show.json.jbuilder:2
+  app/controllers/api/questions_controller.rb:14:in `show'
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:28:41 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 1332.0ms | Allocations: 217829)
+Completed 200 OK in 3672ms (Views: 1334.1ms | ActiveRecord: 1.1ms | Allocations: 336095)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:30:23 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 1.8ms | Allocations: 1343)
+Completed 500 Internal Server Error in 1683ms (ActiveRecord: 0.3ms | Allocations: 119157)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check debugger
+json.@question.id do
+    debugger
+    json.extract! @question, :id, :title, :body, :asker_id
+end
+# json.user do
+#     json.partial! '/api/users/user', user: @question.asker
+# end:
+  app/controllers/api/questions_controller.rb:14:in `show'
+
+Started POST "/__better_errors/b76322c0606eaf4e/variables" for ::1 at 2023-03-31 15:30:25 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:30:58 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 3452.9ms | Allocations: 218137)
+Completed 200 OK in 3835ms (Views: 3456.4ms | ActiveRecord: 0.2ms | Allocations: 328489)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:31:19 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (3.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 921.2ms | Allocations: 218084)
+Completed 200 OK in 2784ms (Views: 930.5ms | ActiveRecord: 3.8ms | Allocations: 336359)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:31:41 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 2.8ms | Allocations: 1343)
+Completed 500 Internal Server Error in 2313ms (ActiveRecord: 1.0ms | Allocations: 119239)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check debugger
+key = @question.id
+json.{key} do
+    debugger
+    json.extract! @question, :id, :title, :body, :asker_id
+end
+# json.user do
+#     json.partial! '/api/users/user', user: @question.asker
+# end:
+  app/controllers/api/questions_controller.rb:14:in `show'
+
+Started POST "/__better_errors/1652851d80d1ba20/variables" for ::1 at 2023-03-31 15:31:43 -0400
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:32:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (3.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 4.1ms | Allocations: 485)
+Completed 200 OK in 2115ms (Views: 29.4ms | ActiveRecord: 25.1ms | Allocations: 161673)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:33:08 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 2.6ms | Allocations: 226)
+Completed 200 OK in 4272ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 116110)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:36:47 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:14:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 3.5ms | Allocations: 346)
+Completed 200 OK in 40ms (Views: 6.6ms | ActiveRecord: 11.2ms | Allocations: 10553)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:41:30 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:14:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 1.4ms | Allocations: 263)
+Completed 200 OK in 16ms (Views: 5.6ms | ActiveRecord: 1.5ms | Allocations: 2273)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:42:17 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:14:in `show'
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/show.json.jbuilder (Duration: 1.0ms | Allocations: 329)
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 3.0ms | Allocations: 2353)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 15:46:13 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1400)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:54:55 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (6.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 118.6ms | Allocations: 8369)
+Completed 200 OK in 147ms (Views: 128.2ms | ActiveRecord: 9.2ms | Allocations: 12339)
+
+
+Started GET "/api/questions/3" for ::1 at 2023-03-31 15:55:06 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (2.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 3.3ms | Allocations: 868)
+Completed 200 OK in 13ms (Views: 3.4ms | ActiveRecord: 3.0ms | Allocations: 1921)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 16:00:34 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:9
+  Rendered api/questions/index.json.jbuilder (Duration: 100.9ms | Allocations: 6467)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 3.7ms | Allocations: 7185)
+
+
+
+NoMethodError - undefined method `asker' for nil:NilClass
+    json.partial! '/api/users/user', user: @question.asker
+                                                    ^^^^^^:
+  app/views/api/questions/index.json.jbuilder:11
+  app/views/api/questions/index.json.jbuilder:9
+  app/controllers/api/questions_controller.rb:8:in `index'
+
+Started POST "/__better_errors/8c415a27f7812613/variables" for ::1 at 2023-03-31 16:00:35 -0400
+Started GET "/api/questions" for ::1 at 2023-03-31 16:01:01 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:3
+  Rendered api/questions/index.json.jbuilder (Duration: 5.6ms | Allocations: 1455)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.9ms | Allocations: 2453)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 16:02:00 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:4
+  Rendered api/questions/index.json.jbuilder (Duration: 3.7ms | Allocations: 1483)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 2490)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 16:04:27 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/index.json.jbuilder:6
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/index.json.jbuilder:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/index.json.jbuilder:6
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/questions/index.json.jbuilder:6
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/api/questions/index.json.jbuilder:6
+  Rendered api/questions/index.json.jbuilder (Duration: 132.6ms | Allocations: 5047)
+Completed 200 OK in 142ms (Views: 125.8ms | ActiveRecord: 14.2ms | Allocations: 6070)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 16:05:31 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 214.3ms | Allocations: 10679)
+Completed 200 OK in 238ms (Views: 192.5ms | ActiveRecord: 41.7ms | Allocations: 11659)
+
+
+Started GET "/api/questions" for ::1 at 2023-03-31 16:08:32 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (8.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 179.3ms | Allocations: 8405)
+Completed 200 OK in 218ms (Views: 172.3ms | ActiveRecord: 44.2ms | Allocations: 9387)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:09:19 -0400
+Started GET "/api/users" for 127.0.0.1 at 2023-03-31 16:09:19 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 62.8ms | Allocations: 4179)
+Completed 200 OK in 74ms (Views: 59.1ms | ActiveRecord: 6.6ms | Allocations: 4719)
+
+
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 1.4ms | Allocations: 196)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 40.5ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 190.6ms | Allocations: 3277)
+Completed 200 OK in 200ms (Views: 197.5ms | ActiveRecord: 0.6ms | Allocations: 4212)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-03-31 16:09:26 -0400
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:09:26 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 9.4ms | Allocations: 2442)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 2.2ms | Allocations: 2980)
+
+
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (Duration: 0.3ms | Allocations: 107)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 1.2ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 22)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.2ms | Allocations: 21)
+  Rendered api/users/_user.json.jbuilder (Duration: 0.4ms | Allocations: 22)
+  Rendered api/users/index.json.jbuilder (Duration: 59.6ms | Allocations: 2778)
+Completed 200 OK in 127ms (Views: 124.9ms | ActiveRecord: 0.3ms | Allocations: 3237)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 16:09:27 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1352)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:09:28 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 21.9ms | Allocations: 2455)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 1.7ms | Allocations: 2946)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 16:11:59 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 957)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:12:00 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 15.2ms | Allocations: 2385)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 2.0ms | Allocations: 2855)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 16:12:18 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 936)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:12:20 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 22.0ms | Allocations: 2385)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 1.9ms | Allocations: 2848)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 16:13:56 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 954)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:13:57 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 11.2ms | Allocations: 2386)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.7ms | Allocations: 2843)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 16:14:00 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 963)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:14:01 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 6.0ms | Allocations: 2385)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 2851)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 16:14:26 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 948)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:14:38 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (2.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 13.3ms | Allocations: 2385)
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 3.4ms | Allocations: 2851)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2023-03-31 16:16:05 -0400
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 948)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:16:11 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 11.2ms | Allocations: 2385)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 2.2ms | Allocations: 2845)
+
+
+Started GET "/api/questions/5" for 127.0.0.1 at 2023-03-31 16:23:08 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 8.6ms | Allocations: 2186)
+Completed 200 OK in 46ms (Views: 8.0ms | ActiveRecord: 22.9ms | Allocations: 7090)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:23:22 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 18.5ms | Allocations: 2386)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 1.1ms | Allocations: 2858)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-03-31 16:23:22 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 9.4ms | Allocations: 2385)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 1.9ms | Allocations: 2842)
+
+
+Started GET "/api/questions/3" for 127.0.0.1 at 2023-03-31 16:23:26 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 3.5ms | Allocations: 852)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 1.5ms | Allocations: 1769)
+
+

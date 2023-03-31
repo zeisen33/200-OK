@@ -3,14 +3,14 @@ import csrfFetch from "./csrf"
 const RECEIVE_USER = 'api/RECEIVE_USER'
 const RECEIVE_USERS = 'api/RECEIVE_USERS'
 
-const receiveUser = (user) => {
+export const receiveUser = (user) => {
     return {
         type: RECEIVE_USER,
         user: user
     }
 }
 
-const receiveUsers = (users) => {
+export const receiveUsers = (users) => {
     // debugger
     return {
     type: RECEIVE_USERS, 
@@ -19,7 +19,7 @@ const receiveUsers = (users) => {
 }
 
 export const getUsers = (state) => {
-    return state?.users ? Object.values(state.users) : []
+    return state.users
 }
 
 export const fetchUser = (userId) => async dispatch => {
@@ -58,6 +58,8 @@ const usersReducer = (state={}, action) => {
             nextState = { ...state, ...action.users}
             // debugger
             return nextState
+        // case RECEIVE_QUESTION:
+        //     nextState[action.payload.asker.id] = action.payload.asker
         default: 
             return state
     }

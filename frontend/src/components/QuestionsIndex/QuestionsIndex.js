@@ -8,12 +8,12 @@ const QuestionsIndex = () => {
     const dispatch = useDispatch()
     const questions = useSelector(questionActions.getQuestions)
     const users = useSelector(userActions.getUsers)
+    // debugger
     // const user = users[question.akerId]
 
-    debugger
+    // debugger
     useEffect(() => {
         dispatch(questionActions.fetchAllQuestions())
-        dispatch(userActions.fetchAllUsers())
     }, [dispatch])
 
     // debugger
@@ -30,7 +30,7 @@ const QuestionsIndex = () => {
                         </h1>
                     </li>
                     <li>
-                        Asked by: {question.askerId}
+                        Asked by: {users[question.askerId].displayName}
                     </li>
                 </ul>
             </div>

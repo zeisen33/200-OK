@@ -1,5 +1,6 @@
 import csrfFetch from "./csrf"
 import { fetchAllUsers } from "./users"
+import { receiveUser, receiveUsers } from "./users"
 
 const RECEIVE_QUESTIONS = '/api/RECEIVE_QUESTIONS'
 const RECEIVE_QUESTION = '/api/RECEIVE_QUESTION'
@@ -16,7 +17,6 @@ export const receiveQuestions = (questions) => {
     return {
         type: RECEIVE_QUESTIONS,
         questions: questions
-        // users: data.users
     }
 }
 
@@ -37,20 +37,19 @@ export const fetchAllQuestions = () => async (dispatch) => {
     
     const data = await response.json()
     // debugger
-    dispatch(receiveQuestions(data))
-    dispatch(fetchAllUsers)
+    dispatch(receiveUsers(data.askers))
+    dispatch(receiveQuestions(data.questions))
+    // dispatch(receiveUsers)
 }
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/questions/${questionId}`, {
-        method: 'GET'
-    })
+    const response = await csrfFetch(`/api/questions/${questionId}`)
 
     const data = await response.json()
     // debugger
     // data.question maybe
-    dispatch(receiveQuestion(data.questions))
-
+    dispatch(receiveQuestion(data.question))
+    dispatch(receiveUser(data.asker))
 }
 
 
@@ -64,6 +63,7 @@ const questionsReducer = (state={}, action) => {
             nextState = { ...state, ...action.questions} 
             return nextState
         case RECEIVE_QUESTION:
+            // nextState[action.payload.question.id] = action.payload.question
             nextState[action.question.id] = action.question
             return nextState
         default:
