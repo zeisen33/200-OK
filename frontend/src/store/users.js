@@ -22,6 +22,10 @@ export const getUsers = (state) => {
     return state.users
 }
 
+export const getUser = (userId) => (state) => {
+    return state.users[userId]
+}
+
 export const fetchUser = (userId) => async dispatch => {
     const res = csrfFetch(`/api/users/${userId}`, {
         method: 'GET'

@@ -9,9 +9,11 @@ import * as userActions from '../../store/users'
 const QuestionsShow = () => {
     const dispatch = useDispatch()
     const { questionId } = useParams() 
-    const question = useSelector(questionActions.getQuestion(questionId))
-    const users = useSelector(userActions.getUsers)
-    // const question = questionActions.fetchQuestion(questionId)
+    let question = useSelector(questionActions.getQuestion(questionId))
+    const user = useSelector(userActions.getUser(question.askerId))
+    // allows navigation to show page from Index but not directly from URL
+    // since direct from URL doesn't save the question in state
+
     // debugger
     useEffect(() => {
         if (questionId) {
@@ -19,11 +21,11 @@ const QuestionsShow = () => {
         }
     }, [dispatch, questionId])    
     // debugger
-    if (question) {
+    if (question && user) {
         return (
             <div className="ShowQuestionContainer">
                 <h1>Hello From QusetionShow {question.title}</h1>
-                <h3>asked by {users[question.askerId].displayName}</h3>
+                <h3>asked by {user.displayName}</h3>
                 <p>{question.body}</p>
             </div>
         )

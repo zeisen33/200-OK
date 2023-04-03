@@ -48,21 +48,26 @@ export const fetchQuestion = (questionId) => async (dispatch) => {
     const data = await response.json()
     // debugger
     // data.question maybe
-    dispatch(receiveQuestion(data.question))
     dispatch(receiveUser(data.asker))
+    dispatch(receiveQuestion(data.question))
 }
 
 export const createQuestion = (question) => async (dispatch) => {
-    debugger
+    // debugger
     const response = await csrfFetch(`/api/questions`, {
         method: 'POST',
         body: JSON.stringify(question)
     })
 
-    debugger
+    // debugger
     if (response.ok) {
+        debugger
         const data = await response.json();
-        dispatch(receiveQuestion(data.question))
+        if (!data.errors) {
+            dispatch(receiveQuestion(data.question))
+        }
+        return data
+
         // remove double dispatch and use payload in action instead
     }
     
