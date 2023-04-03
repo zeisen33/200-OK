@@ -39,20 +39,12 @@ const QuestionsIndex = () => {
 
     // debugger
 
-    if (questions.length === 0) {
-        return <h1>Hello From No Questions</h1>
-    } else {
-        return (
-            <>
-                <h1>Questions</h1>
-                {questionsList}
-            </>
-        )
-    }
+    return (
+        <>
+            <h1>Questions</h1>
+            {questionsList}
+        </>
+    )
 }
-
-
-
-
 
 export default QuestionsIndex

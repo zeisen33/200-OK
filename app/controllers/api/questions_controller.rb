@@ -16,17 +16,11 @@ class Api::QuestionsController < ApplicationController
         render :show
     end
 
-    # def new
-    #     @question = Question.new
-    #     @question.asker_id = current_user
-    #     render json: :new
-    # end
-
     def create
         @question = Question.new(question_params)
         @question.asker_id = current_user
         if @question.save 
-            render :create
+            render :show
         else 
             render json: { errors: @question.errors.full_messages}
         end
