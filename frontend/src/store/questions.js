@@ -53,14 +53,19 @@ export const fetchQuestion = (questionId) => async (dispatch) => {
 }
 
 export const createQuestion = (question) => async (dispatch) => {
+    // debugger
     const response = await csrfFetch(`/api/questions`, {
         method: 'POST',
         body: JSON.stringify(question)
     })
 
-    const data = await response.json();
-    dispatch(receiveQuestion(data.question))
-    // remove double dispatch and use payload in action instead
+    // debugger
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveQuestion(data.question))
+        // remove double dispatch and use payload in action instead
+    }
+    
 }
 
 
@@ -74,6 +79,7 @@ const questionsReducer = (state={}, action) => {
             nextState = { ...state, ...action.questions} 
             return nextState
         case RECEIVE_QUESTION:
+            // debugger
             // nextState[action.payload.question.id] = action.payload.question
             nextState[action.question.id] = action.question
             return nextState
