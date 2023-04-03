@@ -1,0 +1,27 @@
+{
+  "name": "fsp",
+  "version": "1.0.0",
+  "description": "200 OK is a forum for asking and answering coding questions. Anyone can search for and view user submitted questions and their answers.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeisen33/FSP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeisen33/FSP/issues"
+  },
+  "engines": {
+    "node": "16.17.0"
+  },
+  "homepage": "https://github.com/zeisen33/FSP#readme"
+
+}

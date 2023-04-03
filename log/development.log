@@ -14879,3 +14879,13 @@ Processing by Api::QuestionsController#create as JSON
 Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3524)
 
 
+Started GET "/api/session" for ::1 at 2023-04-03 10:40:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 16.0ms | Allocations: 650)
+Completed 200 OK in 134ms (Views: 56.3ms | ActiveRecord: 7.0ms | Allocations: 12609)
+
+
