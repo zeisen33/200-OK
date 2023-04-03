@@ -20,6 +20,8 @@ Bundler.require(*Rails.groups)
 
 module Fullstack
   class Application < Rails::Application
+    config.railties_order = [:all, :main_app]
+
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore,
       key: '_auth_me_session',
