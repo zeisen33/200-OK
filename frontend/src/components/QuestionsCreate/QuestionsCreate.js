@@ -27,7 +27,7 @@ const QuestionsCreate = () => {
         e.preventDefault()
         await setErrors([]);
         // debugger
-        await dispatch(questionActions.createQuestion({title, body, asker_id: asker.id}))
+        await dispatch(questionActions.createQuestion({title, body, asker}))
         // debugger
         //     .catch(async (res) => {
         //         let data;

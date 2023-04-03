@@ -53,13 +53,13 @@ export const fetchQuestion = (questionId) => async (dispatch) => {
 }
 
 export const createQuestion = (question) => async (dispatch) => {
-    // debugger
+    debugger
     const response = await csrfFetch(`/api/questions`, {
         method: 'POST',
         body: JSON.stringify(question)
     })
 
-    // debugger
+    debugger
     if (response.ok) {
         const data = await response.json();
         dispatch(receiveQuestion(data.question))
