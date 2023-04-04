@@ -14,15 +14,13 @@ const QuestionsShow = () => {
     let question = useSelector(questionActions.getQuestion(questionId))
     // debugger
     const asker = useSelector(userActions.getAsker(question?.askerId)) 
-    const [updateRedirect, setUpdateRedirect] = useState(false)
-    debugger
+    // debugger
     const currentUserId = useSelector(userActions.getCurrentUserId)
-    debugger
+    // debugger
     
     
     useEffect(() => {
         // debugger
-        console.log('Hello from useEffect')
         if (questionId) {
             dispatch(questionActions.fetchQuestion(questionId))
         }
@@ -30,9 +28,9 @@ const QuestionsShow = () => {
 
 
     const updateButton = () => {
-        debugger
+        // debugger
         if (currentUserId === question.askerId) {
-            debugger
+            // debugger
             return <Link to={`/questions/${questionId}/edit`}>Edit Question</Link>
         }
     }
@@ -48,7 +46,7 @@ const QuestionsShow = () => {
             </div>
         )
     } else {
-        return <h1>No Question</h1>
+        return null
     }
 }
 

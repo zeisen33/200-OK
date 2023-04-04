@@ -51,10 +51,11 @@ export const fetchAllQuestions = () => async (dispatch) => {
 }
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
+    debugger
     const response = await csrfFetch(`/api/questions/${questionId}`)
 
     const data = await response.json()
-    // debugger
+    debugger
     // data.question maybe
     dispatch(receiveUser(data.asker))
     dispatch(receiveQuestion(data.question))
