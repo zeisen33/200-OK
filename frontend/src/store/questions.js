@@ -21,7 +21,15 @@ export const receiveQuestions = (questions) => {
 }
 
 export const getQuestion = (questionId) => (state) => {
-    return state?.questions ? state.questions[questionId] : null;
+    // debugger
+    if (state && Object.keys(state.questions).length > 0) {
+        // debugger
+        return state.questions[questionId]
+    } else {
+        // debugger
+        return null
+    }
+    // return state?.questions ? state.questions[questionId] : null;
 }
 
 export const getQuestions = (state) => {

@@ -9,10 +9,10 @@ const QuestionsIndex = () => {
     const questions = useSelector(questionActions.getQuestions)
     const users = useSelector(userActions.getUsers)
     // debugger
-    // const user = users[question.akerId]
 
     // debugger
     useEffect(() => {
+        // debugger
         dispatch(questionActions.fetchAllQuestions())
     }, [dispatch])
 

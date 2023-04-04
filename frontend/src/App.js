@@ -8,6 +8,7 @@ import Splash from './components/Splash/Splash.js'
 import QuestionsIndex from './components/QuestionsIndex/QuestionsIndex.js'
 import QuestionsShow from './components/QuestionsShow/QuestionsShow'
 import QuestionsCreate from "./components/QuestionsCreate/QuestionsCreate";
+import QuestionsUpdate from "./components/QuestionsUpdate/QuestionsUpdate";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
       </Route>
       <Route path='/signup' >
         <SignupFormPage />
+      </Route>
+      <Route path='/questions/:questionId/edit' >
+        <QuestionsUpdate />
       </Route>
     </Switch>
     </>

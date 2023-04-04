@@ -23,8 +23,19 @@ export const getUsers = (state) => {
 }
 
 export const getUser = (userId) => (state) => {
-    return state.users[userId]
+    // debugger
+    if (Object.keys(state.users).length > 0) {
+        return state.users[userId]
+    } else {
+        return null
+    }
 }
+
+export const getAsker = (askerId) => (state) => {
+    // debugger
+    return state.users[askerId]
+}
+
 
 export const fetchUser = (userId) => async dispatch => {
     const res = csrfFetch(`/api/users/${userId}`, {

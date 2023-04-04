@@ -1,32 +1,55 @@
 import "./QuestionsShow.css"
-import { useParams } from "react-router-dom"
+import { Redirect, useParams, Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import * as questionActions from '../../store/questions.js'
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import * as userActions from '../../store/users'
+import QuestionsUpdate from "../QuestionsUpdate/QuestionsUpdate"
 
 const QuestionsShow = () => {
     const dispatch = useDispatch()
-    const { questionId } = useParams() 
+    const { questionId } = useParams()
+    // debugger 
     let question = useSelector(questionActions.getQuestion(questionId))
-    const user = useSelector(userActions.getUser(question.askerId))
-    // allows navigation to show page from Index but not directly from URL
-    // since direct from URL doesn't save the question in state
-
     // debugger
+    const asker = useSelector(userActions.getAsker(question?.askerId)) 
+    
+    
     useEffect(() => {
+        // debugger
+        console.log('Hello from useEffect')
         if (questionId) {
             dispatch(questionActions.fetchQuestion(questionId))
         }
-    }, [dispatch, questionId])    
+    }, [questionId])
+  
+                 
     // debugger
-    if (question && user) {
+    
+    // const UpdateButton = () => {
+        //     return (
+            //         <button onClick={() => {
+                //             debugger
+                //             return (<Redirect to={`/questions/${questionId}/update`}></Redirect>)}}
+                //         >Update Question</button>
+                //     )
+                // }
+                
+                // const updateButton = () => {
+                    //     return (
+                        //         <button onClick={setRedirect(true)}>Edit Question</button>
+                        //     )
+                        // }
+         
+    // debugger                            
+    if (question && asker) {
         return (
             <div className="ShowQuestionContainer">
-                <h1>Hello From QusetionShow {question.title}</h1>
-                <h3>asked by {user.displayName}</h3>
+                <h1>{question.title}</h1>
+                <h3>asked by {asker.displayName}</h3>
                 <p>{question.body}</p>
+                {/* {updateButton} */}
             </div>
         )
     } else {
