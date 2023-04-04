@@ -46725,3 +46725,362 @@ Processing by Api::QuestionsController#show as JSON
 Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 1.3ms | Allocations: 1803)
 
 
+Started GET "/api/questions/42" for 127.0.0.1 at 2023-04-04 15:55:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"42"}
+  [1m[36mQuestion Load (42.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (40.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 161.5ms | Allocations: 9217)
+Completed 200 OK in 328ms (Views: 147.8ms | ActiveRecord: 140.5ms | Allocations: 18371)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 15:55:47 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 20.1ms | Allocations: 868)
+Completed 200 OK in 55ms (Views: 25.8ms | ActiveRecord: 8.1ms | Allocations: 1930)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 15:58:44 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (128.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 7.2ms | Allocations: 853)
+Completed 200 OK in 154ms (Views: 9.2ms | ActiveRecord: 129.1ms | Allocations: 1820)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 15:58:59 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (2.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (15.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 20.7ms | Allocations: 851)
+Completed 200 OK in 29ms (Views: 6.3ms | ActiveRecord: 17.7ms | Allocations: 1799)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 15:59:07 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 3.7ms | Allocations: 851)
+Completed 200 OK in 110ms (Views: 4.3ms | ActiveRecord: 1.4ms | Allocations: 1790)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 16:00:29 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (33.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (58.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 61.5ms | Allocations: 851)
+Completed 200 OK in 110ms (Views: 3.8ms | ActiveRecord: 92.2ms | Allocations: 1799)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 16:02:00 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 2.6ms | Allocations: 851)
+Completed 200 OK in 11ms (Views: 2.5ms | ActiveRecord: 1.6ms | Allocations: 1817)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 16:02:09 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (6.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 4.5ms | Allocations: 851)
+Completed 200 OK in 75ms (Views: 3.3ms | ActiveRecord: 8.3ms | Allocations: 1787)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 16:02:26 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (29.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 15.0ms | Allocations: 853)
+Completed 200 OK in 56ms (Views: 14.9ms | ActiveRecord: 31.1ms | Allocations: 1820)
+
+
+Started GET "/api/questions/4" for 127.0.0.1 at 2023-04-04 16:02:49 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 4.3ms | Allocations: 853)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 0.8ms | Allocations: 1808)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-04-04 16:02:50 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (10.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 106.5ms | Allocations: 10781)
+Completed 200 OK in 114ms (Views: 98.9ms | ActiveRecord: 12.4ms | Allocations: 11393)
+
+
+Started GET "/api/questions/5" for 127.0.0.1 at 2023-04-04 16:02:52 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 3.3ms | Allocations: 878)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 1.3ms | Allocations: 1942)
+
+
+Started GET "/api/questions/5" for 127.0.0.1 at 2023-04-04 16:03:18 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (13.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 9.6ms | Allocations: 844)
+Completed 200 OK in 81ms (Views: 6.1ms | ActiveRecord: 17.9ms | Allocations: 1792)
+
+
+Started GET "/api/questions/5" for 127.0.0.1 at 2023-04-04 16:07:02 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 9.9ms | Allocations: 844)
+Completed 200 OK in 30ms (Views: 12.9ms | ActiveRecord: 1.9ms | Allocations: 1788)
+
+
+Started GET "/api/questions/5" for 127.0.0.1 at 2023-04-04 16:07:06 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 5.0ms | Allocations: 846)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 2.1ms | Allocations: 1788)
+
+
+Started GET "/api/questions" for 127.0.0.1 at 2023-04-04 16:07:46 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (2.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 7], ["id", 9]]
+  ↳ app/views/api/questions/index.json.jbuilder:5
+  Rendered api/questions/index.json.jbuilder (Duration: 23.4ms | Allocations: 6585)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 2.9ms | Allocations: 7062)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:07:49 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 4.3ms | Allocations: 849)
+Completed 200 OK in 8ms (Views: 3.2ms | ActiveRecord: 1.9ms | Allocations: 1788)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:07:53 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 3.7ms | Allocations: 849)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 1.4ms | Allocations: 1791)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:07:55 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 20.0ms | Allocations: 850)
+Completed 200 OK in 46ms (Views: 32.1ms | ActiveRecord: 1.0ms | Allocations: 1801)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:07:57 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 5.3ms | Allocations: 849)
+Completed 200 OK in 13ms (Views: 4.2ms | ActiveRecord: 1.9ms | Allocations: 1770)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:09:16 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 7.0ms | Allocations: 849)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 3.5ms | Allocations: 1782)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:09:22 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 10.9ms | Allocations: 849)
+Completed 200 OK in 31ms (Views: 5.3ms | ActiveRecord: 6.6ms | Allocations: 1803)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:09:27 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 4.8ms | Allocations: 849)
+Completed 200 OK in 15ms (Views: 5.0ms | ActiveRecord: 1.6ms | Allocations: 1785)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:12:30 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (4.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 16.4ms | Allocations: 849)
+Completed 200 OK in 41ms (Views: 10.7ms | ActiveRecord: 13.6ms | Allocations: 1797)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:13:46 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 8.5ms | Allocations: 849)
+Completed 200 OK in 23ms (Views: 8.9ms | ActiveRecord: 3.6ms | Allocations: 1770)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:15:07 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (24.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (26.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 34.7ms | Allocations: 849)
+Completed 200 OK in 66ms (Views: 11.0ms | ActiveRecord: 51.0ms | Allocations: 1797)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:16:58 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (16.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 4.2ms | Allocations: 849)
+Completed 200 OK in 113ms (Views: 6.3ms | ActiveRecord: 17.4ms | Allocations: 1795)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:17:19 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (4.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 9.9ms | Allocations: 849)
+Completed 200 OK in 35ms (Views: 3.3ms | ActiveRecord: 11.4ms | Allocations: 1785)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:17:22 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 11.0ms | Allocations: 849)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 4.3ms | Allocations: 1788)
+
+
+Started GET "/api/questions/32" for 127.0.0.1 at 2023-04-04 16:17:25 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:12:in `show'
+  Rendering api/questions/show.json.jbuilder
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:13
+  Rendered api/questions/show.json.jbuilder (Duration: 3.3ms | Allocations: 849)
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 1.5ms | Allocations: 1791)
+
+

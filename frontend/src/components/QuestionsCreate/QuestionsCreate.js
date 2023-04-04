@@ -50,10 +50,6 @@ const QuestionsCreate = () => {
                     setErrors(data.errors)
                 }
             })
-
-        //     debugger
-        // if (createFetchResponse.question) {
-        // }
     }
 
     const showErrors = (inputType) => {

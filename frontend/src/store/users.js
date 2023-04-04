@@ -36,6 +36,10 @@ export const getAsker = (askerId) => (state) => {
     return state.users[askerId]
 }
 
+export const getCurrentUserId = (state) => {
+    return state.session.user.id
+}
+
 
 export const fetchUser = (userId) => async dispatch => {
     const res = csrfFetch(`/api/users/${userId}`, {

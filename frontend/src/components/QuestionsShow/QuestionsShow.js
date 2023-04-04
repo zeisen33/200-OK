@@ -14,6 +14,10 @@ const QuestionsShow = () => {
     let question = useSelector(questionActions.getQuestion(questionId))
     // debugger
     const asker = useSelector(userActions.getAsker(question?.askerId)) 
+    const [updateRedirect, setUpdateRedirect] = useState(false)
+    debugger
+    const currentUserId = useSelector(userActions.getCurrentUserId)
+    debugger
     
     
     useEffect(() => {
@@ -23,25 +27,16 @@ const QuestionsShow = () => {
             dispatch(questionActions.fetchQuestion(questionId))
         }
     }, [questionId])
-  
-                 
-    // debugger
+
+
+    const updateButton = () => {
+        debugger
+        if (currentUserId === question.askerId) {
+            debugger
+            return <Link to={`/questions/${questionId}/edit`}>Edit Question</Link>
+        }
+    }
     
-    // const UpdateButton = () => {
-        //     return (
-            //         <button onClick={() => {
-                //             debugger
-                //             return (<Redirect to={`/questions/${questionId}/update`}></Redirect>)}}
-                //         >Update Question</button>
-                //     )
-                // }
-                
-                // const updateButton = () => {
-                    //     return (
-                        //         <button onClick={setRedirect(true)}>Edit Question</button>
-                        //     )
-                        // }
-         
     // debugger                            
     if (question && asker) {
         return (
@@ -49,14 +44,12 @@ const QuestionsShow = () => {
                 <h1>{question.title}</h1>
                 <h3>asked by {asker.displayName}</h3>
                 <p>{question.body}</p>
-                {/* {updateButton} */}
+                {updateButton()}
             </div>
         )
     } else {
         return <h1>No Question</h1>
     }
-
-
 }
 
 export default QuestionsShow
