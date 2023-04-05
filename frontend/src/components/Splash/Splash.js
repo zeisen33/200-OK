@@ -1,7 +1,6 @@
-import NavBar from "../Navigation/NavBar"
 import "./Splash.css"
 import SearchIcon from '../../assets/SearchIcon.png'
-import { Link, Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Footer from "../Footer/Footer.js"
 
 const Splash = () => {

@@ -1,30 +1,25 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Redirect } from "react-router-dom"
-import { getCurrentUserId } from "../../store/users"
-import { useParams } from "react-router-dom"
+import { Redirect, useParams, Link, useHistory } from "react-router-dom"
+import { useEffect, useState } from "react"
 import * as questionActions from '../../store/questions'
 import * as userActions from '../../store/users'
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import { useHistory } from "react-router-dom"
-
 
 const QuestionsUpdate = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const currentUserId = useSelector(getCurrentUserId)
+    const currentUserId = useSelector(userActions.getCurrentUserId)
     const { questionId } = useParams();
     const question = useSelector(questionActions.getQuestion(questionId))
     const asker = useSelector(userActions.getAsker(question?.askerId)) 
-    // debugger
+    debugger
     const [title, setTitle] = useState(question?.title)
     const [body, setBody] = useState(question?.body)
-    // debugger
+    debugger
     const [errors, setErrors] = useState([])
     const [submitted, setSubmitted] = useState(false)
 
     useEffect(() => {
-        // debugger
+        debugger
         dispatch(questionActions.fetchQuestion(questionId))
         // debugger
     }, [questionId])

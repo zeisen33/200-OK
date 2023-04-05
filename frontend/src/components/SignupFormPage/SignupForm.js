@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css'
-import ErrorLogo from "../../assets/Exclam.png"
 import WellfoundLogo from "../../assets/Wellfound.png"
 import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
-import { loginUser } from "../../store/session";
 
 
 
@@ -19,9 +17,6 @@ function SignupFormPage() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   // const [displayErrors, setDisplayErrors] = useState([])
-  const [emailErrors, setEmailErrors] = useState([])
-  const [passwordErrors, setPasswordErrors] = useState([])
-  const [robot, setRobot] = useState()
 
   if (sessionUser) return <Redirect to="/" />;
 

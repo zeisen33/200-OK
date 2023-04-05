@@ -2,8 +2,7 @@ import "./QuestionsCreate.css"
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import * as questionActions from "../../store/questions.js"
-import { Link } from "react-router-dom"
-import { Redirect } from "react-router-dom"
+import { Redirect, Link } from "react-router-dom"
 
 const QuestionsCreate = () => {
     const dispatch = useDispatch()

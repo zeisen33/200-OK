@@ -1,14 +1,12 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from 'react'
 import * as sessionActions from '../../store/session'
-import { Redirect } from 'react-router-dom'
-import './LoginForm.css'
-import { Link } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import ErrorLogo from "../../assets/Exclam.png"
 import WellfoundLogo from "../../assets/Wellfound.png"
 import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
-import NavBar from "../Navigation/NavBar"
+import './LoginForm.css'
 
 const LoginFormPage = (props) => {
     // const mustBeLoggedIn = props.location.mustBeLoggedIn

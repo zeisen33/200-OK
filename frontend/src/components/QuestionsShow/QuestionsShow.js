@@ -1,11 +1,9 @@
 import "./QuestionsShow.css"
-import { Redirect, useParams, Link, useHistory } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useParams, Link, useHistory } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { useEffect } from "react"
 import * as questionActions from '../../store/questions.js'
-import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
 import * as userActions from '../../store/users'
-import QuestionsUpdate from "../QuestionsUpdate/QuestionsUpdate"
 
 const QuestionsShow = () => {
     const history = useHistory();
@@ -19,14 +17,12 @@ const QuestionsShow = () => {
     const currentUserId = useSelector(userActions.getCurrentUserId)
     // debugger
     
-
     useEffect(() => {
         // debugger
         if (questionId) {
             dispatch(questionActions.fetchQuestion(questionId))
         }
     }, [questionId])
-
 
     const updateButton = () => {
         // debugger
@@ -47,8 +43,7 @@ const QuestionsShow = () => {
         // Else should never hit because it's a repeat of deleteButton condition
         } else {
             history.push(`/questions/${questionId}`)
-        }
-        
+        } 
     }
 
     const deleteButton = () => {

@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import * as questionActions from '../../store/questions.js'
 import { Link } from "react-router-dom"
+import * as questionActions from '../../store/questions.js'
 import * as userActions from '../../store/users'
 
 const QuestionsIndex = () => {
@@ -26,7 +26,7 @@ const QuestionsIndex = () => {
                 <ul>
                     <li>
                         <h1>
-                            <Link to={`questions/${question.id}`}>{question.title}</Link>
+                            <Link to={`/questions/${question.id}`}>{question.title}</Link>
                         </h1>
                     </li>
                     <li>
