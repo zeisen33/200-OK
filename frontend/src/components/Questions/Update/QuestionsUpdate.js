@@ -11,18 +11,25 @@ const QuestionsUpdate = () => {
     const { questionId } = useParams();
     const question = useSelector(questionActions.getQuestion(questionId))
     const asker = useSelector(userActions.getAsker(question?.askerId)) 
-    debugger
-    const [title, setTitle] = useState(question?.title)
-    const [body, setBody] = useState(question?.body)
-    debugger
+    // debugger
+    const [title, setTitle] = useState('')
+    const [body, setBody] = useState('')
+    // debugger
     const [errors, setErrors] = useState([])
     const [submitted, setSubmitted] = useState(false)
 
     useEffect(() => {
-        debugger
+        // debugger
         dispatch(questionActions.fetchQuestion(questionId))
         // debugger
     }, [questionId])
+
+    useEffect(() => {
+        if (question) {
+            setTitle(question.title)
+            setBody(question.body)
+        }
+    }, [question])
 
     // debugger
     if (asker) {

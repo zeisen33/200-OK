@@ -187,3 +187,10 @@
     color: rgb(149, 155, 162);
     font-size: 14pt;
 }
+
+#AskLink {
+    text-decoration: none;
+}
+#Ask {
+    text-decoration: none;
+}
