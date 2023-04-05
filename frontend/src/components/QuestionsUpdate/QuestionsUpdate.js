@@ -22,7 +22,7 @@ const QuestionsUpdate = () => {
         // }
         // debugger
         if (questionId) {
-            debugger
+            // debugger
             try {
                 const res = dispatch(questionActions.fetchQuestion(questionId))
             } catch {

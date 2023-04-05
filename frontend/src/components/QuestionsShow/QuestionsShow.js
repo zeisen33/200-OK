@@ -34,6 +34,20 @@ const QuestionsShow = () => {
             return <Link to={`/questions/${questionId}/edit`}>Edit Question</Link>
         }
     }
+
+    const handleDelete = (e) => {
+        // e.preventDefault();
+        // debugger
+        dispatch(questionActions.deleteQuestion(questionId))
+        return <Redirect to={`/questions`} ></Redirect>
+    }
+
+    const deleteButton = () => {
+        // debugger
+        if (currentUserId === question.askerId) {
+            return <button onClick={handleDelete}>Delete Question</button>
+        }
+    }
     
     // debugger                            
     if (question && asker) {
@@ -43,6 +57,7 @@ const QuestionsShow = () => {
                 <h3>asked by {asker.displayName}</h3>
                 <p>{question.body}</p>
                 {updateButton()}
+                {deleteButton()}
             </div>
         )
     } else {

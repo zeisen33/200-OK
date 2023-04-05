@@ -91,7 +91,7 @@ export const createQuestion = (question) => async (dispatch) => {
 
 export const deleteQuestion = (questionId) => async (dispatch) => {
     const response = await csrfFetch(`/api/questions/${questionId}`, {
-        method: 'DESTROY'
+        method: 'DELETE'
     })
 
     dispatch(removeQuestion(questionId))
@@ -113,6 +113,7 @@ const questionsReducer = (state={}, action) => {
             nextState[action.question.id] = action.question
             return nextState
         case REMOVE_QUESTION:
+            // debugger
             delete nextState[action.questionId]
             return nextState
         default:
