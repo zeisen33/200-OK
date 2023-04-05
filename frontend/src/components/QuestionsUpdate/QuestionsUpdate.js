@@ -13,45 +13,36 @@ const QuestionsUpdate = () => {
     const { questionId } = useParams();
     const question = useSelector(questionActions.getQuestion(questionId))
     const asker = useSelector(userActions.getAsker(question?.askerId)) 
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
+    debugger
+    const [title, setTitle] = useState(question?.title)
+    const [body, setBody] = useState(question?.body)
+    debugger
     const [errors, setErrors] = useState([])
     const [submitted, setSubmitted] = useState(false)
 
-
     useEffect(() => {
         // debugger
-        if (question && currentUserId != question?.askerId) {
-        //     debugger
-            console.log('redirect)')
-        }
+        dispatch(questionActions.fetchQuestion(questionId))
         // debugger
-        // if (questionId) {
-        //     // debugger
-        //     try {
-        //         const res = dispatch(questionActions.fetchQuestion(questionId))
-        //     } catch {
-        //         return <Redirect to={`/questions/${questionId}`} />
-        //     }  
-        // }
-    }, [questionId])
+    }, [question])
 
-    
-    if (question && asker) {
-        return (
-            <div>
-                <h1>Hello from Update Question</h1>
-                <h1>{asker.displayName}</h1>
-            </div>
-        )
-    } else {
-        return null
-    } 
+    // debugger
+    if (asker) {
+        // debugger
+        if (asker.id != currentUserId) {
+            // debugger
+            // if not signed in as the question asker, cannot edit. Return to show page
+            return <Redirect to={`/questions/${questionId}`} />
+        }
+    }
 
     if (submitted) {
-        // debugger
+        debugger
+        console.log('updated')
         return <Redirect to={`/questions/${question.id}`} />
     }
+
+        // later: add error slice of state to show that you aren't logged in
 
     const handleTitle = (e) => setTitle(e.target.value)
     const handleBody = (e) => setBody(e.target.value)
@@ -61,10 +52,16 @@ const QuestionsUpdate = () => {
         e.preventDefault()
         await setErrors([]);
         // debugger
-        const createFetchResponse = dispatch(questionActions.updateQuestion({title, body, asker}))
+        const createFetchResponse = dispatch(questionActions.updateQuestion({title, body, id: questionId}))
+            // debugger
             .then((data) => {
-                if (!data.question) {
+                // debugger
+                if (data.errors) {
+                    debugger
                     setErrors(data.errors)
+                } else {
+                    // debugger
+                    setSubmitted(true)
                 }
             })
     }
@@ -81,32 +78,31 @@ const QuestionsUpdate = () => {
         return errorEl
     }
 
-    // debugger
-
     return (
-        <>Hello from QUpdate</>
-        // <div>
-        //     <h1>Ask a public question</h1>
-        //     <form onSubmit={handleSubmit}>
-        //         <label>Title 
-        //             <span>Be specific and imagine you're asking a question to another person</span>
-        //             <input type='text'
-        //                 value={title}
-        //                 onChange={handleTitle}
-        //             />
-        //         </label>
-        //         {showErrors('Title')}
-        //         <label>Body 
-        //             <span>Include all the information someone would need to answer your question</span>
-        //             <textarea
-        //                 value={body}
-        //                 onChange={handleBody}
-        //             />
-        //         </label>
-        //         {showErrors('Body')}
-        //         <button type='submit'>Post your Question</button>
-        //     </form>
-        // </div>
+        <div>
+        <h1>Edit your question</h1>
+            <form onSubmit={handleSubmit}>
+                <label>Title 
+                    <span>Be specific and imagine you're asking a question to another person</span>
+                    <input type='text'
+                        value={title}
+                        onChange={handleTitle}
+                        // placeholder={question.title}
+                    />
+                </label>
+                {showErrors('Title')}
+                <label>Body 
+                    <span>Include all the information someone would need to answer your question</span>
+                    <textarea
+                        value={body}
+                        onChange={handleBody}
+                        // placeholder={question.body}
+                    />
+                </label>
+                {showErrors('Body')}
+                <button type='submit'>Edit</button>
+            </form>
+        </div>
     )
 }
 

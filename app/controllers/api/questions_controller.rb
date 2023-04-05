@@ -35,10 +35,11 @@ class Api::QuestionsController < ApplicationController
     # end
 
     def update
+        # debugger
         @question = Question.find_by(id: params[:id])
         @current_user = current_user
         if @question.asker.id == @current_user.id
-            if @question.update
+            if @question.update(question_params)
                 render json: @question
             else
                  render json: { errors: @question.errors.full_messages}
