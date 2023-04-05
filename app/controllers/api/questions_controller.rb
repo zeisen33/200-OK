@@ -38,6 +38,7 @@ class Api::QuestionsController < ApplicationController
         # debugger
         @question = Question.find_by(id: params[:id])
         @current_user = current_user
+        # debugger
         if @question.asker.id == @current_user.id
             if @question.update(question_params)
                 render json: @question

@@ -5,18 +5,21 @@ import { useParams } from "react-router-dom"
 import * as questionActions from '../../store/questions'
 import * as userActions from '../../store/users'
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 
 const QuestionsUpdate = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
     const currentUserId = useSelector(getCurrentUserId)
     const { questionId } = useParams();
     const question = useSelector(questionActions.getQuestion(questionId))
     const asker = useSelector(userActions.getAsker(question?.askerId)) 
-    debugger
+    // debugger
     const [title, setTitle] = useState(question?.title)
     const [body, setBody] = useState(question?.body)
-    debugger
+    // debugger
     const [errors, setErrors] = useState([])
     const [submitted, setSubmitted] = useState(false)
 
@@ -24,7 +27,7 @@ const QuestionsUpdate = () => {
         // debugger
         dispatch(questionActions.fetchQuestion(questionId))
         // debugger
-    }, [question])
+    }, [questionId])
 
     // debugger
     if (asker) {
@@ -37,7 +40,7 @@ const QuestionsUpdate = () => {
     }
 
     if (submitted) {
-        debugger
+        // debugger
         console.log('updated')
         return <Redirect to={`/questions/${question.id}`} />
     }
@@ -78,6 +81,33 @@ const QuestionsUpdate = () => {
         return errorEl
     }
 
+    const handleDelete = (e) => {
+        // e.preventDefault();
+        debugger
+        if (currentUserId === question.askerId) {
+            debugger
+            dispatch(questionActions.deleteQuestion(questionId))
+            history.push(`/questions`)
+        
+        // Else should never hit because it's a repeat of deleteButton condition
+        } else {
+            history.push(`/questions/${questionId}`)
+        }
+        
+    }
+
+    const deleteButton = () => {
+        if (question && asker) {
+        // debugger
+            if (currentUserId === question.askerId) {
+                return <button onClick={handleDelete}>Delete Question</button>
+            } else {
+                return null
+            }
+        }
+    }
+
+
     return (
         <div>
         <h1>Edit your question</h1>
@@ -101,6 +131,8 @@ const QuestionsUpdate = () => {
                 </label>
                 {showErrors('Body')}
                 <button type='submit'>Edit</button>
+                <Link to={`/questions/${questionId}`}>Cancel</Link>
+                {deleteButton()}
             </form>
         </div>
     )

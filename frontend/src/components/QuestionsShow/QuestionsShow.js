@@ -1,5 +1,5 @@
 import "./QuestionsShow.css"
-import { Redirect, useParams, Link } from "react-router-dom"
+import { Redirect, useParams, Link, useHistory } from "react-router-dom"
 import { useSelector } from "react-redux"
 import * as questionActions from '../../store/questions.js'
 import { useEffect, useState } from "react"
@@ -8,6 +8,7 @@ import * as userActions from '../../store/users'
 import QuestionsUpdate from "../QuestionsUpdate/QuestionsUpdate"
 
 const QuestionsShow = () => {
+    const history = useHistory();
     const dispatch = useDispatch()
     const { questionId } = useParams()
     // debugger 
@@ -18,7 +19,7 @@ const QuestionsShow = () => {
     const currentUserId = useSelector(userActions.getCurrentUserId)
     // debugger
     
-    
+
     useEffect(() => {
         // debugger
         if (questionId) {
@@ -37,9 +38,17 @@ const QuestionsShow = () => {
 
     const handleDelete = (e) => {
         // e.preventDefault();
-        // debugger
-        dispatch(questionActions.deleteQuestion(questionId))
-        return <Redirect to={`/questions`} ></Redirect>
+        debugger
+        if (currentUserId === question.askerId) {
+            debugger
+            dispatch(questionActions.deleteQuestion(questionId))
+            history.push(`/questions`)
+        
+        // Else should never hit because it's a repeat of deleteButton condition
+        } else {
+            history.push(`/questions/${questionId}`)
+        }
+        
     }
 
     const deleteButton = () => {

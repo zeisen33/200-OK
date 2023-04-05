@@ -30,7 +30,7 @@ export const removeQuestion = (questionId) => {
 
 export const getQuestion = (questionId) => (state) => {
     // debugger
-    if (state && Object.keys(state.questions).length > 0) {
+    if (Object.keys(state.questions).length > 0) {
         // debugger
         return state.questions[questionId]
     } else {
