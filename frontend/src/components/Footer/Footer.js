@@ -8,14 +8,14 @@ const Footer = () =>{
                 <div className='FooterLine1'>
                 <Link className='FooterLine1Item' id='logo200okFooter' to='/'>200 OK</Link>
                 <Link className='FooterLine1Item' id='SearchQuestions'to='/questions'>Search Questions</Link>
-                <Link className='FooterLine1Item' id='AskQuestionFooter' to='/'>Ask a Question</Link>
+                <Link className='FooterLine1Item' id='AskQuestionFooter' to='/questions/new'>Ask a Question</Link>
                 <span className='FooterLine1Item' id='Me' >Site by Zane Eisen</span>
                 </div>
                 <br/>
                 <div className='FooterLine1'>
-                <Link className='FooterLine1Item' id='GitHubFooter' to='https://github.com/zeisen33'>GitHub</Link>
-                <Link className='FooterLine1Item' id='https://www.linkedin.com/in/zane-eisen-121856bb/'>LinkedIn</Link>
-                <Link className='FooterLine1Item' id='GitHubFooter' to='https://angel.co/'>Wellfound</Link>
+                <a href='//github.com/zeisen33' className='FooterLine1Item' id='GitHubFooter'>GitHub</a>
+                <a href='//www.linkedin.com/in/zane-eisen-121856bb/'className='FooterLine1Item' id='LinkedInFooter' >LinkedIn</a>
+                <a href='//wellfound.com' className='FooterLine1Item' id='WellfoundFooter'>Wellfound</a>
                 </div>
                 <br/>
                 <div className='Line3'>

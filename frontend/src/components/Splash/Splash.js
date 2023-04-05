@@ -19,7 +19,6 @@ const Splash = () => {
                         <span id='questionIcon' className='rightBubbleItem'>?</span>
                         <span id='have?' className='rightBubbleItem'>Have a coding question?</span>
                         <Link className='rightBubbleItem' to='/questions/new' id='QuestionButton'><span id='questionLink'>Ask a Question</span></Link>
-
                     </div>
                 </div>
                 <div id='TextContainer'>
@@ -34,7 +33,6 @@ const Splash = () => {
                     <div className='Subtitle'>
                         <Link to='/questions/new' >
                             <span id='Ask' className='largeWhite'>Ask</span>
-                            <br/>
                                 <span className='smallGrey'>a question</span>
                         </Link>
                     </div>

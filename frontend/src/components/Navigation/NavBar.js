@@ -67,7 +67,7 @@ return (
             <Link to='/' id='NavBarLogo200'>200 OK</Link>
         </h1>
         <div id='GitLinkContainer' className='NavBarItem' >
-            <Link id='GitLink' to='https://github.com/zeisen33/Stack-Overflow'>Site GitHub Repo</Link>
+            <a href='https://github.com/zeisen33/Stack-Overflow' id='GitLink'>Site GitHub Repo</a>
         </div>
         <div id='SearchContainer' className='NavBarItem'>
             <input id='NavSearchBar' type='text' placeholder='Search...' value={searchStr} onChange={handleSearchChange} />
