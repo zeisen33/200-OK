@@ -2,8 +2,8 @@ import "./QuestionsShow.css"
 import { useParams, Link, useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
-import * as questionActions from '../../store/questions.js'
-import * as userActions from '../../store/users'
+import * as questionActions from '../../../store/questions.js'
+import * as userActions from '../../../store/users'
 
 const QuestionsShow = () => {
     const history = useHistory();

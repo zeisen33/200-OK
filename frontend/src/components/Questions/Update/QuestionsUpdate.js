@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect, useParams, Link, useHistory } from "react-router-dom"
 import { useEffect, useState } from "react"
-import * as questionActions from '../../store/questions'
-import * as userActions from '../../store/users'
+import * as questionActions from '../../../store/questions'
+import * as userActions from '../../../store/users'
 
 const QuestionsUpdate = () => {
     const history = useHistory();

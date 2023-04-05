@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import * as questionActions from '../../store/questions.js'
-import * as userActions from '../../store/users'
+import * as questionActions from '../../../store/questions.js'
+import * as userActions from '../../../store/users'
 
 const QuestionsIndex = () => {
     const dispatch = useDispatch()

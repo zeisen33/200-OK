@@ -3,12 +3,11 @@ import { Route, Switch } from 'react-router-dom'
 import React from 'react'
 import NavBar from './components/Navigation/NavBar.js'
 import SignupFormPage from './components/SignupFormPage/SignupForm'
-import Footer from './components/Footer/Footer.js'
 import Splash from './components/Splash/Splash.js'
-import QuestionsIndex from './components/QuestionsIndex/QuestionsIndex.js'
-import QuestionsShow from './components/QuestionsShow/QuestionsShow'
-import QuestionsCreate from "./components/QuestionsCreate/QuestionsCreate";
-import QuestionsUpdate from "./components/QuestionsUpdate/QuestionsUpdate";
+import QuestionsIndex from './components/Questions/Index/QuestionsIndex.js'
+import QuestionsShow from './components/Questions/Show/QuestionsShow'
+import QuestionsCreate from "./components/Questions/Create/QuestionsCreate";
+import QuestionsUpdate from "./components/Questions/Update/QuestionsUpdate";
 
 function App() {
   return (
