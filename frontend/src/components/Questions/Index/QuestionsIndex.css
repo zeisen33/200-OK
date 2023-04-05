@@ -1,0 +1,65 @@
+#OuterQIndexContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+section {
+    border-top: 1px solid rgba(128, 128, 128, 0.505);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.QTitle {
+    font-size: 18px;
+    display: flex;
+    align-items: left;
+}
+
+#TopQsContainer {
+    
+}
+
+#TopQs {
+    font-size: 28px;
+}
+
+#askedByContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: right;
+}
+
+.askedBy {
+    font-size: 12px;
+}
+
+#sectionContentContainer {
+    margin: 10px;
+}
+
+#TopSec {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+#NewQContainer {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    /* align-items: right; */
+}
+
+#AskButton {
+    color: white;
+    border: 1px solid rgb(30, 151, 252);
+    border-radius: 3px;
+    background-color: rgb(30, 151, 252);
+}
