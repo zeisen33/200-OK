@@ -4,6 +4,7 @@ import { receiveUser, receiveUsers } from "./users"
 
 const RECEIVE_QUESTIONS = '/api/RECEIVE_QUESTIONS'
 const RECEIVE_QUESTION = '/api/RECEIVE_QUESTION'
+const REMOVE_QUESTION = '/api/REMOVE_QUESTION'
 
 export const receiveQuestion = (question) => {
     // debugger
@@ -17,6 +18,13 @@ export const receiveQuestions = (questions) => {
     return {
         type: RECEIVE_QUESTIONS,
         questions: questions
+    }
+}
+
+export const removeQuestion = (questionId) => {
+    return {
+        type: REMOVE_QUESTION,
+        questionId: questionId
     }
 }
 
@@ -51,11 +59,11 @@ export const fetchAllQuestions = () => async (dispatch) => {
 }
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
-    debugger
+    // debugger
     const response = await csrfFetch(`/api/questions/${questionId}`)
 
     const data = await response.json()
-    debugger
+    // debugger
     // data.question maybe
     dispatch(receiveUser(data.asker))
     dispatch(receiveQuestion(data.question))
@@ -79,7 +87,14 @@ export const createQuestion = (question) => async (dispatch) => {
 
         // remove double dispatch and use payload in action instead
     }
-    
+}
+
+export const deleteQuestion = (questionId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/questions/${questionId}`, {
+        method: 'DESTROY'
+    })
+
+    dispatch(removeQuestion(questionId))
 }
 
 
@@ -96,6 +111,9 @@ const questionsReducer = (state={}, action) => {
             // debugger
             // nextState[action.payload.question.id] = action.payload.question
             nextState[action.question.id] = action.question
+            return nextState
+        case REMOVE_QUESTION:
+            delete nextState[action.questionId]
             return nextState
         default:
             return state

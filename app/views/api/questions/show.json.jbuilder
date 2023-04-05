@@ -1,7 +1,7 @@
 # debugger
 # key = @question.id
 json.question do
-#     # debugger
+    debugger
     json.extract! @question, :id, :title, :body, :asker_id
 end
 

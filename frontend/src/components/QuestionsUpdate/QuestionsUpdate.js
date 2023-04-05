@@ -15,22 +15,22 @@ const QuestionsUpdate = () => {
     const asker = useSelector(userActions.getAsker(question?.askerId))  
 
     useEffect(() => {
-        debugger
+        // debugger
+        // if (question && currentUserId != question?.askerId) {
+        //     debugger
+        //     console.log('redirect)')
+        // }
+        // debugger
         if (questionId) {
             debugger
-            dispatch(questionActions.fetchQuestion(questionId))
+            try {
+                const res = dispatch(questionActions.fetchQuestion(questionId))
+            } catch {
+                return <Redirect to={`/questions/${questionId}`} />
+            }  
         }
-    }, [questionId, currentUserId])
+    }, [questionId])
 
-
-    debugger
-    if ((question && currentUserId) && !currentUserId === question.askerId) {
-        debugger
-        return <Redirect to={`/questions/${questionId}`} />
-    }
-    debugger
-    
-    
     
     if (question && asker) {
         return (
