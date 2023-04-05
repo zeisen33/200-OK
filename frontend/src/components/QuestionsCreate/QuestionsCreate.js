@@ -9,7 +9,6 @@ const QuestionsCreate = () => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
-    const [loginRedirect, setloginRedirect] = useState(false)
     const [errors, setErrors] = useState([])
     const [question, setQuestion] = useState(null)
     const [submitted, setSubmitted] = useState(false)
@@ -38,7 +37,7 @@ const QuestionsCreate = () => {
     const handleBody = (e) => setBody(e.target.value)
 
     const handleSubmit = async (e) => {
-        debugger
+        // debugger
         e.preventDefault()
         await setErrors([]);
         // debugger

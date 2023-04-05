@@ -37,7 +37,12 @@ export const getAsker = (askerId) => (state) => {
 }
 
 export const getCurrentUserId = (state) => {
-    return state.session.user.id
+    // debugger
+    if (state.session.user) {
+        return state.session.user.id
+    } else {
+        return null
+    }
 }
 
 

@@ -89,6 +89,17 @@ export const createQuestion = (question) => async (dispatch) => {
     }
 }
 
+export const updateQuestion = (question) => async (dispatch) => {
+    const response = await csrfFetch(`/api/questions/${question.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(question)
+    })
+
+    const data = await response.json();
+    dispatch(receiveUser(data.asker))
+    dispatch(receiveQuestion(data.question))
+}
+
 export const deleteQuestion = (questionId) => async (dispatch) => {
     const response = await csrfFetch(`/api/questions/${questionId}`, {
         method: 'DELETE'
