@@ -133,10 +133,9 @@
     margin-top: 5px;
 }
 .input:focus {
-    outline: none !important;
+    outline: 2px solid rgb(212, 229, 242);
     /* background-color: red; */
     border: 1px solid var(--FocusBorder);
-    box-shadow: 0 0 8px var(--FocusShadow);
 }
 
 #label {
@@ -182,8 +181,7 @@
 #imnotarobot {
     width: 20px;
 }
-#robotlabel {
-}
+
 #captchaline {
     display: flex;
     margin: 10px;

@@ -63,6 +63,8 @@ const NoWizard = () => {
         return errorEl
     }
 
+    const inputClassName = () => errors.length > 0 ? 'errorInput' : 'input'
+
     // debugger
 
     return (
@@ -77,10 +79,11 @@ const NoWizard = () => {
                     <br/>
                     <span className='smallText'>Be specific and imagine you're asking a question to another person</span>
                     <br/>
-                    <input className='CreateInput' 
+                    <input className={inputClassName()} id='NewTitle' 
                         type='text'
                         value={title}
                         onChange={handleTitle}
+                        placeholder='e.g. Are strings mutable in Ruby?'
                         />
                 </label>
                 {showErrors('Title')}
@@ -89,7 +92,7 @@ const NoWizard = () => {
                     <br/>
                     <span className='smallText'>Include all the information someone would need to answer your question</span>
                     <br/>
-                    <input className='CreateInput' id='BodyInput'
+                    <input className='input' id='NewBodyInput'
                         value={body}
                         onChange={handleBody}
                         />

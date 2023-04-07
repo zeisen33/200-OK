@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     background-color: rgb(241,242,243);
+    height: 78vh;
 }
 #NoWizContainer {
     margin-top: 30px;
@@ -56,8 +57,14 @@
     margin-top: 15px;
 }
 
-#BodyInput {
+#NewTitle {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#NewBodyInput {
     height: 150px;
+    width: 100%;
 }
 
 .BlueButton {
@@ -75,4 +82,17 @@
 }
 .BlueButton:focus {
     outline: 3px solid rgb(176, 215, 246)
+}
+
+.errorInput {
+    width: 268px;
+    height: 33.59px;
+    border: 1px solid var(--Error);
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.errorInput:focus {
+    outline: 2px solid var(--ErrorShadow);
+    /* background-color: red; */
+    border: 1px solid var(--Error);
 }
