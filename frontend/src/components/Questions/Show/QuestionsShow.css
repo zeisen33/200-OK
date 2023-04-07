@@ -31,7 +31,7 @@
 }
 
 #AskCont {
-    width: fit-content;
+    width: inherit;
     display: flex;
     flex-direction: row;
 }
@@ -48,7 +48,9 @@
 #AskQ {
     margin-left: 10px;
     margin-right: 10px;
-    width: fit-content;
+    text-align: center;
+    text-justify: center;
+
 }
 
 #hOne {
