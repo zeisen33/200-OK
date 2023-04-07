@@ -1,7 +1,10 @@
 #OuterQIndexContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;   
+    height: 78vh;
+    overflow-y: scroll;
+    padding-bottom: 50px; 
 }
 
 
