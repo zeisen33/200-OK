@@ -59,11 +59,11 @@ export const fetchAllQuestions = () => async (dispatch) => {
 }
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
-    debugger
+    // debugger
     const response = await csrfFetch(`/api/questions/${questionId}`)
 
     const data = await response.json()
-    debugger
+    // debugger
     // data.question maybe
     dispatch(receiveUser(data.asker))
     dispatch(receiveQuestion(data.question))
@@ -129,7 +129,7 @@ const questionsReducer = (state={}, action) => {
             // debugger
             // nextState[action.payload.question.id] = action.payload.question
             nextState[action.question.id] = action.question
-            debugger
+            // debugger
             return nextState
         case REMOVE_QUESTION:
             // debugger

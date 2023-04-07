@@ -92,7 +92,7 @@ const NoWizard = () => {
                     <br/>
                     <span className='smallText'>Include all the information someone would need to answer your question</span>
                     <br/>
-                    <input className='input' id='NewBodyInput'
+                    <textarea className='input' id='NewBodyInput'
                         value={body}
                         onChange={handleBody}
                         />

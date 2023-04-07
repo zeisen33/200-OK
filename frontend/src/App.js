@@ -18,9 +18,6 @@ function App() {
       <Route path='/login'>
         <LoginFormPage />
       </Route>
-      <Route exact path='/'>
-        <Splash />
-      </Route>
       <Route exact path='/questions'>
         <QuestionsIndex />
       </Route>
@@ -30,11 +27,14 @@ function App() {
       <Route exact path = '/questions/:questionId'>
         <QuestionsShow />
       </Route>
-      <Route path='/signup' >
+      <Route exact path='/signup' >
         <SignupFormPage />
       </Route>
       <Route path='/questions/:questionId/edit' >
         <QuestionsUpdate />
+      </Route>
+      <Route exact path='/'>
+        <Splash />
       </Route>
     </Switch>
     <Footer />

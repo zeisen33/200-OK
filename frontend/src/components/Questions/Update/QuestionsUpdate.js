@@ -3,6 +3,7 @@ import { Redirect, useParams, Link, useHistory } from "react-router-dom"
 import { useEffect, useState } from "react"
 import * as questionActions from '../../../store/questions'
 import * as userActions from '../../../store/users'
+import './QuestionsUpdate.css'
 
 const QuestionsUpdate = () => {
     const history = useHistory();
@@ -102,40 +103,59 @@ const QuestionsUpdate = () => {
         if (question && asker) {
         // debugger
             if (currentUserId === question.askerId) {
-                return <button onClick={handleDelete}>Delete Question</button>
+                return <button className='deleteButton' onClick={handleDelete}>Delete Question</button>
             } else {
                 return null
             }
         }
     }
 
+    const inputClassName = () => errors.length > 0 ? 'errorInput' : 'input'
 
     return (
-        <div>
-        <h1>Edit your question</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Title 
-                    <span>Be specific and imagine you're asking a question to another person</span>
-                    <input type='text'
-                        value={title}
-                        onChange={handleTitle}
-                        // placeholder={question.title}
-                    />
-                </label>
-                {showErrors('Title')}
-                <label>Body 
-                    <span>Include all the information someone would need to answer your question</span>
-                    <textarea
-                        value={body}
-                        onChange={handleBody}
-                        // placeholder={question.body}
-                    />
-                </label>
-                {showErrors('Body')}
-                <button type='submit'>Edit</button>
-                <Link to={`/questions/${questionId}`}>Cancel</Link>
-                {deleteButton()}
-            </form>
+        <div id='fullPage'>
+            <div id='NoWizContainer'>
+                <h1 id='PageTitle'>Edit your question</h1>
+                <div id='formContainer'>
+                    <form id='NoWizForm' onSubmit={handleSubmit}>
+                        <div id='formattingDiv' >
+                            <div id='formContents' >
+                                <label>Title 
+                                <br/>
+                                    <span className='smallText'>Be specific and imagine you're asking a question to another person</span>
+                                <br/>
+                                    <input className={inputClassName()} id='NewTitle'
+                                        type='text'
+                                        value={title}   
+                                        onChange={handleTitle}
+                                        // placeholder={question.title}
+                                    />
+                                </label>
+                            {showErrors('Title')}
+                                <div id='BodyContainer'>
+                                    <label>Body 
+                                        <br/>
+                                        <span className='smallText'>Include all the information someone would need to answer your question</span>
+                                        <br/>
+                                        <textarea className='input' id='NewBodyInput'
+                                            value={body}
+                                            onChange={handleBody}
+                                            // placeholder={question.body}
+                                        />
+                                    </label>
+                                </div>
+                            </div>
+                        {showErrors('Body')}
+                        </div>
+                        <br/>
+                        <div id='ButtonsDiv'>
+                            <button id='SaveEdits' className='BlueButton' type='submit'>Save Edits</button>
+                            <Link id='Cancel' className='inSiteLink' to={`/questions/${questionId}`}><span id='CancelSpan'>Cancel</span></Link>
+                            {deleteButton()}
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

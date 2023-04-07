@@ -15,6 +15,7 @@
     width: 100vw;
     right: 0px;
     margin-right: 0px;
+    box-shadow: 0 0 3px rgb(164, 165, 165);   
 }
 
 .NavBarItem {

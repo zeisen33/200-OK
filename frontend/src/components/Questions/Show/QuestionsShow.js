@@ -28,7 +28,7 @@ const QuestionsShow = () => {
         // debugger
         if (currentUserId === question.askerId) {
             // debugger
-            return <Link to={`/questions/${questionId}/edit`}>Edit Question</Link>
+            return <Link id='ShowEditButton' className='inSiteLink' to={`/questions/${questionId}/edit`}>Edit</Link>
         }
     }
 
@@ -49,20 +49,40 @@ const QuestionsShow = () => {
     const deleteButton = () => {
         // debugger
         if (currentUserId === question.askerId) {
-            return <button onClick={handleDelete}>Delete Question</button>
+            return <button className='deleteButton' onClick={handleDelete}>Delete Question</button>
         }
     }
     
     // debugger                            
     if (question && asker) {
         return (
-            <div className="ShowQuestionContainer">
-                <h1>{question.title}</h1>
-                <h3>asked by {asker.displayName}</h3>
-                <p>{question.body}</p>
-                {updateButton()}
-                {deleteButton()}
+            <div id='ShowPageContainer'>
+                <div id='TopConts' >
+                    <div id='ShowTop' >
+                        <div id='ShowTopTop' >
+                            <div id='TitleCont'>
+                                <h1 id='hOne'>{question.title}</h1>
+                            </div>
+                            <div>
+                                <Link id='AskCont' className='BlueButton' to='/questions/new'><span id='AskQ' className='smallText'>Ask Question</span></Link>
+                            </div>
+                        </div>
+                        <div id='ShowTopBot'>
+                            <h6 id='hSix'><span>asked by {asker.displayName}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <div id="ShowQuestionContainer">
+                    <div id='QBody' >
+                        <p>{question.body}</p>
+                    </div>
+                    <div id='EditOrDeleteCont'>
+                        {updateButton()}
+                        {deleteButton()}
+                    </div>
+                </div>
             </div>
+
         )
     } else {
         return null

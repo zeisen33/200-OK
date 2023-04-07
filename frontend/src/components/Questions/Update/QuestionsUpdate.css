@@ -1,0 +1,38 @@
+#ButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+.deleteButton {
+    margin-right: 20px;
+    background-color: var(--ErrorShadow);
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+.deleteButton:hover {
+    background-color: var(--Error);
+}
+.deleteButton:focus {
+    outline: 3px solid var(--ErrorShadow);
+}
+
+#SaveEdits {
+    margin-right: 20px;
+}
+
+#CancelSpan {
+    margin: 10px;
+}
+
+#Cancel {
+    margin-right: 20px;
+}
+#Cancel:hover {
+    background-color: rgb(240, 248, 255);
+    border: 1px solid rgb(218, 234, 247);
+    border-radius: 3px;
+}
+#Cancel:focus {
+    outline: 3px solid rgb(218, 234, 247);
+}
