@@ -6,8 +6,9 @@ import SignupFormPage from './components/SignupFormPage/SignupForm'
 import Splash from './components/Splash/Splash.js'
 import QuestionsIndex from './components/Questions/Index/QuestionsIndex.js'
 import QuestionsShow from './components/Questions/Show/QuestionsShow'
-import QuestionsCreate from "./components/Questions/Create/QuestionsCreate";
+import QuestionsCreate from './components/Questions/Create/Create'
 import QuestionsUpdate from "./components/Questions/Update/QuestionsUpdate";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <QuestionsIndex />
       </Route>
       <Route path='/questions/new'>
-        <QuestionsCreate />
+        <QuestionsCreate wizard={true} />
       </Route>
       <Route exact path = '/questions/:questionId'>
         <QuestionsShow />
@@ -36,6 +37,7 @@ function App() {
         <QuestionsUpdate />
       </Route>
     </Switch>
+    <Footer />
     </>
   );
 }

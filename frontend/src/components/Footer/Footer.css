@@ -1,11 +1,10 @@
 #FooterOuterContainer {
-    height: 100%;
+    height: 100;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 32px;
     background-color: rgb(35, 38, 41);
     border: none;
 }

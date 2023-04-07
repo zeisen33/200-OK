@@ -1,0 +1,78 @@
+#fullPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(241,242,243);
+}
+#NoWizContainer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    margin-bottom: 30px;
+}
+
+#PageTitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+#formContainer {
+    width: 100%;
+}
+
+#formattingDiv {
+    background-color: white;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.188);
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(128, 128, 128, 0.337);
+}
+
+#NoWizForm {
+    width: 100%;
+}
+
+#formContents {
+    margin: 15px;
+}
+
+.smallText {
+    font-size: 12px;
+
+}
+
+.CreateInput {
+    margin-top: 2px;
+    height: 30px;
+    width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.383);
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+#BodyContainer {
+    margin-top: 15px;
+}
+
+#BodyInput {
+    height: 150px;
+}
+
+.BlueButton {
+    background-color: rgb(30, 151, 252);
+    color: white;
+    border: 1px transparent;
+    height: 43px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    text-justify: center;
+}
+.BlueButton:hover {
+    background-color: rgb(18 118 201);
+}
+.BlueButton:focus {
+    outline: 3px solid rgb(176, 215, 246)
+}

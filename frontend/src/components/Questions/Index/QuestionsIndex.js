@@ -45,7 +45,7 @@ const QuestionsIndex = () => {
 
     // debugger
 
-    
+
     return (
         <div id='OuterQIndexContainer'>
             <div id='TopSec'>
@@ -53,7 +53,7 @@ const QuestionsIndex = () => {
                     <h1 id='TopQs'>Top Questions</h1>
                 </div>
                 <div id='NewQContainer'>
-                    <Link id='AskButton' to='/questions/new' >Ask Question</Link>
+                    <Link id='AskButton' to='/questions/new' ><span id='AskText'>Ask Question</span></Link>
                 </div>
             </div>
             {questionsList}
