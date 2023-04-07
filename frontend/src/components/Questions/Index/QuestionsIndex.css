@@ -44,6 +44,7 @@ section {
 }
 
 #TopSec {
+    margin-top: 15px;
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
@@ -76,6 +77,14 @@ section {
 }
 
 #AskText {
-    margin-left: 4px;
-    margin-right: 4px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.inSiteLink {
+    text-decoration: none;
+    color: rgb(18, 118, 201)
+}
+.inSiteLink:hover {
+    color: rgb(36, 155, 252);
 }

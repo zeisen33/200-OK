@@ -28,7 +28,7 @@ const QuestionsIndex = () => {
                     <ul id='sectionContentContainer'>
                         <li id='TitleContainer'>
                             <h1 className='QTitle'>
-                                <Link to={`/questions/${question.id}`}>{question.title}</Link>
+                                <Link className='inSiteLink' to={`/questions/${question.id}`}>{question.title}</Link>
                             </h1>
                         </li>
                         <div id='askedByContainer'>
