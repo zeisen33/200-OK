@@ -63,7 +63,7 @@ const QuestionsShow = () => {
                             <div id='TitleCont'>
                                 <h1 id='hOne'>{question.title}</h1>
                             </div>
-                            <div>
+                            <div id='AskDiv'>
                                 <Link id='AskCont' className='BlueButton' to='/questions/new'><span id='AskQ' className='smallText'>Ask Question</span></Link>
                             </div>
                         </div>

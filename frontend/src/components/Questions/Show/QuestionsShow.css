@@ -30,10 +30,16 @@
     width: 100% !important;
 }
 
+#AskQ {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 #AskCont {
     width: inherit;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 #ShowQuestionContainer {
@@ -45,12 +51,14 @@
     border-top: 1px solid rgba(128, 128, 128, 0.284);
 }
 
-#AskQ {
-    margin-left: 10px;
-    margin-right: 10px;
+
+#AskDiv {
+    width: fit-content;
+    white-space: nowrap;
+    display: flex; 
+    flex-direction: row;
     text-align: center;
     text-justify: center;
-
 }
 
 #hOne {
