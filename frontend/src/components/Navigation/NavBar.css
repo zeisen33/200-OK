@@ -136,6 +136,10 @@
     height: 35.58px;
     border-radius: 2px;
     margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .RightButton:focus {
     outline: 3px solid var(--FocusShadow);

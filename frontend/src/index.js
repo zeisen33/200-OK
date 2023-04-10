@@ -9,6 +9,8 @@ import csrfFetch, { restoreCSRF } from './store/csrf';
 import sessionReducer from './store/session.js'
 import * as sessionActions from './store/session'
 import * as questionActions from './store/questions'
+import * as answerActions from './store/answers'
+
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -16,6 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
   window.questionActions = questionActions;
+  window.answerActions = answerActions;
   // debugger
 }
 

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import * as questionActions from '../../../store/questions.js'
 import * as userActions from '../../../store/users'
+import AnswersList from "../../Answers/AnswersList"
 
 const QuestionsShow = () => {
     const history = useHistory();
@@ -16,7 +17,17 @@ const QuestionsShow = () => {
     // debugger
     const currentUserId = useSelector(userActions.getCurrentUserId)
     // debugger
-    
+    const answers = useSelector((state) => {
+        const answersArr = []
+
+        Object.values(state.answers).map((answer) => {
+            return (
+                answer.questionId == questionId ? answersArr.push(answer) : null
+            )
+        })
+        return answersArr
+    })
+
     useEffect(() => {
         // debugger
         if (questionId) {
@@ -81,6 +92,7 @@ const QuestionsShow = () => {
                         {deleteButton()}
                     </div>
                 </div>
+                <AnswersList answers={answers} />
             </div>
 
         )

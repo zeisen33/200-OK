@@ -93,7 +93,7 @@ ApplicationRecord.transaction do
     })
     Answer.create!({
       question_id: 4, 
-      author_id: 7,
+      author_id: 8,
       body: 'No, CSS is a stylesheet language'
     })
   

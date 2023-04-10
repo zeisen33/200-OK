@@ -12,3 +12,11 @@ end
 json.asker do 
     json.extract! @question.asker, :id, :display_name
 end
+
+json.answers do
+    @question.answers.each do |answer|
+        json.set! answer.id do
+            json.extract! answer, :body, :id, :question_id, :author_id
+        end
+    end
+end

@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf"
 import { fetchAllUsers } from "./users"
 import { receiveUser, receiveUsers } from "./users"
+import { receiveAnswers } from './answers'
 
 const RECEIVE_QUESTIONS = '/api/RECEIVE_QUESTIONS'
 const RECEIVE_QUESTION = '/api/RECEIVE_QUESTION'
@@ -67,6 +68,7 @@ export const fetchQuestion = (questionId) => async (dispatch) => {
     // data.question maybe
     dispatch(receiveUser(data.asker))
     dispatch(receiveQuestion(data.question))
+    dispatch(receiveAnswers(data.answers))
 }
 
 export const createQuestion = (question) => async (dispatch) => {

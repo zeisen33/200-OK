@@ -40,8 +40,7 @@ const NavBar = () => {
                 <div id='RightButtonsContainerLoggedIn'>
                     <div id='RightButtonLinkedInContainer'>
                         <a href='https://www.linkedin.com/in/zane-eisen-121856bb/' className="RightButton" id ='LinkedInRight'>
-                            <img src={LinkedInLogo} className='logos'></img>
-                        My LinkedIn
+                            <img src={LinkedInLogo} className='logos'></img><span id='MyLinkedIn'>My LinkedIn</span>
                         </a>
                     </div>
                     <button className='RightButton' id='NavLogoutButton' onClick={handleLogout}>Log out</button>
