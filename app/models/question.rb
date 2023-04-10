@@ -4,4 +4,5 @@ class Question < ApplicationRecord
     validates :body, length: {maximum: 999}
 
     belongs_to :asker, foreign_key: :asker_id, class_name: :User
+    has_many :answers, dependent: :destroy
 end
