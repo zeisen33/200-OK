@@ -63,37 +63,37 @@ ApplicationRecord.transaction do
     puts "Creating answers..."
     Answer.create!({
       question_id: 1,
-      answer_author_id: 1,
+      author_id: 1,
       body: "Use a '#' instead of a '$'"
     })
     Answer.create!({
       question_id: 1,
-      answer_author_id: 2,
+      author_id: 2,
       body: "Ruby uses hashtags, not dollar signs."
     })
     Answer.create!({
       question_id: 2,
-      answer_author_id: 2,
+      author_id: 2,
       body: "Start the multi-line comment with '/*' and end it with '*/" 
     })
     Answer.create!({
       question_id: 3,
-      answer_author_id: 3,
+      author_id: 3,
       body: 'Big-O Notation is a way to express how many operations an algorithm requires, or how much memory an algorithm requires, as the input changes. These are the computational limiting factors of an algorithm, and can help programmers decide which algorithm to use. You can consider a best case scenario, worst case, or average case. For example, bubble sort has a worst-case time complexity of O(n^2), meaning if you use bubble sort to sort 10 items, it will take at most 10^2 = 100 operations until it is finished. As inputs get larger and larger, the performance of an algorithm becomes more important. Algorithms with worse complexities can be slow or take up too much memory.'
     })
     Answer.create!({
       question_id: 4,
-      answer_author_id: 5,
+      author_id: 5,
       body: 'No'
     })
     Answer.create!({
       question_id: 4, 
-      answer_author_id: 6,
+      author_id: 6,
       body: 'Yes'
     })
     Answer.create!({
       question_id: 4, 
-      answer_author_id: 7,
+      author_id: 7,
       body: 'No, CSS is a stylesheet language'
     })
   
