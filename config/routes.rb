@@ -10,9 +10,8 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     # resources :questions
     resources :questions, only: [:index, :create, :update, :destroy]
-    resources :questions, only: [:show] do 
-      resources :answers, only: [:index, :show, :create, :update, :destroy]
-    end
+    resources :answers, only: [:index, :show, :create, :update, :destroy]
+    ## Don't need to nest answers under questions because I will have questionId when I need it
   end
 
   get '*path', to: "static_pages#frontend_index"
