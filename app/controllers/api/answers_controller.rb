@@ -27,10 +27,11 @@ class Api::AnswersController < ApplicationController
 
     def update
         @answer = Answer.find_by(id: params[:id])
+        debugger
         @current_user = current_user
         if @answer.answer_author.id == @current_user.id 
             if @answer.update(answer_params)
-                render json: @answer
+                render :show
             else
                 render json: { errors: @answer.errors.full_messages }
             end
@@ -41,7 +42,7 @@ class Api::AnswersController < ApplicationController
         @answer = Answer.find_by(id: params[:id])
         @current_user = current_user
         if @answer.answer_author.id == @current_user.id
-            @answer.delete
+            @answer.destroy
         end
     end
 
