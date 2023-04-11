@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as answerActions from '../../store/answers'
@@ -15,15 +15,15 @@ const AnswerForm = () => {
         Object.values(state.answers).forEach((answer) => {
             // debugger
             if (answer.authorId === currentUser.id && answer.questionId === parseInt(questionId)) {
-                debugger
+                // debugger
                 returnThisAnswer = answer
             }
-            debugger
+            // debugger
         })
 
         return returnThisAnswer
     })
-    debugger
+    // debugger
     
     if (currentUsersAnswer) {
         formType = 'Update'
@@ -32,6 +32,11 @@ const AnswerForm = () => {
     }
 
     const [body, setBody] = useState(currentUsersAnswer)
+
+    useEffect(() => {
+        // debugger
+        setBody(currentUsersAnswer.body)
+    }, [currentUsersAnswer])
 
     const handleChange = (e) => {
         setBody(e.target.value);
