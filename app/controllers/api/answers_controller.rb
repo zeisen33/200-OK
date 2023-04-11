@@ -1,4 +1,6 @@
 class Api::AnswersController < ApplicationController
+    wrap_parameters include: Answer.attribute_names + ['authorId', 'questionId']
+    
     def index
         @answers = Answer.all.includes(:answer_author, :question)
         render :index
@@ -12,8 +14,10 @@ class Api::AnswersController < ApplicationController
 
     def create
         @answer = Answer.new(answer_params)
-        ## how do i get @answer[:question_id] and @answer[], which it needs
-        @answer[:author_id] = current_user.id
+        # debugger
+        # author = current_user
+        # ## how do i get @answer[:question_id] and @answer[], which it needs
+        # @answer[:author_id] = author.id
         if @answer.save
             render :show
         else
@@ -43,6 +47,6 @@ class Api::AnswersController < ApplicationController
 
     private
     def answer_params
-        params.require(:answer).permit(:body, :question_id)
+        params.require(:answer).permit(:body, :question_id, :author_id)
     end
 end

@@ -5,6 +5,7 @@ import { useEffect } from "react"
 import * as questionActions from '../../../store/questions.js'
 import * as userActions from '../../../store/users'
 import AnswersList from "../../Answers/AnswersList"
+import AnswerForm from "../../Answers/AnswerForm"
 
 const QuestionsShow = () => {
     const history = useHistory();
@@ -93,6 +94,7 @@ const QuestionsShow = () => {
                     </div>
                 </div>
                 <AnswersList answers={answers} />
+                <AnswerForm />
             </div>
 
         )

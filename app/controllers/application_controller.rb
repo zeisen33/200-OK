@@ -13,12 +13,13 @@ class ApplicationController < ActionController::API
     before_action :snake_case_params, :attach_authenticity_token
     # skip_forgery_protection
 
-
+    
     def current_user
         # debugger
         @current_user ||= User.find_by(session_token: session[:session_token])
-        # @current_user
+        @current_user
     end
+    helper_method :current_user
 
     def login!(user)
         # debugger

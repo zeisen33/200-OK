@@ -5,10 +5,10 @@ import { useEffect } from 'react'
 const AnswersShow = (props) => {
     const dispatch = useDispatch();
     const answer = props.answer
-    debugger
+    // debugger
     const authorId = answer.authorId
     const answerAuthor = useSelector((state) => {
-        debugger
+        // debugger
         // if (!state.users) {
         //     return []
         // } else {
@@ -24,7 +24,7 @@ const AnswersShow = (props) => {
 
     })
 
-    debugger
+    // debugger
     
 
     return (

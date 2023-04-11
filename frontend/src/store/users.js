@@ -58,15 +58,15 @@ export const fetchUser = (userId) => async dispatch => {
 }
 
 export const fetchAllUsers = () => async dispatch => {
-    debugger
+    // debugger
     const res = await csrfFetch(`/api/users`, {
         method: "GET"
     })
     // debugger
     if (res.ok) {
-        debugger
+        // debugger
         const data = await res.json();
-        debugger
+        // debugger
         dispatch(receiveUsers(data))
     }
 }
@@ -80,9 +80,9 @@ const usersReducer = (state={}, action) => {
             nextState[action.user.id] = action.user
             return nextState
         case RECEIVE_USERS:
-            debugger
+            // debugger
             nextState = { ...state, ...action.users}
-            debugger
+            // debugger
             return nextState
         // case RECEIVE_QUESTION:
         //     nextState[action.payload.asker.id] = action.payload.asker
