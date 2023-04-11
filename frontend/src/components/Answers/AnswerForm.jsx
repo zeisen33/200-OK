@@ -9,22 +9,22 @@ const AnswerForm = () => {
     let formType = 'Create'
     const currentUser = useSelector((state) => state.session ? state.session.user : 'guest')
     let currentUsersAnswer = useSelector((state) => {
-        debugger
-        return (Object.values(state.answers).forEach((answer) => {
-            debugger
-            if (answer.authorId === currentUser.id) {
+        
+        let returnThisAnswer = ''
+        // debugger
+        Object.values(state.answers).forEach((answer) => {
+            // debugger
+            if (answer.authorId === currentUser.id && answer.questionId === parseInt(questionId)) {
                 debugger
-                return answer
+                returnThisAnswer = answer
             }
+            debugger
         })
-        )
+
+        return returnThisAnswer
     })
     debugger
     
-    
-    
-
-
     if (currentUsersAnswer) {
         formType = 'Update'
     } else {
