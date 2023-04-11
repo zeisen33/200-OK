@@ -98,6 +98,12 @@ const QuestionsShow = () => {
                 <AnswerForm />
                 <Link to='/signup'>Sign Up</Link>
                 <Link to='/login'>Log In</Link>
+                <span>
+                    Not the answer you're looking for? 
+                    <Link to='/'>Browse other questions</Link>
+                    or
+                    <Link to='questions/new' >ask your own question</Link>
+                </span>
             </div>
 
         )
