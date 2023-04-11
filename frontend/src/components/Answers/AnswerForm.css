@@ -1,0 +1,24 @@
+#AnswerFormCont {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#AnswerForm {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+#YourAnswerSpan {
+    margin-bottom: 15px;
+}
+
+#AnswerFormTextarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 45px;
+}
+#AnswerFormTextarea:focus {
+    outline: 3px solid rgb(173, 210, 237);
+}

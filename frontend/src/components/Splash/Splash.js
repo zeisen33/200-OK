@@ -1,9 +1,19 @@
 import "./Splash.css"
 import SearchIcon from '../../assets/SearchIcon.png'
-import { Link } from "react-router-dom"
-import Footer from "../Footer/Footer.js"
+import { Link, useHistory } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { useEffect } from "react"
 
 const Splash = () => {
+    const history = useHistory();
+    const currentUser = useSelector((state) => state.session.user ? state.session.user : 'guest' )
+
+    useEffect(() => {
+        if (currentUser != 'guest') {
+            history.push('/questions')
+        }
+    }, [])
+
     return (
     <div id='wholeWindow'>
         <div id='ContentContainerSplash'>

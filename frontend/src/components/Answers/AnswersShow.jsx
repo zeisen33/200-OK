@@ -1,6 +1,7 @@
 import * as userActions from '../../store/users'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
+import './AnswersShow.css'
 
 const AnswersShow = (props) => {
     const dispatch = useDispatch();
@@ -8,33 +9,20 @@ const AnswersShow = (props) => {
     // debugger
     const authorId = answer.authorId
     const answerAuthor = useSelector((state) => {
-        // debugger
-        // if (!state.users) {
-        //     return []
-        // } else {
-        //     return (
-        //         Object.values(state.users).filter((user) => {
-        //             return user.id == author_id
-        //         })
-        //     )
-        // }
         if (authorId) {
             return state.users[authorId]
         }
-
     })
 
     // debugger
-    
-
     return (
-        <div>
-        <h1>{answer.body}</h1>
-        <h3>Answered by {answerAuthor?.displayName}</h3>
-        <h1>Hello from AnswersShow</h1>
+        <div id='AnswerShowCont'>
+            <h1 id='answerBody'>{answer.body}</h1>
+            <div id='AnsweredByCont'>
+                <h3>Answered by {answerAuthor?.displayName}</h3>
+            </div>
         </div>
     )
-
 }
 
 export default AnswersShow

@@ -30,6 +30,8 @@ const QuestionsShow = () => {
         return Object.values(state.answers).filter(answer => answer.questionId == questionId);
     })
 
+    const numOfAnswers = Object.entries(answers).length
+
     useEffect(() => {
         // debugger
         if (questionId) {
@@ -80,9 +82,6 @@ const QuestionsShow = () => {
                                 <Link id='AskCont' className='BlueButton' to='/questions/new'><span id='AskQ' className='smallText'>Ask Question</span></Link>
                             </div>
                         </div>
-                        <div id='ShowTopBot'>
-                            <h6 id='hSix'><span>asked by {asker.displayName}</span></h6>
-                        </div>
                     </div>
                 </div>
                 <div id="ShowQuestionContainer">
@@ -93,19 +92,24 @@ const QuestionsShow = () => {
                         {updateButton()}
                         {deleteButton()}
                     </div>
+                <div id='BottomConts' >
+                    <div id='ShowTopBot'>
+                        <h6 id='hSix'><span id='highlightedLightBlue'>asked by {asker.displayName}</span></h6>
+                    </div>
+                    <h2 id='hTwo'>{(numOfAnswers === 1 ? 1 + ' Answer' : numOfAnswers + ' Answers')}</h2>
+                    <AnswersList answers={answers} />
+                    <AnswerForm />
+                    <Link to='/signup'>Sign Up</Link>
+                    <Link to='/login'>Log In</Link>
+                    <span>
+                        Not the answer you're looking for? 
+                        <Link to='/'>Browse other questions</Link>
+                        or
+                        <Link to='questions/new' >ask your own question</Link>
+                    </span>
                 </div>
-                <AnswersList answers={answers} />
-                <AnswerForm />
-                <Link to='/signup'>Sign Up</Link>
-                <Link to='/login'>Log In</Link>
-                <span>
-                    Not the answer you're looking for? 
-                    <Link to='/'>Browse other questions</Link>
-                    or
-                    <Link to='questions/new' >ask your own question</Link>
-                </span>
+                </div>
             </div>
-
         )
     } else {
         return null

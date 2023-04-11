@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import * as answerActions from '../../store/answers'
+import './AnswerForm.css'
 
 const AnswerForm = () => {
     const dispatch = useDispatch();
@@ -90,25 +91,27 @@ const AnswerForm = () => {
     }
 
     return (
-        <form onSubmit={handleCreateOrUpdate}>Your Answer
-            <textarea 
-                value={body}
-                onChange={handleChange}
-            />
-            {draftDiscarded ? <span>Draft Discarded</span> : null}
-            {answerErrors}
-            <button type='submit'>{formType} Your Answer</button>
-            {loggedInErrors}
-            <LoggedInErrorsLink />
-            {/* <button onClick={(e) => {
-                debugger
-                setBody(currentUsersAnswer.body)}
-            }>Discard</button> */}
-            
-            {discardButton}
-            <button onClick={handleDelete}>Delete Your Answer</button>
-            {deleteErrors ? <span>You are not logged in.</span> : null}
-        </form>
+        <div id='AnswerFormCont' >
+            <form id='AnswerForm'onSubmit={handleCreateOrUpdate}><span id='YourAnswerSpan'>Your Answer</span>
+                <textarea id='AnswerFormTextarea'
+                    value={body}
+                    onChange={handleChange}
+                    />
+                {draftDiscarded ? <span>Draft Discarded</span> : null}
+                {answerErrors}
+                <button type='submit'>{formType} Your Answer</button>
+                {loggedInErrors}
+                <LoggedInErrorsLink />
+                {/* <button onClick={(e) => {
+                    debugger
+                    setBody(currentUsersAnswer.body)}
+                }>Discard</button> */}
+                
+                {discardButton}
+                <button onClick={handleDelete}>Delete Your Answer</button>
+                {deleteErrors ? <span>You are not logged in.</span> : null}
+            </form>
+        </div>
     )
 }
 

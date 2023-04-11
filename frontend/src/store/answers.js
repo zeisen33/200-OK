@@ -50,15 +50,15 @@ export const createAnswer = (answer) => async (dispatch) => {
 }
 
 export const updateAnswer = (answer) => async (dispatch) => {
-    debugger
+    // debugger
     const res = await csrfFetch(`/api/answers/${answer.id}`, {
         method: 'PATCH',
         body: JSON.stringify(answer)
     })
 
-    debugger
+    // debugger
     const data = await res.json();
-    debugger
+    // debugger
     dispatch(receiveAnswer(data))
 }
 

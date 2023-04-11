@@ -27,7 +27,7 @@ class Api::AnswersController < ApplicationController
 
     def update
         @answer = Answer.find_by(id: params[:id])
-        debugger
+        # debugger
         @current_user = current_user
         if @answer.answer_author.id == @current_user.id 
             if @answer.update(answer_params)
