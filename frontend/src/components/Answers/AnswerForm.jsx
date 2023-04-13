@@ -142,7 +142,7 @@ const AnswerForm = () => {
         // debugger
         if (deleteErrors) {
             return (
-                <div id='deleteErrorsDiv'>
+                <div className='answerFormErrorsDiv'>
                     <span className='redWhiteText'>{deleteErrors ? <span>{deleteErrors}</span> : null}</span>
                 </div>
             )
