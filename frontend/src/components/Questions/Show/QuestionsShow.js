@@ -99,14 +99,14 @@ const QuestionsShow = () => {
                     <h2 id='hTwo'>{(numOfAnswers === 1 ? 1 + ' Answer' : numOfAnswers + ' Answers')}</h2>
                     <AnswersList answers={answers} />
                     <AnswerForm />
-                    <Link to='/signup'>Sign Up</Link>
-                    <Link to='/login'>Log In</Link>
-                    <span>
-                        Not the answer you're looking for? 
-                        <Link to='/'>Browse other questions</Link>
+                    <div id='NotAnswerCont'>
+                        <span>
+                        Not the answer you're looking for?
+                        </span>
+                        <Link id='BrowseLink' className='inSiteLink' to='/'>Browse other questions</Link>
                         or
-                        <Link to='questions/new' >ask your own question</Link>
-                    </span>
+                        <Link id='OwnQLink' className='inSiteLink' to='/questions/new' >ask your own question.</Link>
+                    </div>
                 </div>
                 </div>
             </div>

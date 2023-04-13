@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "react-scripts start"
   },
   "repository": {
     "type": "git",

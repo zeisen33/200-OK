@@ -47,19 +47,22 @@ export const createAnswer = (answer) => async (dispatch) => {
 
     const data = await res.json();
     dispatch(receiveAnswer(data))
+    return res;
 }
 
 export const updateAnswer = (answer) => async (dispatch) => {
-    // debugger
+    debugger
     const res = await csrfFetch(`/api/answers/${answer.id}`, {
         method: 'PATCH',
         body: JSON.stringify(answer)
     })
 
-    // debugger
+    debugger
     const data = await res.json();
     // debugger
     dispatch(receiveAnswer(data))
+    debugger
+    return res
 }
 
 export const deleteAnswer = (answerId) => async (dispatch) => {
