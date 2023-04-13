@@ -19,14 +19,6 @@ const QuestionsShow = () => {
     const currentUserId = useSelector(userActions.getCurrentUserId)
     // debugger
     const answers = useSelector((state) => {
-        // const answersArr = []
-
-        // Object.values(state.answers).map((answer) => {
-        //     return (
-        //         answer.questionId == questionId ? answersArr.push(answer) : null
-        //     )
-        // })
-        // return answersArr
         return Object.values(state.answers).filter(answer => answer.questionId == questionId);
     })
 

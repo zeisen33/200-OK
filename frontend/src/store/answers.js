@@ -45,23 +45,34 @@ export const createAnswer = (answer) => async (dispatch) => {
         body: JSON.stringify(answer)
     })
 
-    const data = await res.json();
-    dispatch(receiveAnswer(data))
+    if (res.ok) {
+        const data = await res.json();
+        // debugger
+        if (data?.errors) {
+            return data
+        } else {
+            dispatch(receiveAnswer(data))
+        }
+    }
     return res;
 }
 
 export const updateAnswer = (answer) => async (dispatch) => {
-    debugger
+    // debugger
     const res = await csrfFetch(`/api/answers/${answer.id}`, {
         method: 'PATCH',
         body: JSON.stringify(answer)
     })
 
-    debugger
-    const data = await res.json();
-    // debugger
-    dispatch(receiveAnswer(data))
-    debugger
+    if (res.ok) {
+        // debugger
+        const data = await res.json();
+        if (data?.errors) {
+            return data
+        } else {
+            dispatch(receiveAnswer(data))
+        }
+    }
     return res
 }
 

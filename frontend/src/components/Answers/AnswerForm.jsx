@@ -8,7 +8,7 @@ const AnswerForm = () => {
     const dispatch = useDispatch();
     const [draftDiscarded, setDraftDiscarded] = useState(false)
     const [deleteErrors, setDeleteErrors] = useState(false)
-    const [answerErrors, setAnswerErrors] = useState([])
+    const [answerErrors, setAnswerErrors] = useState([false])
     const [loggedInErrors, setLoggedInErrors] = useState([])
     const { questionId } = useParams();
     let formType = 'Create'
@@ -49,7 +49,7 @@ const AnswerForm = () => {
 
     useEffect(() => {
         setDeleteErrors(false)
-        setAnswerErrors([])
+        setAnswerErrors(false)
     }, [body])
 
     const handleChange = (e) => {
@@ -63,42 +63,30 @@ const AnswerForm = () => {
         // debugger
         if (currentUser != 'guest') {
             if (formType === 'Post') {
-                debugger
+                // debugger
                 return dispatch(answerActions.createAnswer(answer))
-                    .catch(async (res) => {
-                        let data;
-                        debugger
-                        try {
-                            debugger
-                            data = await res.clone().json();
-                            debugger
-                        } catch {
-                            debugger
-                            data = await res.text()
-                            debugger
-                        }
-                        if (data?.errors) setAnswerErrors(data.errors)
-                        else if (data) setAnswerErrors([data])
-                        else setAnswerErrors([res.statusText]);
+                    .then(async (data) => {
+                        // let data;
+                        // debugger
+                        // try {
+                        //     debugger
+                        //     data = await res.clone().json();
+                        //     debugger
+                        // } catch {
+                        //     debugger
+                        //     data = await res.text()
+                        //     debugger
+                        // }
+                        setAnswerErrors(data.errors)
+                        // else if (data) setAnswerErrors([data])
+                        // else setAnswerErrors([res.statusText]);
                     })
             } else {
                 answer.id = currentUsersAnswer.id
                 return dispatch(answerActions.updateAnswer(answer))
-                    .catch(async (res) => {
-                        let data;
-                        debugger
-                        try {
-                            debugger
-                            data = await res.clone().json();
-                            debugger
-                        } catch {
-                            debugger
-                            data = await res.text()
-                            debugger
-                        }
-                        if (data?.errors) setAnswerErrors(data.errors)
-                        else if (data) setAnswerErrors([data])
-                        else setAnswerErrors([res.statusText]);
+                    .then(async (data) => {
+                        // debugger
+                        setAnswerErrors(data.errors)
                     })
             } 
         } else {
@@ -162,6 +150,18 @@ const AnswerForm = () => {
         }
     }
 
+    const ShowAnswerErrors = () => {
+        if (answerErrors) {
+            return (
+                <div id='answerErrorsDiv'>
+                    <span className='redWhiteText'>{answerErrors[0]}</span>
+                </div>
+            )
+        } else {
+            return null
+        }
+    }
+
     return (
         <div id='AnswerFormCont' >
             <form id='AnswerForm'onSubmit={handleCreateOrUpdate}><span id='YourAnswerSpan'>Your Answer</span>
@@ -173,15 +173,15 @@ const AnswerForm = () => {
 
                 {draftDiscarded ? <span id='draftDiscarded'>Draft Discarded</span> : null}
                 </div>
-                {answerErrors}
+                <ShowAnswerErrors />
                 {<Links></Links>}
                 <div id='AnswerButtonsCont'>
                     <button id='PostUpdate' type='submit' className='BlueButton'>{formType} Your Answer</button>
                     {discardButton}
                     <button id='deleteAnswer' className='deleteButton' onClick={handleDelete}>Delete Your Answer</button>
                 </div>
-                <ShowLoggedInErrors></ShowLoggedInErrors>
-                <ShowDeleteErrors></ShowDeleteErrors>
+                <ShowLoggedInErrors />
+                <ShowDeleteErrors />
             </form>
         </div>
     )

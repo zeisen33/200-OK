@@ -59,6 +59,35 @@ ApplicationRecord.transaction do
       asker_id: 9,
       title: "Should I learn Python or Ruby?"
     })
+    Question.create!({
+      asker_id: 3,
+      title: 'What is the difference between a lambda and a proc?',
+      body: "Ruby uses procs but also has lambdas. What's the difference? And when would you want to use a proc vs a lambda?"
+    })
+    Question.create!({
+      asker_id: 4,
+      title: 'What does MERN stand for?',
+    })
+    Question.create!({
+      asker_id: 5,
+      title: "How do you exit out of pry?",
+      body: "I feel like I've tried everything. Quit, escape, q, exit, everything."
+    })
+    Question.create!({
+      asker_id: 6,
+      title: 'What is a favicon?',
+      body: "All I know about it is that every serious website has one"
+    })
+    Question.create!({
+      asker_id: 7,
+      title: "What kind of music do you like to listen to while coding?",
+      body: "Personally I enjoy listening to pop the most, but when crunch time comes, I switch to classical, which somehow helps me be more productive"
+    })
+    Question.create!({
+      asker_id: 8,
+      title: "How do search engines like Google work so fast?",
+      body: "I can type a short phrase and in less than a second millions of results are loaded. How is that possible?"
+    })
 
     puts "Creating answers..."
     Answer.create!({
