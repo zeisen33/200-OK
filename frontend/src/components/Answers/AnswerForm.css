@@ -71,7 +71,7 @@
     margin: 10px;
 }
 
-#deleteErrorsDiv {
+.answerFormErrorsDiv {
     width: fit-content;
     display: flex;
     flex-direction: column;

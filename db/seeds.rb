@@ -125,6 +125,36 @@ ApplicationRecord.transaction do
       author_id: 8,
       body: 'No, CSS is a stylesheet language'
     })
-  
+    Answer.create!({
+      question_id: 6,
+      author_id: 7,
+      body: "Returning (or breaking, or raising, etc.) from a proc will return you out of the enclosing function, while doing the same in a lambda will return out of the lambda but continue running the enclosing function."
+    })
+    Answer.create!({
+      question_id: 7,
+      author_id: 8,
+      body: "MongoDB ExpressJS React NodeJS"
+    })
+    Answer.create!({
+      question_id: 7,
+      author_id: 9,
+      body: "Mongo Express React Node, which are what you use in the stack."
+    })
+    Answer.create!({
+      question_id: 9,
+      author_id: 10,
+      body: "A favicon is the little logo in the tab header."
+    })
+    Answer.create!({
+      question_id: 10,
+      author_id: 11,
+      body: "I've tried coding to a lot of music, and for me the most fun is house music, and the most productive is jazz."
+    })
+    Answer.create!({
+      question_id: 11,
+      author_id: 1,
+      body: "This is a very complicated topic. It is a whole field of knowledge, called Search Engine Optimaztion (SEO). It comes down to two very important main factors. First, computers are very, very fast. One second feels fast for you, but computers can do thousands and thousands of operations in that second. The other important factor is that nearly all searches have been searched before, or a similar search has been conducted before. This allows search engines to store a search and its results. Now they can look through a database of previous search results, instead of coming up with a new search result every time."
+    })
+
     puts "Done!"
   end

@@ -128,7 +128,7 @@ const AnswerForm = () => {
         // debugger
         if (loggedInErrors.length != 0) {
             return (
-                <div id='loggedInErrorsDiv'>
+                <div className='answerFormErrorsDiv'>
                     <span className='redWhiteText'>{loggedInErrors}</span>
                     {/* <LoggedInErrorsLink /> */}
                 </div>
@@ -153,7 +153,7 @@ const AnswerForm = () => {
     const ShowAnswerErrors = () => {
         if (answerErrors) {
             return (
-                <div id='answerErrorsDiv'>
+                <div className='answerFormErrorsDiv'>
                     <span className='redWhiteText'>{answerErrors[0]}</span>
                 </div>
             )
