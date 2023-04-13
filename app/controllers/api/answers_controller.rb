@@ -12,7 +12,6 @@ class Api::AnswersController < ApplicationController
         render :show
     end
 
-    
     def create
         @answer = Answer.new(answer_params)
         # debugger
