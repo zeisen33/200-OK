@@ -8,6 +8,6 @@ For each question, higher voted answers are shown first.
 
 Once submitted, questions, answers, and votes can all be changed or deleted.
 
-Currently, user authentication is working, and the remaining features are in progress.
+Currently, user authentication, questions, and answers are working. Voting and searching are in progress.
 
 200 OK was built using Ruby on Rails, React, and Redux, with postgresql for the database.
