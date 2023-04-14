@@ -134,7 +134,7 @@ const questionsReducer = (state={}, action) => {
             // debugger
             return nextState
         case REMOVE_QUESTION:
-            // debugger
+            debugger
             delete nextState[action.questionId]
             return nextState
         default:

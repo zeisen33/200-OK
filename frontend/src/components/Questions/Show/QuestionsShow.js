@@ -44,7 +44,7 @@ const QuestionsShow = () => {
         debugger
         if (currentUserId === question.askerId) {
             debugger
-            dispatch(questionActions.deleteQuestion(questionId))
+            dispatch(questionActions.deleteQuestion((questionId)))
             history.push(`/questions`)
         
         // Else should never hit because it's a repeat of deleteButton condition
