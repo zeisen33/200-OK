@@ -34,9 +34,9 @@ const QuestionsShow = () => {
     }
 
     const handleDelete = (e) => {
-        debugger
+        // debugger
         if (currentUserId === question.askerId) {
-            debugger
+            // debugger
             dispatch(questionActions.deleteQuestion((questionId)))
             history.push(`/questions`)
         

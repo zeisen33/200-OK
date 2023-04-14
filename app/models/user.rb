@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :password, length: {in: 6..255, allow_nil: true}
 
     has_one :asker, foreign_key: :asker_id, class_name: :Question, dependent: :destroy
-    has_many :answers, foreign_key: :answer_author_id, class_name: :Answer, dependent: :destroy
+    has_many :answers, foreign_key: :author_id, class_name: :Answer, dependent: :destroy
 
     before_validation :ensure_session_token
 
