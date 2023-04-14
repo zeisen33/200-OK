@@ -10,14 +10,10 @@ import AnswerForm from "../../Answers/AnswerForm"
 const QuestionsShow = () => {
     const history = useHistory();
     const dispatch = useDispatch()
-    const { questionId } = useParams()
-    // debugger 
+    const { questionId } = useParams() 
     let question = useSelector(questionActions.getQuestion(questionId))
-    // debugger
     const asker = useSelector(userActions.getAsker(question?.askerId)) 
-    // debugger
     const currentUserId = useSelector(userActions.getCurrentUserId)
-    // debugger
     const answers = useSelector((state) => {
         return Object.values(state.answers).filter(answer => answer.questionId == questionId);
     })
@@ -25,22 +21,19 @@ const QuestionsShow = () => {
     const numOfAnswers = Object.entries(answers).length
 
     useEffect(() => {
-        // debugger
         if (questionId) {
             dispatch(questionActions.fetchQuestion(questionId))
         }
     }, [questionId])
 
     const updateButton = () => {
-        // debugger
         if (currentUserId === question.askerId) {
-            // debugger
+    
             return <Link id='ShowEditButton' className='inSiteLink' to={`/questions/${questionId}/edit`}>Edit</Link>
         }
     }
 
     const handleDelete = (e) => {
-        // e.preventDefault();
         debugger
         if (currentUserId === question.askerId) {
             debugger

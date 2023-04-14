@@ -110,10 +110,12 @@ export const updateQuestion = (question) => async (dispatch) => {
 }
 
 export const deleteQuestion = (questionId) => async (dispatch) => {
+    // debugger
     const response = await csrfFetch(`/api/questions/${questionId}`, {
         method: 'DELETE'
     })
 
+    // debugger
     dispatch(removeQuestion(questionId))
 }
 
@@ -134,7 +136,7 @@ const questionsReducer = (state={}, action) => {
             // debugger
             return nextState
         case REMOVE_QUESTION:
-            debugger
+            // debugger
             delete nextState[action.questionId]
             return nextState
         default:

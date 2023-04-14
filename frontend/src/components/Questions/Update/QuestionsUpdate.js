@@ -63,7 +63,7 @@ const QuestionsUpdate = () => {
             .then((data) => {
                 // debugger
                 if (data.errors) {
-                    debugger
+                    // debugger
                     setErrors(data.errors)
                 } else {
                     // debugger
@@ -86,9 +86,9 @@ const QuestionsUpdate = () => {
 
     const handleDelete = (e) => {
         // e.preventDefault();
-        debugger
+        // debugger
         if (currentUserId === question.askerId) {
-            debugger
+            // debugger
             dispatch(questionActions.deleteQuestion(questionId))
             history.push(`/questions`)
         

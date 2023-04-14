@@ -43,9 +43,6 @@ const QuestionsIndex = () => {
         )
     })
 
-    // debugger
-
-
     return (
         <div id='OuterQIndexContainer'>
             <div id='TopSec'>

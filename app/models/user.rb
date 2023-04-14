@@ -5,7 +5,6 @@ class User < ApplicationRecord
     validates :display_name, length: { in: 3..30 }, format: {without: URI::MailTo::EMAIL_REGEXP, message: "Cant be an email"}
     validates :email, presence: true, uniqueness: true
     validates :email, length: { in: 3..255 }, format: {with: URI::MailTo::EMAIL_REGEXP}
-    # validates :password_digest, presence: true
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: {in: 6..255, allow_nil: true}
 
