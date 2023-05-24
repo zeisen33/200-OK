@@ -10,14 +10,14 @@ export const receiveSearchResults = searchResults => ({
 export const fetchSearchResults = (query) => async dispatch => {
     const res = await csrfFetch(`/api/search?q=${query}`);
     const data = await res.json();
-    console.log(data)
+    // console.log(data)
     dispatch(receiveSearchResults(data));
 };
 
 const searchReducer = (state = {}, action) => {
     switch (action.type) {
         case GET_SEARCH_RESULTS:
-            return action.searchResults.search
+            return action.searchResults
         default:
             return state;
     }

@@ -1,26 +1,39 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchResults } from "../../store/search";
-import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import * as searchActions from '../../store/search'
 
 const Search = () => {
+    const location = useLocation()
+    const idxOfQuery = location.search.indexOf('q') + 2
+    const query = location.search.slice(idxOfQuery)
+    // console.log(query)
     const dispatch = useDispatch();
     const history = useHistory();
     // debugger;
 
     useEffect(() => {
-        const query = history.location.search.split("=")[1];
-        dispatch(fetchSearchResults(query))
-    }, []);
+        dispatch(searchActions.fetchSearchResults(query))
+    }, [query])
 
-    const searchResults = useSelector((state) => state.searchResults );
+    const searchResults = useSelector((state) => state.search ? state.search.questions : {});
     
+    const resultsMap = () => {
+        debugger
+        if (!!searchResults) {
+            debugger
+            return <div>
+                {Object.values(searchResults).map(result => <span>{result.title}</span>)}
+            </div>
+        } else {
+            return null
+        } 
+    }
+
     return(
-        <> Hello From Search Results Show Page
-        {/* {Object.values(searchResults).map((ele) => {
-            return <div>{ele.title}</div>
-        })} */}
+        <> 
+            {resultsMap()}
         </>
     );
 }

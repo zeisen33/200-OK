@@ -23,13 +23,7 @@ const NavBar = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.alert(searchStr)
-        dispatch(searchActions.fetchSearchResults(searchStr))
-        setRedirect(true)
-    }
-
-    if (redirect) {
-        history.push(`/search?=${searchStr}`)
+        history.push(`/search?q=${searchStr}`)
     }
 
     const handleLogout = async () => {
