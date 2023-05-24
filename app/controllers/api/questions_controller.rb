@@ -52,7 +52,7 @@ class Api::QuestionsController < ApplicationController
         @question = Question.find_by(id: params[:id])
         @current_user = current_user
         if @question.asker.id == @current_user.id
-            @question.delete
+            @question.destroy
         end
     end
 

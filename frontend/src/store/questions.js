@@ -110,12 +110,12 @@ export const updateQuestion = (question) => async (dispatch) => {
 }
 
 export const deleteQuestion = (questionId) => async (dispatch) => {
-    // debugger
+    debugger
     const response = await csrfFetch(`/api/questions/${questionId}`, {
         method: 'DELETE'
     })
 
-    // debugger
+    debugger
     dispatch(removeQuestion(questionId))
 }
 
