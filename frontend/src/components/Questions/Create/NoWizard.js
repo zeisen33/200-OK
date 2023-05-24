@@ -75,7 +75,7 @@ const NoWizard = () => {
             <form id='NoWizForm' onSubmit={handleSubmit}>
                 <div id='formattingDiv' >
                     <div id='formContents'>
-                <label>Title
+                <label id="TitleLabel"><span className='qInputLabel'>Title</span>
                     <br/>
                     <span className='smallText'>Be specific and imagine you're asking a question to another person</span>
                     <br/>
@@ -85,10 +85,10 @@ const NoWizard = () => {
                         onChange={handleTitle}
                         placeholder='e.g. Are strings mutable in Ruby?'
                         />
-                </label>
+                </label >
                 {showErrors('Title')}
                 <div id='BodyContainer'>
-                <label id='BodyLabel'>Body 
+                <label id='BodyLabel' ><span className='qInputLabel'>Body</span> 
                     <br/>
                     <span className='smallText'>Include all the information someone would need to answer your question</span>
                     <br/>

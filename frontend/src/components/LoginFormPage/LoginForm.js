@@ -94,6 +94,13 @@ const LoginFormPage = (props) => {
         )
     }
 
+    const handleDemo = async (e) => {
+        e.preventDefault()
+        // debugger
+        await dispatch(sessionActions.loginUser({email: 'demo@user.io', password: 'password'}));
+        // window.location.replace("/");
+      }
+
     return (
         <>
         <div id='LoginWindow'>
@@ -144,6 +151,7 @@ const LoginFormPage = (props) => {
                     </div>
                     <br/>
                     <button className='Buttons' type="submit" id='LogInButton'>Log in</button>
+                    <button id='signupButton' type='submit' onClick={handleDemo}>Sign in as Demo User</button>
                 </form>
             </div>
             <div id='TextContainer'>

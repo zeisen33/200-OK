@@ -36,10 +36,10 @@ const QuestionsShow = () => {
     const handleDelete = (e) => {
         // debugger
         if (currentUserId === question.askerId) {
-            debugger
-            dispatch(questionActions.deleteQuestion((parseInt(questionId))))
-            history.push(`/questions`)
-        
+            if (window.confirm('Are you sure you want to delete this question?')) {
+                dispatch(questionActions.deleteQuestion((parseInt(questionId))))
+                history.push(`/questions`)
+            }
         // Else should never hit because it's a repeat of deleteButton condition
         } else {
             history.push(`/questions/${questionId}`)

@@ -37,8 +37,10 @@ const Splash = () => {
                 </div>
                 <div id='SubtitleContainer'>
                     <div className='Subtitle'>
-                        <span className='largeWhite'>Search</span>
-                        <span className='smallGrey'>people's questions</span>
+                        <Link to='/questions'>
+                            <span className='largeWhite'>Search</span>
+                            <span className='smallGrey'>people's questions</span>
+                        </Link>
                     </div>
                     <div className='Subtitle'>
                         <Link to='/questions/new' >
@@ -47,12 +49,16 @@ const Splash = () => {
                         </Link>
                     </div>
                     <div className='Subtitle'>
-                    <span className='largeWhite'>Answer</span>
-                        <span className='smallGrey'>others' questions</span>
+                        <Link to='/questions'>
+                            <span className='largeWhite'>Answer</span>
+                            <span className='smallGrey'>others' questions</span>
+                        </Link>
                     </div>
                     <div className='Subtitle'>
-                    <span className='largeWhite'>Vote</span>
-                        <span className='smallGrey'>for good answers</span>
+                        <Link to='/questions'>
+                            <span className='largeWhite'>Vote</span>
+                            <span className='smallGrey'>for good answers</span>
+                        </Link>
                     </div>
                 </div>
             </div>

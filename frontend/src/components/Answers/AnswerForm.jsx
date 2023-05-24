@@ -165,7 +165,7 @@ const AnswerForm = () => {
     return (
         <div id='AnswerFormCont' >
             <form id='AnswerForm'onSubmit={handleCreateOrUpdate}><span id='YourAnswerSpan'>Your Answer</span>
-                <textarea id='AnswerFormTextarea'
+                <textarea id='AnswerFormTextarea' className='input'
                     value={body}
                     onChange={handleChange}
                     />

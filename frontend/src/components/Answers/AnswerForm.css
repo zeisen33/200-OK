@@ -1,3 +1,7 @@
+textArea {
+    font-family: 'Arial', Arial, Helvetica, sans-serif
+} 
+
 #AnswerFormCont {
     margin-top: 15px;
     display: flex;
@@ -19,9 +23,10 @@
     height: 150px;
     margin-bottom: 5px;
 }
-#AnswerFormTextarea:focus {
+/* #AnswerFormTextarea:focus {
     outline: 3px solid rgb(173, 210, 237);
-}
+    border-radius: 2px
+} */
 
 #AnswerButtonsCont {
     margin-top: 30px;

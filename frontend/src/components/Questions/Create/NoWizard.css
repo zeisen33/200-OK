@@ -39,9 +39,16 @@
     margin: 15px;
 }
 
+
+
 .smallText {
     font-size: 12px;
 
+}
+
+.qInputLabel {
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .CreateInput {
