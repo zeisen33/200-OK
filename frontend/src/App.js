@@ -9,6 +9,7 @@ import QuestionsShow from './components/Questions/Show/QuestionsShow'
 import QuestionsCreate from './components/Questions/Create/Create'
 import QuestionsUpdate from "./components/Questions/Update/QuestionsUpdate";
 import Footer from "./components/Footer/Footer";
+import Search from "./components/Search/Show";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
       </Route>
       <Route exact path='/signup' >
         <SignupFormPage />
+      </Route>
+      <Route path='/search' >
+        <Search />
       </Route>
       <Route path='/questions/:questionId/edit' >
         <QuestionsUpdate />

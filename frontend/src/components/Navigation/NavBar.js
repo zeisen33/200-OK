@@ -1,23 +1,35 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from 'react'
 import * as sessionActions from '../../store/session'
-import { Redirect, Link, BrowserRouter, Route } from 'react-router-dom'
+import { Redirect, Link, BrowserRouter, Route, useHistory, NavLink } from 'react-router-dom'
 import './NavBar.css'
 import ErrorLogo from "../../assets/Exclam.png"
 import WellfoundLogo from "../../assets/Wellfound.png"
 import LinkedInLogo from "../../assets/LinkedInLogo.png"
 import GitHubLogo from "../../assets/GitHubLogo.png"
-import { NavLink } from 'react-router-dom'
-
+import * as searchActions from "../../store/search"
 
 const NavBar = () => {
+    const history = useHistory()
     const sessionUser = useSelector((state) => state.session.user);
     const [searchStr, setSearchstr] = useState()
     const dispatch = useDispatch()
+    const [redirect, setRedirect] = useState(false)
 
     const handleSearchChange = (e) => {
         e.preventDefault()
         setSearchstr(e.target.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        window.alert(searchStr)
+        dispatch(searchActions.fetchSearchResults(searchStr))
+        setRedirect(true)
+    }
+
+    if (redirect) {
+        history.push(`/search?=${searchStr}`)
     }
 
     const handleLogout = async () => {
@@ -69,7 +81,9 @@ return (
             <a href='https://github.com/zeisen33/Stack-Overflow' id='GitLink'>Site GitHub Repo</a>
         </div>
         <div id='SearchContainer' className='NavBarItem'>
-            <input id='NavSearchBar' type='text' placeholder='Search...' value={searchStr} onChange={handleSearchChange} />
+            <form onSubmit={handleSubmit}>
+                <input id='NavSearchBar' type='text' placeholder='Search...' value={searchStr} onChange={handleSearchChange} />
+            </form>
         </div>
         <div id='loginoutsignupContainer'>{loginout()}</div>
     </div>

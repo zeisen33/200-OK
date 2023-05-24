@@ -4,12 +4,14 @@ import sessionReducer from './session'
 import questionsReducer from './questions.js'
 import usersReducer from './users'
 import answersReducer from './answers'
+import searchReducer from './search'
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     questions: questionsReducer,
     users: usersReducer,
-    answers: answersReducer
+    answers: answersReducer,
+    search: searchReducer
 })
 
 let enhancer;

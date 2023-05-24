@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 export const GET_SEARCH_RESULTS = 'search/searchResults';
 
 export const receiveSearchResults = searchResults => ({
@@ -6,8 +8,9 @@ export const receiveSearchResults = searchResults => ({
 });
 
 export const fetchSearchResults = (query) => async dispatch => {
-    const res = await fetch(`/api/songs/search?q=${query}`);
+    const res = await csrfFetch(`/api/search?q=${query}`);
     const data = await res.json();
+    console.log(data)
     dispatch(receiveSearchResults(data));
 };
 

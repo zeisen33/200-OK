@@ -1,6 +1,7 @@
 # debugger
 askers = []
 
+# debugger
 json.questions do
     @questions.each do |question|
         askers << question.asker

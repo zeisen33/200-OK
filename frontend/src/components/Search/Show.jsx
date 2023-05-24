@@ -17,10 +17,10 @@ const Search = () => {
     const searchResults = useSelector((state) => state.searchResults );
     
     return(
-        <>
-        {Object.values(searchResults).map((ele) => {
+        <> Hello From Search Results Show Page
+        {/* {Object.values(searchResults).map((ele) => {
             return <div>{ele.title}</div>
-        })}
+        })} */}
         </>
     );
 }

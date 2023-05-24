@@ -56,6 +56,12 @@ class Api::QuestionsController < ApplicationController
         end
     end
 
+    def search
+        query = params['q']
+        @questions = Question.where("title LIKE '%#{query}%'")
+        render :index
+    end
+
     private
     def question_params
         params.require(:question).permit(:title, :body)
