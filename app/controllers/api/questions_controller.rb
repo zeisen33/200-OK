@@ -58,7 +58,11 @@ class Api::QuestionsController < ApplicationController
 
     def search
         query = params['q']
-        @questions = Question.where("LOWER(title) LIKE LOWER('%#{query}%')")
+        if query == '' 
+            @questions = Question.all 
+        else
+            @questions = Question.where("LOWER(title) LIKE LOWER('%#{query}%')")
+        end
         render :index
     end
 

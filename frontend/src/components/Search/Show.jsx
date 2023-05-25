@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchResults } from "../../store/search";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import * as searchActions from '../../store/search'
+import * as userActions from '../../store/users'
 
 const Search = () => {
     const location = useLocation()
@@ -19,22 +20,65 @@ const Search = () => {
 
     const searchResults = useSelector((state) => state.search ? state.search.questions : {});
     
-    const resultsMap = () => {
+    // const resultsMap = () => {
+    //     debugger
+    //     if (!!searchResults) {
+    //         debugger
+    //         return <div>
+    //             {Object.values(searchResults).map(result => <span>{result.title}</span>)}
+    //         </div>
+    //     } else {
+    //         return null
+    //     } 
+    // }
+
+    const askers = useSelector(state => state.search ? state.search.askers : [])
+
+    const resultsList = () => {
+        // return <>Hello from resultsList</>
         debugger
         if (!!searchResults) {
             debugger
-            return <div>
-                {Object.values(searchResults).map(result => <span>{result.title}</span>)}
-            </div>
+            return (
+                Object.values(searchResults).map((result) => {    
+            return (
+            <section>
+                <div key={result.id} >
+                    <ul id='sectionContentContainer'>
+                        <li id='TitleContainer'>
+                            <h1 className='QTitle'>
+                                <Link className='inSiteLink' to={`/questions/${result.id}`}>{result.title}</Link>
+                            </h1>
+                        </li>
+                        <div id='askedByContainer'>
+                            <li className='askedBy'>
+                                Asked by: {askers[result.askerId].displayName}
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </section>
+            )
+            }
+                )
+            )
         } else {
             return null
-        } 
+        }
     }
 
-    return(
-        <> 
-            {resultsMap()}
-        </>
-    );
+    return (
+        <div id='OuterQIndexContainer'>
+            <div id='TopSec'>
+                <div id='TopQsContainer'>
+                    <h1 id='TopQs'>Search Results</h1>
+                </div>
+                <div id='NewQContainer'>
+                    <Link id='AskButton' to='/questions/new' ><span id='AskText'>Ask Question</span></Link>
+                </div>
+            </div>
+            {resultsList()}
+        </div>
+    )
 }
 export default Search;
