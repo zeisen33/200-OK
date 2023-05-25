@@ -4,6 +4,7 @@ import { useHistory, useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import * as searchActions from '../../store/search'
 import * as userActions from '../../store/users'
+import './Show.css'
 
 const Search = () => {
     const location = useLocation()
@@ -69,21 +70,16 @@ const Search = () => {
 
     return (
         <div id='OuterQIndexContainer'>
-            <div id='TopSec'>
-                <div id='Tippy'>
-                    <div id='TopQsContainer'>
-
+            <div id='TopSec' className='width60'>
+                <div id='Tippy' className='QShowTopDiv'>
+                    <div id='TopQsContainer' className='TopQsCont'>
                         <h1 id='TopQs'>Search Results</h1>
-                    </div>
-                    <div id='NewQContainer'>
                         <Link id='AskButton' to='/questions/new' ><span id='AskText'>Ask Question</span></Link>
                     </div>
                 </div>
-                <br/>
-                <div id='TopBottomCont'>
-                    <h3>{`${searchResults ? Object.values(searchResults).length : 0} Results`}</h3>
-                    <h3>{`Results for ${query}`}</h3>
-                </div>
+            </div>
+            <div id='TopBottomCont'>
+                <h3>{`${searchResults ? Object.values(searchResults).length : 0} Results for "${query}"`}</h3>
             </div>
             {resultsList()}
         </div>

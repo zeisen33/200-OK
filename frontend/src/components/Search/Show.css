@@ -1,0 +1,22 @@
+.QShowTopDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.TopQsCont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.width60 {
+    width: 60%
+}
+
+#TopBottomCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 60%;
+    margin-bottom: 15px;
+}
