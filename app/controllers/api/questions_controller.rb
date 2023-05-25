@@ -58,7 +58,7 @@ class Api::QuestionsController < ApplicationController
 
     def search
         query = params['q']
-        if query == '' 
+        if query == '' || query == 'undefined' 
             @questions = Question.all 
         else
             @questions = Question.where("LOWER(title) LIKE LOWER('%#{query}%')")

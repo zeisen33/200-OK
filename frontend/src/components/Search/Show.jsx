@@ -70,11 +70,19 @@ const Search = () => {
     return (
         <div id='OuterQIndexContainer'>
             <div id='TopSec'>
-                <div id='TopQsContainer'>
-                    <h1 id='TopQs'>Search Results</h1>
+                <div id='Tippy'>
+                    <div id='TopQsContainer'>
+
+                        <h1 id='TopQs'>Search Results</h1>
+                    </div>
+                    <div id='NewQContainer'>
+                        <Link id='AskButton' to='/questions/new' ><span id='AskText'>Ask Question</span></Link>
+                    </div>
                 </div>
-                <div id='NewQContainer'>
-                    <Link id='AskButton' to='/questions/new' ><span id='AskText'>Ask Question</span></Link>
+                <br/>
+                <div id='TopBottomCont'>
+                    <h3>{`${searchResults ? Object.values(searchResults).length : 0} Results`}</h3>
+                    <h3>{`Results for ${query}`}</h3>
                 </div>
             </div>
             {resultsList()}

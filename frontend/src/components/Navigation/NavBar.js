@@ -74,7 +74,7 @@ return (
         <div id='GitLinkContainer' className='NavBarItem' >
             <a href='https://github.com/zeisen33/Stack-Overflow' id='GitLink'>Site GitHub Repo</a>
         </div>
-        <div id='SearchContainer' className='NavBarItem'>
+        <div id='SearchContainer' className={['NavBarItem', 'input'].join(' ')}>
             <form onSubmit={handleSubmit}>
                 <input id='NavSearchBar' type='text' placeholder='Search...' value={searchStr} onChange={handleSearchChange} />
             </form>
