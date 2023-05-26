@@ -20,7 +20,7 @@
 }
 
 #BlackBackground {
-    width: 80%;
+    width: 83%;
     height: fit-content;
     background-color: rgb(49, 53, 57);
     display: flex;
@@ -152,6 +152,8 @@
 #bigText {
     color: white;
     font-size: 48pt;
+    margin-left: 10px;
+    margin-right: 10px
 }
 
 #logo200ok {
@@ -167,11 +169,13 @@
 #SubtitleContainer {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .Subtitle {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 24px;
@@ -186,6 +190,7 @@
 .smallGrey {
     color: rgb(149, 155, 162);
     font-size: 14pt;
+    text-align: center
 }
 
 a {
