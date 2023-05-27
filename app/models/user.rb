@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
     has_one :asker, foreign_key: :asker_id, class_name: :Question, dependent: :destroy
     has_many :answers, foreign_key: :author_id, class_name: :Answer, dependent: :destroy
+    has_many :votes, foreign_key: :voter_id, class_name: :AnswerVote, dependent: :destroy
+    has_many :answers_voted, through: :answers, source: :votes, dependent: :destroy
 
     before_validation :ensure_session_token
 
