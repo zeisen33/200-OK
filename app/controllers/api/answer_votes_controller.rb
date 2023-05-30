@@ -1,4 +1,4 @@
-class Api::AnswerVoteController < ApplicationController
+class Api::AnswerVotesController < ApplicationController
     wrap_parameters include: AnswerVote.attribute_names + ['voterId, votedAnswerId, direction']
     
     def show
