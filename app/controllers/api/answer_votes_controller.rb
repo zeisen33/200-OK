@@ -1,5 +1,6 @@
 class Api::AnswerVotesController < ApplicationController
     wrap_parameters include: AnswerVote.attribute_names + ['voterId, votedAnswerId, direction']
+    before_action :require_logged_in, only: [:create, :update, :destroy]
     
     def show
         @answer_vote = AnswerVote.find_by(id: params[:id])

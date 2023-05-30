@@ -7,5 +7,5 @@ json.voter do
 end
 
 json.answer do
-    json.extract! @answer.answer, :id 
+    json.extract! @answer.answer, :id, :title 
 end
