@@ -13,11 +13,12 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
+    puts 'hello from sessions#create'
     email = params[:email]
     password = params[:password]
-    # debugger
+    debugger
     @user = User.find_by_credentials(email, password)
-    # debugger
+    debugger
     if @user
       login!(@user)
       render "api/users/show"
