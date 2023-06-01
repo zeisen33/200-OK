@@ -8,7 +8,8 @@ class Api::AnswerVotesController < ApplicationController
     end
     
     def index
-        @answer_votes = AnswerVote.all
+        @answer_votes = AnswerVote.all.includes(:voter_id, :voted_answer_id)
+        render :index
     end
 
     def create
@@ -21,11 +22,23 @@ class Api::AnswerVotesController < ApplicationController
     end
 
     def update
-
+        @answer_vote = AnswerVote.find_by(id: params[:id])
+        @current_user = current_user
+        if @answer_vote.voter.id == @current_user.id
+            if @answer_vote.update(answer_params)
+                render :show
+            else
+                render json: { errors: @answer_vote.errors.full_messages }
+            end
+        end
     end
 
     def destroy
-
+        @answer_vote = AnswerVote.find_by(id: params[:id])
+        @current_user = current_user
+        if @answer_vote.voter.id == @current_user.id
+            @answer_vote.destroy
+        end
     end
 
     private
