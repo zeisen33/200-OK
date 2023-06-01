@@ -6,6 +6,7 @@ json.voter do
     json.extract! @answer.voter, :id, :display_name
 end
 
+
 json.answer do
     json.extract! @answer.answer, :id, :title 
 end
