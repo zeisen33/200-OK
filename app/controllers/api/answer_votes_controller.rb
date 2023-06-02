@@ -13,16 +13,17 @@ class Api::AnswerVotesController < ApplicationController
     end
 
     def create
-        debugger
         @answer_vote = AnswerVote.new(answer_vote_params)
-        # @current_user = current_user
+        @current_user = current_user
         @answer = @answer_vote.answer
         if @answer_vote.save
             render :show
         else
             errors = @answer_vote.errors.full_messages
             if errors == ['Voter You have already voted on this answer']
-                redirect_to destroy
+                new_AV = @answer.votes.select{|vote| vote.voter_id == @current_user.id }
+                debugger
+                redirect_to action: 'destroy', id: new_AV[0].id
             else
                 render json: { errors: errors }
             end
@@ -45,6 +46,7 @@ class Api::AnswerVotesController < ApplicationController
     def destroy
         debugger
         @answer_vote = AnswerVote.find_by(id: params[:id])
+
         @current_user = current_user
         if @answer_vote.voter.id == @current_user.id
             @answer_vote.destroy
@@ -58,5 +60,4 @@ class Api::AnswerVotesController < ApplicationController
     def answer_vote_params
         params.require(:answer_vote).permit(:voter_id, :voted_answer_id, :direction)
     end
-
 end
