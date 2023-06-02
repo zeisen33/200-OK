@@ -15,18 +15,19 @@ class Api::AnswerVotesController < ApplicationController
     def create
         debugger
         @answer_vote = AnswerVote.new(answer_vote_params)
+        # @current_user = current_user
         @answer = @answer_vote.answer
         if @answer_vote.save
             render :show
         else
             errors = @answer_vote.errors.full_messages
-            if errors == ['Voter You have already voted on this answer']
-                @answer_vote.destroy
-                render json: { vote_status: 'destroyed' }
-                puts 'vote destroyed'
-            else
+            # if errors == ['Voter You have already voted on this answer']
+            #     @answer_vote.destroy
+            #     render json: { vote_status: 'destroyed' }
+            #     puts 'vote destroyed'
+            # else
                 render json: { errors: errors }
-            end
+            # end
         end
     end
 

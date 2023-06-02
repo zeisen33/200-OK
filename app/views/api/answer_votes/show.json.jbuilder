@@ -3,9 +3,10 @@ json.answer_vote do
 end
 
 json.voter do
-    json.extract! @answer.voter, :id, :display_name
+    json.extract! @answer_vote.voter, :id, :display_name
 end
 
+debugger
 json.answer do
-    json.extract! @answer.answer, :id, :title 
+    json.extract! @answer_vote.answer, :id, :body 
 end
