@@ -21,13 +21,11 @@ class Api::AnswerVotesController < ApplicationController
             render :show
         else
             errors = @answer_vote.errors.full_messages
-            # if errors == ['Voter You have already voted on this answer']
-            #     @answer_vote.destroy
-            #     render json: { vote_status: 'destroyed' }
-            #     puts 'vote destroyed'
-            # else
+            if errors == ['Voter You have already voted on this answer']
+                redirect_to destroy
+            else
                 render json: { errors: errors }
-            # end
+            end
         end
     end
 
@@ -45,10 +43,14 @@ class Api::AnswerVotesController < ApplicationController
     end
 
     def destroy
+        debugger
         @answer_vote = AnswerVote.find_by(id: params[:id])
         @current_user = current_user
         if @answer_vote.voter.id == @current_user.id
             @answer_vote.destroy
+            puts 'destroyed'
+        else  
+            puts 'users dont match'
         end
     end
 
