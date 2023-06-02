@@ -40,6 +40,7 @@ export const fetchAnswers = () => async (dispatch) => {
 }
 
 export const createAnswer = (answer) => async (dispatch) => {
+    // debugger
     const res = await csrfFetch(`/api/answers`, {
         method: 'POST',
         body: JSON.stringify(answer)

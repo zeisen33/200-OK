@@ -11,9 +11,11 @@ export const fetchVotes = async (answerId) => {
 export const createVote = async (vote) => {
     debugger
     const res = await csrfFetch(`/api/answer_votes`, {
-        method: 'POST'
+        method: 'POST',
+        body: JSON.stringify(vote)
     })
 
     const data = await res.json()
+    debugger
     return data
 }

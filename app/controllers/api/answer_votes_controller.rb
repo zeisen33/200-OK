@@ -1,5 +1,5 @@
 class Api::AnswerVotesController < ApplicationController
-    wrap_parameters include: AnswerVote.attribute_names + ['voterId, votedAnswerId, direction']
+    wrap_parameters include: AnswerVote.attribute_names + ['voterId', 'votedAnswerId']
     before_action :require_logged_in, only: [:create, :update, :destroy]
     
     def show
@@ -13,19 +13,29 @@ class Api::AnswerVotesController < ApplicationController
     end
 
     def create
-        @answer_vote = Answer.new(answer_params)
+        debugger
+        @answer_vote = AnswerVote.new(answer_vote_params)
+        @answer = @answer_vote.answer
         if @answer_vote.save
             render :show
         else
-            render json: { errors: @answer.errors.full_messages }
+            errors = @answer_vote.errors.full_messages
+            if errors == ['Voter You have already voted on this answer']
+                @answer_vote.destroy
+                render json: { vote_status: 'destroyed' }
+                puts 'vote destroyed'
+            else
+                render json: { errors: errors }
+            end
         end
     end
 
     def update
         @answer_vote = AnswerVote.find_by(id: params[:id])
+        @answer = @answer_vote.answer
         @current_user = current_user
         if @answer_vote.voter.id == @current_user.id
-            if @answer_vote.update(answer_params)
+            if @answer_vote.update(answer_vote_params)
                 render :show
             else
                 render json: { errors: @answer_vote.errors.full_messages }

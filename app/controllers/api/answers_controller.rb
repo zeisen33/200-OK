@@ -13,6 +13,7 @@ class Api::AnswersController < ApplicationController
     end
 
     def create
+        # debugger
         @answer = Answer.new(answer_params)
         # debugger
         # author = current_user

@@ -4,5 +4,5 @@ class AnswerVote < ApplicationRecord
     validates :direction, presence: true
 
     belongs_to :voter, foreign_key: :voter_id, class_name: :User
-    belongs_to :answer, foreign_key: :voted_answer, class_name: :Answer
+    belongs_to :answer, foreign_key: :voted_answer_id, class_name: :Answer
 end
