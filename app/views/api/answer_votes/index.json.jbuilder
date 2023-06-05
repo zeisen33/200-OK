@@ -5,7 +5,7 @@ json.answer_votes do
     @answer_votes.each do |vote|
         voters << vote.voter
         json.set! vote.id do
-            json.extract! vote, :id, :voter_id, :voted_answer_id, :created_at, :updated_at
+            json.extract! vote, :id, :voter_id, :direction, :voted_answer_id, :created_at, :updated_at
         end
     end
 end

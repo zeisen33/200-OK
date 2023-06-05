@@ -23,11 +23,11 @@ export const createVote = async (vote, answerId) => {
 export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
     // debugger
     const res = await fetchVotesByAnswerId(answerId)
-    console.log(res)
+    // console.log(res)
 
-    debugger
+    // debugger
     const votes = Object.values(res).length > 0 ? Object.values(res.answerVotes) : []
-    debugger
+    // debugger
     const vote = votes.filter(vote => vote.voterId === voterId)
     return vote
 }
