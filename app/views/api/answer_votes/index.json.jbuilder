@@ -1,4 +1,4 @@
-
+debugger
 voters = []
 
 json.answer_votes do

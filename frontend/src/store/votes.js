@@ -19,3 +19,11 @@ export const createVote = async (vote) => {
     debugger
     return data
 }
+
+export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
+    debugger
+    const res = await fetchVotes(answerId)
+
+    debugger
+    return res
+}

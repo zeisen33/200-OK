@@ -5,11 +5,14 @@ import { useSelector } from 'react-redux'
 const Voting = ({ props }) => {
     const voterId = useSelector(state => state.session ? state.session.user.id : null)
     const answerId = props.answer.id
+    // const currVote = props.answer.votes
+    // const currVote = props.answer.votes.select(vote => vote.voterId === voterId)
     // debugger
 
     useEffect(() => {
-        // debugger
-    }, [])
+        debugger
+        voteActions.fetchVoteByAnswerIdAndVoterId(answerId, voterId)
+    }, [answerId, voterId])
     
     const handleUp = (e) => {
         e.preventDefault()
