@@ -13,12 +13,16 @@ class Api::AnswerVotesController < ApplicationController
     end
 
     def create
+        # debugger
         @answer_vote = AnswerVote.new(answer_vote_params)
         @answer = @answer_vote.answer
+        debugger
         if @answer_vote.save
             render :show
         else
             errors = @answer_vote.errors.full_messages
+
+            # should never hit
             if errors == ['Voter You have already voted on this answer']
                 new_AV = @answer.votes.select{|vote| vote.voter_id == @current_user.id }
                 av = AnswerVote.find_by(id: new_AV[0])
@@ -38,19 +42,21 @@ class Api::AnswerVotesController < ApplicationController
         @answer_vote = AnswerVote.find_by(id: params[:id])
         @answer = @answer_vote.answer
         @current_user = current_user
-        if @answer_vote.voter.id == @current_user.id
+        if @answer_vote.voter_id == @current_user.id
             if @answer_vote.update(answer_vote_params)
                 render :show
             else
                 render json: { errors: @answer_vote.errors.full_messages }
             end
+        else  
+            render json: { errors: "cannot update a different user's vote" }
         end
     end
 
     def destroy
         @answer_vote = AnswerVote.find_by(id: params[:id])
         @current_user = current_user
-        if @answer_vote.voter.id == @current_user.id
+        if @answer_vote.voter_id == @current_user.id
             @answer_vote.destroy
             puts 'destroyed'
         else  

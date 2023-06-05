@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const Voting = ({ props }) => {
     const voterId = useSelector(state => state.session ? state.session.user.id : null)
     const answerId = props.answer.id
-    const [voted, setVoted] = useState(false)
+    const [voteChanged, setVoteChanged] = useState(false)
     const [currDir, setCurrDir] = useState(null)
     const [vote, setVote] = useState(null)
     // debugger
@@ -17,18 +17,27 @@ const Voting = ({ props }) => {
         setVote(v.length > 0 ? v[0] : null)
         setCurrDir(v.length > 0 ? v[0].direction : null)
         // await setCurrDir(vote.direction)
-    }, [voted])
+    }, [voteChanged])
     
-    const handleUp = (e) => {
+    const handleUp = async (e) => {
         e.preventDefault()
-        voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId)
-        setVoted(true)
+        if (vote) {
+            await voteActions.destroyVote(vote.id, answerId)
+        } else {
+            await voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId)
+        }
+        setVoteChanged(true)
     }
 
-    const handleDown = (e) => {
+    const handleDown = async (e) => {
         e.preventDefault()
-        voteActions.createVote({voterId, voted_AnswerId: answerId, direction: false}, answerId)
-        setVoted(true)
+        if (vote) {
+            await voteActions.destroyVote(vote.id, answerId)
+        } else {
+            debugger
+            await voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId)
+        }
+        setVoteChanged(true)
     }
 
     return (

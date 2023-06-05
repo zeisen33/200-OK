@@ -9,15 +9,21 @@ export const fetchVotesByAnswerId = async (answerId) => {
 }
 
 export const createVote = async (vote, answerId) => {
-    debugger
+    // debugger
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`, {
         method: 'POST',
         body: JSON.stringify(vote)
     })
 
     const data = await res.json()
-    debugger
+    // debugger
     return data
+}
+
+export const destroyVote = async (voteId, answerId) => {
+    const res = await csrfFetch(`/api/answers/${answerId}/answer_votes/${voteId}`, {
+        method: 'DELETE'
+    })
 }
 
 export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
