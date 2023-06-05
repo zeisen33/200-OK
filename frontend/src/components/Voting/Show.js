@@ -16,11 +16,11 @@ const Voting = ({ props }) => {
     
     const handleUp = (e) => {
         e.preventDefault()
-        voteActions.createVote({voterId, votedAnswerId: answerId, direction: true})
+        voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId)
     }
 
     const handleDown = (e) => {
-        e.preventDefault(voteActions.createVote({voterId, voted_AnswerId: answerId, direction: false})
+        e.preventDefault(voteActions.createVote({voterId, voted_AnswerId: answerId, direction: false}, answerId)
         )
     }
 

@@ -8,7 +8,7 @@ class Api::AnswerVotesController < ApplicationController
     end
     
     def index
-        @answer_votes = AnswerVote.all.includes(:voter_id, :voted_answer_id)
+        @answer_votes = AnswerVote.all.where({voted_answer_id: params[:answer_id]})
         render :index
     end
 

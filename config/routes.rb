@@ -11,8 +11,10 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     # resources :questions
     resources :questions, only: [:index, :create, :show, :update, :destroy]
-    resources :answers, only: [:index, :show, :create, :update, :destroy]
-    resources :answer_votes, only: [:index, :show, :create, :update, :destroy]
+    resources :answers, only: [:index, :show, :create, :update, :destroy] do
+      resources :answer_votes, only: [:index, :show, :create, :update, :destroy]
+    end
+    
     ## Don't need to nest answers under questions because I will have questionId when I need it
   end
 

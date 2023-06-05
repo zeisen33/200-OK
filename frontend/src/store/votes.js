@@ -1,16 +1,16 @@
 import csrfFetch from "./csrf";
 
 // doesn't put into store
-export const fetchVotes = async (answerId) => {
-    const res = await csrfFetch(`/api/answer_votes`)
+export const fetchVotesByAnswerId = async (answerId) => {
+    const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`)
 
     const data = await res.json()
     return data;
 }
 
-export const createVote = async (vote) => {
+export const createVote = async (vote, answerId) => {
     debugger
-    const res = await csrfFetch(`/api/answer_votes`, {
+    const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`, {
         method: 'POST',
         body: JSON.stringify(vote)
     })
@@ -21,9 +21,13 @@ export const createVote = async (vote) => {
 }
 
 export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
-    debugger
-    const res = await fetchVotes(answerId)
+    // debugger
+    const res = await fetchVotesByAnswerId(answerId)
+    console.log(res)
 
     debugger
-    return res
+    const votes = Object.values(res).length > 0 ? Object.values(res.answerVotes) : []
+    debugger
+    const vote = votes.filter(vote => vote.voterId === voterId)
+    return vote
 }
