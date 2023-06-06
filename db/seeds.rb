@@ -162,14 +162,14 @@ ApplicationRecord.transaction do
     })
 
 
-    puts 'Creating AnswerVotes...' ## 20 AnswerVotes
+    puts 'Creating AnswerVotes...' ## 30 AnswerVotes
     pairs = []
-    while pairs.length < 20
+    while pairs.length < 30
       user_id = rand(1..12)
       question_id = rand(1..11)
       answer_id = rand(1..13)
       dir = rand()
-      if dir > 0.4
+      if dir > 0.3
         direction = true
       else
         direction = false
