@@ -28,7 +28,9 @@ export const destroyVote = async (voteId, answerId) => {
 }
 
 export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
-    // debugger
+    if (!voterId) {
+        return []
+    }
     const res = await fetchVotesByAnswerId(answerId)
     // console.log(res)
 

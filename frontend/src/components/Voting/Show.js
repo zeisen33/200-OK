@@ -3,7 +3,7 @@ import * as voteActions from '../../store/votes'
 import { useSelector } from 'react-redux'
 
 const Voting = ({ props }) => {
-    const voterId = useSelector(state => state.session ? state.session.user.id : null)
+    const voterId = useSelector(state => state.session.user ? state.session.user.id : null)
     const answerId = props.answer.id
     const [voteChanged, setVoteChanged] = useState(false)
     const [currDir, setCurrDir] = useState(null)
@@ -28,23 +28,31 @@ const Voting = ({ props }) => {
         // debugger
         e.preventDefault()
         // debugger
-        if (vote) {
-            await voteActions.destroyVote(vote.id, answerId)
+        if (voterId) {
+            if (vote) {
+                await voteActions.destroyVote(vote.id, answerId)
+            } else {
+                await voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId)
+            }
+            setVoteChanged(true)
         } else {
-            await voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId)
+            alert('You must be logged in to vote')
         }
-        setVoteChanged(true)
     }
 
     const handleDown = async (e) => {
         e.preventDefault()
-        if (vote) {
-            await voteActions.destroyVote(vote.id, answerId)
+        if (voterId) {
+            if (vote) {
+                await voteActions.destroyVote(vote.id, answerId)
+            } else {
+                // debugger
+                await voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId)
+            }
+            setVoteChanged(true)
         } else {
-            // debugger
-            await voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId)
+            alert('You must be logged in to vote')
         }
-        setVoteChanged(true)
     }
 
     return (
