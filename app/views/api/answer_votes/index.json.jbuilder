@@ -13,7 +13,7 @@ end
 json.voters do
     voters.each do |voter|
         json.set! voter.id do 
-            json.extract! voter, :id, :display_name
+            json.extract! voter, :id #:display_name
         end
     end
 end

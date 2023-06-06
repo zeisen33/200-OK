@@ -2,10 +2,12 @@ import AnswersShow from "./AnswersShow"
 import { useEffect } from "react"
 import * as userActions from '../../store/users'
 import { useDispatch } from "react-redux"
+import * as voteActions from '../../store/votes'
 
 const AnswersList = (props) => {
     const dispatch = useDispatch();
     const answers = props.answers
+    // debugger
 
     const answersMap = () => {
         // debugger
@@ -25,6 +27,7 @@ const AnswersList = (props) => {
     useEffect(() => {
         // debugger
         dispatch(userActions.fetchAllUsers())
+
     }, [])
 
     // debugger
