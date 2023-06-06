@@ -25,8 +25,13 @@ ApplicationRecord.transaction do
       email: 'demo@user.io', 
       password: 'password'
     )
+    User.create!(
+      display_name: 'zane',
+      email: 'zane@user.io',
+      password: 'password'
+    )
   
-    # More users
+    # More users. 12 users
     10.times do 
       User.create!({
         display_name: Faker::Internet.unique.username(specifier: 3),
@@ -35,7 +40,7 @@ ApplicationRecord.transaction do
       }) 
     end
 
-    puts "Creating questions..."
+    puts "Creating questions..." # 11 questions
     Question.create!({
       asker_id: 1,
       title: 'How do you String Interpolate in Ruby',
@@ -89,7 +94,7 @@ ApplicationRecord.transaction do
       body: "I can type a short phrase and in less than a second millions of results are loaded. How is that possible?"
     })
 
-    puts "Creating answers..."
+    puts "Creating answers..." # 13 answers
     Answer.create!({
       question_id: 1,
       author_id: 1,
@@ -156,5 +161,29 @@ ApplicationRecord.transaction do
       body: "This is a very complicated topic. It is a whole field of knowledge, called Search Engine Optimaztion (SEO). It comes down to two very important main factors. First, computers are very, very fast. One second feels fast for you, but computers can do thousands and thousands of operations in that second. The other important factor is that nearly all searches have been searched before, or a similar search has been conducted before. This allows search engines to store a search and its results. Now they can look through a database of previous search results, instead of coming up with a new search result every time."
     })
 
+
+    puts 'Creating AnswerVotes...' ## 20 AnswerVotes
+    pairs = []
+    while pairs.length < 20
+      user_id = rand(1..12)
+      question_id = rand(1..11)
+      answer_id = rand(1..13)
+      dir = rand()
+      if dir > 0.4
+        direction = true
+      else
+        direction = false
+      end
+
+      begin AnswerVote.create!({
+        direction: direction,
+        voter_id: user_id,
+        voted_answer_id: answer_id
+      })
+        pairs << [user_id, answer_id]
+      rescue
+        break
+      end
+    end
     puts "Done!"
   end

@@ -10,11 +10,11 @@ export const fetchVotesByAnswerId = async (answerId) => {
 
 export const fetchVoteSum = async (answerId) => {
     const votesAndVoters = await fetchVotesByAnswerId(answerId)
-    debugger
+    // debugger
     const votes = Object.values(votesAndVoters).length > 0 ? Object.values(votesAndVoters.answerVotes) : []
     const upVotes = votes.filter(vote => vote.direction === true)
     const downVotes = votes.filter(vote => vote.direction === false)
-    debugger
+    // debugger
     return upVotes.length - downVotes.length
 }
 
