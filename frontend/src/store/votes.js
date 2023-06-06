@@ -8,6 +8,16 @@ export const fetchVotesByAnswerId = async (answerId) => {
     return data;
 }
 
+export const fetchVoteSum = async (answerId) => {
+    const votesAndVoters = await fetchVotesByAnswerId(answerId)
+    debugger
+    const votes = Object.values(votesAndVoters).length > 0 ? Object.values(votesAndVoters.answerVotes) : []
+    const upVotes = votes.filter(vote => vote.direction === true)
+    const downVotes = votes.filter(vote => vote.direction === false)
+    debugger
+    return upVotes.length - downVotes.length
+}
+
 export const createVote = async (vote, answerId) => {
     // debugger
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`, {

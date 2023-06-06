@@ -38,20 +38,21 @@ class Api::AnswerVotesController < ApplicationController
         end
     end
 
-    def update
-        @answer_vote = AnswerVote.find_by(id: params[:id])
-        @answer = @answer_vote.answer
-        @current_user = current_user
-        if @answer_vote.voter_id == @current_user.id
-            if @answer_vote.update(answer_vote_params)
-                render :show
-            else
-                render json: { errors: @answer_vote.errors.full_messages }
-            end
-        else  
-            render json: { errors: "cannot update a different user's vote" }
-        end
-    end
+    ### Not used, just destroyed and created to update. Easier
+    # def update
+    #     @answer_vote = AnswerVote.find_by(id: params[:id])
+    #     @answer = @answer_vote.answer
+    #     @current_user = current_user
+    #     if @answer_vote.voter_id == @current_user.id
+    #         if @answer_vote.update(answer_vote_params)
+    #             render :show
+    #         else
+    #             render json: { errors: @answer_vote.errors.full_messages }
+    #         end
+    #     else  
+    #         render json: { errors: "cannot update a different user's vote" }
+    #     end
+    # end
 
     def destroy
         @answer_vote = AnswerVote.find_by(id: params[:id])

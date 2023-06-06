@@ -8,7 +8,7 @@ const Voting = ({ props }) => {
     const [voteChanged, setVoteChanged] = useState(false)
     const [currDir, setCurrDir] = useState(null)
     const [vote, setVote] = useState(null)
-    // debugger
+    const [score, setScore] = useState(0)
 
     useEffect(() => {
         const vFunction = async () => {
@@ -18,10 +18,18 @@ const Voting = ({ props }) => {
             setCurrDir(v.length > 0 ? v[0].direction : null)
         }
         // debugger
+        const voteSum = async () => {
+            // debugger
+            const voteScore = await voteActions.fetchVoteSum(answerId)
+            // debugger
+            setScore(voteScore)
+        }
 
-        // await setCurrDir(vote.direction)
+        // debugger
         vFunction()
+        voteSum()
         setVoteChanged(false)
+        // debugger
     }, [voteChanged])
     
     const handleUp = async (e) => {
@@ -30,10 +38,13 @@ const Voting = ({ props }) => {
         // debugger
         if (voterId) {
             if (vote) {
+                // debugger
                 await voteActions.destroyVote(vote.id, answerId)
             } else {
+                // debugger
                 await voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId)
             }
+            // debugger
             setVoteChanged(true)
         } else {
             alert('You must be logged in to vote')
@@ -59,7 +70,7 @@ const Voting = ({ props }) => {
         <div>Hello from Voting
             <button onClick={handleUp}>UpVote</button>
             <span>CurrDir: {`${currDir}`}</span>
-            <span>Score: </span>
+            <span>Score: {score}</span>
             <button onClick={handleDown}>DownVote</button>
         </div>
     )
