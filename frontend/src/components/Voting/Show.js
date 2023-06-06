@@ -10,17 +10,24 @@ const Voting = ({ props }) => {
     const [vote, setVote] = useState(null)
     // debugger
 
-    useEffect(async () => {
+    useEffect(() => {
+        const vFunction = async () => {
+            const v = await voteActions.fetchVoteByAnswerIdAndVoterId(answerId, voterId)
+            // debugger
+            setVote(v.length > 0 ? v[0] : null)
+            setCurrDir(v.length > 0 ? v[0].direction : null)
+        }
         // debugger
-        const v = await voteActions.fetchVoteByAnswerIdAndVoterId(answerId, voterId)
-        // debugger
-        setVote(v.length > 0 ? v[0] : null)
-        setCurrDir(v.length > 0 ? v[0].direction : null)
+
         // await setCurrDir(vote.direction)
+        vFunction()
+        setVoteChanged(false)
     }, [voteChanged])
     
     const handleUp = async (e) => {
+        // debugger
         e.preventDefault()
+        // debugger
         if (vote) {
             await voteActions.destroyVote(vote.id, answerId)
         } else {
@@ -34,7 +41,7 @@ const Voting = ({ props }) => {
         if (vote) {
             await voteActions.destroyVote(vote.id, answerId)
         } else {
-            debugger
+            // debugger
             await voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId)
         }
         setVoteChanged(true)

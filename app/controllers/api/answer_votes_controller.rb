@@ -16,25 +16,25 @@ class Api::AnswerVotesController < ApplicationController
         # debugger
         @answer_vote = AnswerVote.new(answer_vote_params)
         @answer = @answer_vote.answer
-        debugger
+        # debugger
         if @answer_vote.save
             render :show
         else
             errors = @answer_vote.errors.full_messages
 
             # should never hit
-            if errors == ['Voter You have already voted on this answer']
-                new_AV = @answer.votes.select{|vote| vote.voter_id == @current_user.id }
-                av = AnswerVote.find_by(id: new_AV[0])
-                av.destroy
-                if @answer_vote.save
-                    render show
-                else
-                    render json: { destroyed: true }
-                end
-            else
-                render json: { errors: errors }
-            end
+            # if errors == ['Voter You have already voted on this answer']
+            #     new_AV = @answer.votes.select{|vote| vote.voter_id == @current_user.id }
+            #     av = AnswerVote.find_by(id: new_AV[0])
+            #     av.destroy
+            #     if @answer_vote.save
+            #         render show
+            #     else
+            #         render json: { destroyed: true }
+            #     end
+            # else
+            #     render json: { errors: errors }
+            # end
         end
     end
 

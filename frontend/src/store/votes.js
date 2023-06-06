@@ -21,6 +21,7 @@ export const createVote = async (vote, answerId) => {
 }
 
 export const destroyVote = async (voteId, answerId) => {
+    // debugger
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes/${voteId}`, {
         method: 'DELETE'
     })
