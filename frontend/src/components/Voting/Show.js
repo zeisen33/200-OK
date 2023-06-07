@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import * as voteActions from '../../store/votes'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Voting = ({ props }) => {
+    const dispatch = useDispatch();
     const voterId = useSelector(state => state.session.user ? state.session.user.id : null)
     const answerId = props.answer.id
     const [voteChanged, setVoteChanged] = useState(false)
@@ -20,7 +21,7 @@ const Voting = ({ props }) => {
         // debugger
         const voteSum = async () => {
             // debugger
-            const voteScore = await voteActions.fetchVoteSum(answerId)
+            const voteScore = await dispatch(voteActions.fetchVoteSum(answerId))
             // debugger
             setScore(voteScore)
         }
