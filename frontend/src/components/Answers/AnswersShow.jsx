@@ -7,7 +7,7 @@ import Voting from '../Voting/Show'
 const AnswersShow = (props) => {
     const dispatch = useDispatch();
     const answer = props.answer
-    const votes = props.votes
+    // const votes = props.votes
     // debugger
     const authorId = answer.authorId
     const answerAuthor = useSelector((state) => {
@@ -15,6 +15,7 @@ const AnswersShow = (props) => {
             return state.users[authorId]
         }
     })
+    // console.log(props)
 
     // debugger
     return (

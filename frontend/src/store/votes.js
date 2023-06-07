@@ -66,19 +66,18 @@ export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
 }
 
 
-// MOVED TO ANSWERS REDUCER
-// const voteSumReducer = (state={}, action) => {
-//     // debugger
-//     Object.freeze(state)
-//     let nextState = { ...state }
-//     switch (action.type) {
-//         case RECEIVE_VOTESUM:
-//             // debugger
-//             nextState[`answerId=${action.answerId}`] = action.sum
-//             return nextState
-//         default:
-//             return nextState
-//     }
-// }
+const votesReducer = (state={}, action) => {
+    // debugger
+    Object.freeze(state)
+    let nextState = { ...state }
+    switch (action.type) {
+        case RECEIVE_VOTESUM:
+            // debugger
+            nextState[`answerId=${action.answerId}`] = action.sum
+            return nextState
+        default:
+            return nextState
+    }
+}
 
-// export default voteSumReducer
+export default votesReducer

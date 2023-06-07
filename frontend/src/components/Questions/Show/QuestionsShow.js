@@ -82,7 +82,7 @@ const QuestionsShow = () => {
                         <h6 id='hSix'><span id='highlightedLightBlue'>asked by {asker.displayName}</span></h6>
                     </div>
                     <h2 id='hTwo'>{(numOfAnswers === 1 ? 1 + ' Answer' : numOfAnswers + ' Answers')}</h2>
-                    <AnswersList answers={answers} />
+                    <AnswersList questionId={questionId} />
                     <AnswerForm />
                     <div id='NotAnswerCont'>
                         <span>

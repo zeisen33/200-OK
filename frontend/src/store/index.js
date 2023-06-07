@@ -5,15 +5,15 @@ import questionsReducer from './questions.js'
 import usersReducer from './users'
 import answersReducer from './answers'
 import searchReducer from './search'
-import voteSumReducer from './votes'
+import votesReducer from './votes'
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     questions: questionsReducer,
     users: usersReducer,
     answers: answersReducer,
-    search: searchReducer
-    // votes: voteSumReducer
+    search: searchReducer,
+    votes: votesReducer
 })
 
 let enhancer;

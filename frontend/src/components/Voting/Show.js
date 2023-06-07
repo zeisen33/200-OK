@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './Show.css'
 
 const Voting = ({ props }) => {
+    // debugger
     const dispatch = useDispatch();
     const voterId = useSelector(state => state.session.user ? state.session.user.id : null)
     const answerId = props.answer.id
@@ -32,7 +33,7 @@ const Voting = ({ props }) => {
         voteSum()
         setVoteChanged(false)
         // debugger
-    }, [voteChanged])
+    }, [voteChanged, props.answer])
     
     const handleUp = async (e) => {
         // debugger
@@ -103,7 +104,7 @@ const Voting = ({ props }) => {
     return (
         <div id='VotingControls'>
             {upButton()}
-            <span id='score'>{score}</span>
+            <span id='score'>{props.answer.voteSum}</span>
             {downButton()}
         </div>
     )
