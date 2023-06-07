@@ -12,8 +12,8 @@ const rootReducer = combineReducers({
     questions: questionsReducer,
     users: usersReducer,
     answers: answersReducer,
-    search: searchReducer,
-    votes: voteSumReducer
+    search: searchReducer
+    // votes: voteSumReducer
 })
 
 let enhancer;

@@ -7,13 +7,14 @@ import * as voteActions from '../../store/votes'
 const AnswersList = (props) => {
     const dispatch = useDispatch();
     const answers = props.answers
+    const sortedAnswers = answers.sort((a,b) => a.voteSum - b.voteSum)
     // debugger
 
     const answersMap = () => {
-        // debugger
+        debugger
         return (
             <div>
-                {answers.map((answer) => {
+                {sortedAnswers.map((answer) => {
                     return (
                         <ul>
                             <AnswersShow answer={answer} />
