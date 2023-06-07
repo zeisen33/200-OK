@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as voteActions from '../../store/votes'
 import { useDispatch, useSelector } from 'react-redux'
+import './Show.css'
 
 const Voting = ({ props }) => {
     const dispatch = useDispatch();
@@ -8,7 +9,7 @@ const Voting = ({ props }) => {
     const answerId = props.answer.id
     const [voteChanged, setVoteChanged] = useState(false)
     const [currDir, setCurrDir] = useState(null)
-    const [vote, setVote] = useState(null)
+    const [vote, setVote] = useState('none')
     const [score, setScore] = useState(0)
 
     useEffect(() => {
@@ -16,7 +17,7 @@ const Voting = ({ props }) => {
             const v = await voteActions.fetchVoteByAnswerIdAndVoterId(answerId, voterId)
             // debugger
             setVote(v.length > 0 ? v[0] : null)
-            setCurrDir(v.length > 0 ? v[0].direction : null)
+            setCurrDir(v.length > 0 ? v[0].direction : 'none')
         }
         // debugger
         const voteSum = async () => {
@@ -67,12 +68,45 @@ const Voting = ({ props }) => {
         }
     }
 
+    const upTri = () => {
+        if (currDir === true) {
+            return <div className='tri-up' id='tri-up-Curr'></div>
+        } else {
+            return <div className='tri-up' id='tri-up'></div>
+        }
+    }
+
+    const downTri = () => {
+        if (currDir === false) {
+            return <div className='tri-down' id='tri-down-Curr'></div>
+        } else {
+            return <div className='tri-down' id='tri-down'></div>
+        }
+    }
+
+    const upButton = () => {
+        if (currDir === true) {
+            return <button className='VoteButton' id='upVoteCurr' onClick={handleUp}>{upTri()}</button>
+        } else {
+            return <button className='VoteButton' id='upVote' onClick={handleUp}>{upTri()}</button>
+        }
+    }
+
+    const downButton = () => {
+        if (currDir === false) {
+            return <button className='VoteButton' id='downVoteCurr' onClick={handleDown}>{downTri()}</button>
+        } else {
+            return <button className='VoteButton' id='downVote' onClick={handleDown}>{downTri()}</button>
+        }
+    }
+
     return (
-        <div>Hello from Voting
-            <button onClick={handleUp}>UpVote</button>
-            <span>CurrDir: {`${currDir}`}</span>
-            <span>Score: {score}</span>
-            <button onClick={handleDown}>DownVote</button>
+        <div id='VotingControls'>
+            {upButton()}
+            <br/>
+            <span>{score}</span>
+            <br/>
+            {downButton()}
         </div>
     )
 } 

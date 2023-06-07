@@ -1,7 +1,7 @@
 #AnswerShowCont {
     margin-top: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     border-bottom: 1px solid rgba(128, 128, 128, 0.284)
 }
