@@ -68,14 +68,14 @@ const NavBar = () => {
 
 return (
     <div id='OuterContainer' >
-        <h1 className='NavBarItem' id="NavBarContainer200">
+        <div className='NavBarItem' id="NavBarContainer200">
             <Link to='/' id='NavBarLogo200'>200 OK</Link>
-        </h1>
+        </div>
         <div id='GitLinkContainer' className='NavBarItem' >
             <a href='https://github.com/zeisen33/Stack-Overflow' id='GitLink'>Site GitHub Repo</a>
         </div>
         <div id='SearchContainer' className={['NavBarItem', 'input'].join(' ')}>
-            <form onSubmit={handleSubmit}>
+            <form id='SearchForm' onSubmit={handleSubmit}>
                 <input id='NavSearchBar' type='text' placeholder='Search...' value={searchStr} onChange={handleSearchChange} />
             </form>
         </div>
