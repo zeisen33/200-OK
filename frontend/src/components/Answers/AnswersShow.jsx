@@ -20,9 +20,11 @@ const AnswersShow = (props) => {
     return (
         <div id='AnswerShowCont'>
             <Voting props={props}/>
-            <h1 id='answerBody'>{answer.body}</h1>
-            <div id='AnsweredByCont'>
-                <h3>Answered by {answerAuthor?.displayName}</h3>
+            <div id='AnswerContent'>
+                <h1 id='answerBody'>{answer.body}</h1>
+                <div id='AnsweredByCont'>
+                    <h3>Answered by {answerAuthor?.displayName}</h3>
+                </div>
             </div>
         </div>
     )

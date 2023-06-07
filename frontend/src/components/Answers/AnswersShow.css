@@ -2,8 +2,15 @@
     margin-top: 15px;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     width: 100%;
     border-bottom: 1px solid rgba(128, 128, 128, 0.284)
+}
+
+#AnswerContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 #AnsweredByCont {
@@ -12,7 +19,8 @@
     flex-direction: row;
     align-items: right;
     justify-content: right;
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #answerBody {

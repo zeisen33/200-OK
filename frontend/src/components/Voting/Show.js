@@ -103,9 +103,7 @@ const Voting = ({ props }) => {
     return (
         <div id='VotingControls'>
             {upButton()}
-            <br/>
-            <span>{score}</span>
-            <br/>
+            <span id='score'>{score}</span>
             {downButton()}
         </div>
     )
