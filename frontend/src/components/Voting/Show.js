@@ -9,20 +9,28 @@ const Voting = ({ answer }) => {
     const voterId = useSelector(state => state.session.user ? state.session.user.id : null)
     const answerId = answer.id
     const [voteChanged, setVoteChanged] = useState(false)
-    const [currDir, setCurrDir] = useState(null)
-    const [vote, setVote] = useState('none')
-    const [score, setScore] = useState(0)
     const votes = useSelector(state => state ? state.votes.answerVotes : [])
-    console.log(votes)
-    console.log(typeof votes)
-    if (votes) {
-        console.log(Object.values(votes))
+    const thisAnswersVotes = votes ? Object.values(votes).filter(vote => vote.votedAnswerId === answerId) : []
+   
+    const thisUsersVote = thisAnswersVotes.filter(vote => vote.voterId === voterId)[0]
+    console.log(thisUsersVote)
+    
+    const findCurrDir = () => {
+        if (thisUsersVote) {
+            return thisUsersVote.direction
+        } else {
+            return 'none'
+        }
     }
 
-    // const answers = useSelector((state) => {
-    //     return state.answers
-    // })
-    // console.log(answers)
+    const currDir = findCurrDir()
+    console.log(currDir)
+    // const [currDir, setCurrDir] = useState(null)
+    const upVotes = thisAnswersVotes.filter(vote => vote.direction === true)
+    const downVotes = thisAnswersVotes.filter(vote => vote.direction === false)
+    const score = upVotes.length - downVotes.length
+
+    // debugger
 
     useEffect(() => {
         const fetchVotes = async () => {
@@ -43,24 +51,24 @@ const Voting = ({ answer }) => {
         // // debugger
         // vFunction()
         // voteSum()
-        // setVoteChanged(false)
         // // debugger
-
+        
+        // setVoteChanged(false)
         fetchVotes()
         // debugger
     }, [voteChanged, answer])
     
-    const handleUp = async (e) => {
+    const handleUp = (e) => {
         // debugger
         e.preventDefault()
         // debugger
         if (voterId) {
-            if (vote) {
+            if (currDir !== 'none') {
                 // debugger
-                await voteActions.destroyVote(vote.id, answerId)
+                dispatch(voteActions.destroyVote(thisUsersVote.id, answerId))
             } else {
                 // debugger
-                await voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId)
+                dispatch(voteActions.createVote({voterId, votedAnswerId: answerId, direction: true}, answerId))
             }
             // debugger
             setVoteChanged(true)
@@ -69,14 +77,16 @@ const Voting = ({ answer }) => {
         }
     }
 
-    const handleDown = async (e) => {
+    const handleDown = (e) => {
         e.preventDefault()
+        debugger
         if (voterId) {
-            if (vote) {
-                await voteActions.destroyVote(vote.id, answerId)
+            if (currDir !== 'none') {
+                debugger
+                dispatch(voteActions.destroyVote(thisUsersVote.id, answerId))
             } else {
-                // debugger
-                await voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId)
+                debugger
+                dispatch(voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId))
             }
             setVoteChanged(true)
         } else {
@@ -119,7 +129,7 @@ const Voting = ({ answer }) => {
     return (
         <div id='VotingControls'>
             {upButton()}
-            <span id='score'>{answer.voteSum}</span>
+            <span id='score'>{score}</span>
             {downButton()}
         </div>
     )

@@ -27,19 +27,6 @@ export const removeVote = (voteId) => {
 }
 
 
-// export const fetchVoteSum = (answerId) => async (dispatch) => {
-//     const votesAndVoters = await fetchVotesByAnswerId(answerId)
-//     // debugger
-//     const votes = Object.values(votesAndVoters).length > 0 ? Object.values(votesAndVoters.answerVotes) : []
-//     const upVotes = votes.filter(vote => vote.direction === true)
-//     const downVotes = votes.filter(vote => vote.direction === false)
-//     // debugger
-//     const sum = upVotes.length - downVotes.length
-//     dispatch(receiveVoteSum(answerId, sum))
-//     return sum
-// }
-
-
 export const fetchVotesByAnswerId = (answerId) => async (dispatch) => {
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`)
 
@@ -50,15 +37,15 @@ export const fetchVotesByAnswerId = (answerId) => async (dispatch) => {
 
 
 export const createVote = (vote, answerId) => async (dispatch) => {
-    // debugger
+    debugger
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`, {
         method: 'POST',
         body: JSON.stringify(vote)
     })
 
     const data = await res.json()
+    debugger
     dispatch(receiveVote(data))
-    return data
 }
 
 export const destroyVote = (voteId, answerId) => async (dispatch) => {
@@ -91,15 +78,19 @@ const votesReducer = (state={}, action) => {
     let nextState = { ...state }
     switch (action.type) {
         case RECEIVE_VOTES:
-            debugger
+            // debugger
             nextState["answerVotes"] = { ...state.answerVotes, ...action.votes.answerVotes }
             return nextState
         case RECEIVE_VOTE:
             // debugger
-            nextState[action.vote.id] = action.vote
+            nextState["answerVotes"][action.vote.answerVote.id] = action.vote.answerVote
+            // nextState["answerVotes"] = { ...state.answerVotes, ...action.vote.answerVote }
+
+            // nextState[action.vote.answerVote.id] = action.vote.answerVote
             return nextState
         case REMOVE_VOTE:
-            delete nextState[action.voteId]
+            // debugger
+            delete nextState["answerVotes"][action.voteId]
             return nextState
         default:
             return nextState
