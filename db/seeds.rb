@@ -26,8 +26,8 @@ ApplicationRecord.transaction do
       password: 'password'
     )
     User.create!(
-      display_name: 'zane',
-      email: 'zane@user.io',
+      display_name: 'rick',
+      email: 'rick@user.io',
       password: 'password'
     )
   

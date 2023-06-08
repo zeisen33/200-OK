@@ -12,7 +12,8 @@ const AnswersList = ({ questionId }) => {
     // debugger
     
     const answers = useSelector((state) => {
-        return Object.values(state.answers)
+        // debugger
+        return Object.values(state.answers).filter(answer => answer.questionId == questionId)
     })
 
     // const sortedAnswers = Object.values(answers).sort((a,b) =>  b.voteSum - a.voteSum)
