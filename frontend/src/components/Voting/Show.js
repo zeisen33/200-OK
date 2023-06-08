@@ -13,7 +13,7 @@ const Voting = ({ answer }) => {
     const thisAnswersVotes = votes ? Object.values(votes).filter(vote => vote.votedAnswerId === answerId) : []
    
     const thisUsersVote = thisAnswersVotes.filter(vote => vote.voterId === voterId)[0]
-    console.log(thisUsersVote)
+    // console.log(thisUsersVote)
     
     const findCurrDir = () => {
         if (thisUsersVote) {
@@ -24,7 +24,7 @@ const Voting = ({ answer }) => {
     }
 
     const currDir = findCurrDir()
-    console.log(currDir)
+    // console.log(currDir)
     // const [currDir, setCurrDir] = useState(null)
     const upVotes = thisAnswersVotes.filter(vote => vote.direction === true)
     const downVotes = thisAnswersVotes.filter(vote => vote.direction === false)
@@ -36,24 +36,7 @@ const Voting = ({ answer }) => {
         const fetchVotes = async () => {
             await dispatch(voteActions.fetchVotesByAnswerId(answerId))
         } 
-        // const vFunction = async () => {
-        //     const v = await voteActions.fetchVoteByAnswerIdAndVoterId(answerId, voterId)
-        //     // debugger
-        //     setVote(v.length > 0 ? v[0] : null)
-        //     setCurrDir(v.length > 0 ? v[0].direction : 'none')
-        // }
         // debugger
-        const voteSum = async () => {
-            // debugger
-            // setScore(voteScore)
-        }
-
-        // // debugger
-        // vFunction()
-        // voteSum()
-        // // debugger
-        
-        // setVoteChanged(false)
         fetchVotes()
         // debugger
     }, [voteChanged, answer])
