@@ -1,38 +1,55 @@
 import csrfFetch from "./csrf";
 
-export const RECEIVE_VOTESUM = 'voteSum'
-
-export const receiveVoteSum = (answerId, sum) => {
+export const RECEIVE_VOTE = 'createVote'
+export const RECEIVE_VOTES = 'receiveVotes'
+export const REMOVE_VOTE = 'removeVote'
+ 
+export const receiveVote = (vote) => {
     // debugger
     return ({
-        type: RECEIVE_VOTESUM,
-        answerId: answerId,
-        sum: sum
+        type: RECEIVE_VOTE,
+        vote
     })
 }
-export const fetchVoteSum = (answerId) => async (dispatch) => {
-    const votesAndVoters = await fetchVotesByAnswerId(answerId)
-    // debugger
-    const votes = Object.values(votesAndVoters).length > 0 ? Object.values(votesAndVoters.answerVotes) : []
-    const upVotes = votes.filter(vote => vote.direction === true)
-    const downVotes = votes.filter(vote => vote.direction === false)
-    // debugger
-    const sum = upVotes.length - downVotes.length
-    dispatch(receiveVoteSum(answerId, sum))
-    return sum
+
+export const receiveVotes = (votes) => {
+    return ({
+        type: RECEIVE_VOTES,
+        votes
+    })
+}
+
+export const removeVote = (voteId) => {
+    return ({
+        type: REMOVE_VOTE,
+        voteId
+    })
 }
 
 
-// doesn't put into store
-export const fetchVotesByAnswerId = async (answerId) => {
+// export const fetchVoteSum = (answerId) => async (dispatch) => {
+//     const votesAndVoters = await fetchVotesByAnswerId(answerId)
+//     // debugger
+//     const votes = Object.values(votesAndVoters).length > 0 ? Object.values(votesAndVoters.answerVotes) : []
+//     const upVotes = votes.filter(vote => vote.direction === true)
+//     const downVotes = votes.filter(vote => vote.direction === false)
+//     // debugger
+//     const sum = upVotes.length - downVotes.length
+//     dispatch(receiveVoteSum(answerId, sum))
+//     return sum
+// }
+
+
+export const fetchVotesByAnswerId = (answerId) => async (dispatch) => {
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`)
 
     const data = await res.json()
+    dispatch(receiveVotes(data))
     return data;
 }
 
 
-export const createVote = async (vote, answerId) => {
+export const createVote = (vote, answerId) => async (dispatch) => {
     // debugger
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`, {
         method: 'POST',
@@ -40,15 +57,17 @@ export const createVote = async (vote, answerId) => {
     })
 
     const data = await res.json()
-    // debugger
+    dispatch(receiveVote(data))
     return data
 }
 
-export const destroyVote = async (voteId, answerId) => {
+export const destroyVote = (voteId, answerId) => async (dispatch) => {
     // debugger
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes/${voteId}`, {
         method: 'DELETE'
     })
+
+    dispatch(removeVote(voteId))
 }
 
 export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
@@ -71,9 +90,16 @@ const votesReducer = (state={}, action) => {
     Object.freeze(state)
     let nextState = { ...state }
     switch (action.type) {
-        case RECEIVE_VOTESUM:
+        case RECEIVE_VOTES:
+            debugger
+            nextState["answerVotes"] = { ...state.answerVotes, ...action.votes.answerVotes }
+            return nextState
+        case RECEIVE_VOTE:
             // debugger
-            nextState[`answerId=${action.answerId}`] = action.sum
+            nextState[action.vote.id] = action.vote
+            return nextState
+        case REMOVE_VOTE:
+            delete nextState[action.voteId]
             return nextState
         default:
             return nextState

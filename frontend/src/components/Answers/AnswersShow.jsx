@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import './AnswersShow.css'
 import Voting from '../Voting/Show'
+import * as voteActions from '../../store/votes'
 
 const AnswersShow = (props) => {
     const dispatch = useDispatch();
@@ -18,9 +19,18 @@ const AnswersShow = (props) => {
     // console.log(props)
 
     // debugger
+
+    useEffect(() => {
+        const fetchVotes = async () => {
+            await dispatch(voteActions.fetchVotesByAnswerId(answer.id))
+        }
+        // debugger
+    },[answer])
+
+
     return (
         <div id='AnswerShowCont'>
-            <Voting props={props}/>
+            <Voting answer={answer}/>
             <div id='AnswerContent'>
                 <h1 id='answerBody'>{answer.body}</h1>
                 <div id='AnsweredByCont'>

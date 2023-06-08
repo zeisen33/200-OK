@@ -12,19 +12,20 @@ const AnswersList = ({ questionId }) => {
     // debugger
     
     const answers = useSelector((state) => {
-        return state.answers
+        return Object.values(state.answers)
     })
 
-    const sortedAnswers = Object.values(answers).sort((a,b) =>  b.voteSum - a.voteSum)
+    // const sortedAnswers = Object.values(answers).sort((a,b) =>  b.voteSum - a.voteSum)
     
     // const sortedAnswers = answers.sort((a,b) =>  b.voteSum - a.voteSum)
-    console.log(sortedAnswers)
+    // console.log(sortedAnswers)
 
     const answersMap = () => {
         // debugger
         return (
             <div>
-                {sortedAnswers.map((answer) => {
+                {answers.map((answer) => {
+                    // debugger
                     return (
                         <ul>
                             <AnswersShow answer={answer} />

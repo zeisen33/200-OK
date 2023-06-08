@@ -1,5 +1,4 @@
 import csrfFetch from "./csrf"
-import { RECEIVE_VOTESUM } from "./votes"
 
 export const RECEIVE_ANSWER = '/api/RECEIVE_ANSWER'
 export const RECEIVE_ANSWERS = '/api/RECEIVE_ANSWERS'
@@ -97,9 +96,6 @@ const answersReducer = (state={}, action) => {
             nextState = { ...state, ...action.answers}
         case REMOVE_ANSWER:
             delete nextState[action.answerId]
-            return nextState;
-        case RECEIVE_VOTESUM:
-            nextState[action.answerId]['voteSum'] = action.sum
             return nextState;
         default: 
             return nextState
