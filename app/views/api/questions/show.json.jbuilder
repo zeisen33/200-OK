@@ -19,17 +19,4 @@ json.answers do
             json.extract! answer, :body, :id, :question_id, :author_id, :votes
         end
     end
-    # @question.answers.sort_by {|answer|
-    #     debugger
-    #     count = 0
-    #     answer.votes.each do |vote|
-    #         debugger
-    #         if vote.direction == true
-    #             count += 1
-    #         elsif vote.direction == false
-    #             count -= 1
-    #         end
-    #     end
-    # }
-    # debugger
 end
