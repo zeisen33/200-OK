@@ -37,9 +37,9 @@ const Search = () => {
 
     const resultsList = () => {
         // return <>Hello from resultsList</>
-        debugger
+        // debugger
         if (!!searchResults) {
-            debugger
+            // debugger
             return (
                 Object.values(searchResults).map((result) => {    
             return (

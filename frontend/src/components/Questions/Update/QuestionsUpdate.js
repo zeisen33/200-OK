@@ -44,7 +44,7 @@ const QuestionsUpdate = () => {
 
     if (submitted) {
         // debugger
-        console.log('updated')
+        // console.log('updated')
         return <Redirect to={`/questions/${question.id}`} />
     }
 
