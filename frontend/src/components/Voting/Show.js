@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import * as voteActions from '../../store/votes'
 import { useDispatch, useSelector } from 'react-redux'
 import './Show.css'
+import * as voteChangedActions from '../../store/voteChanged'
 
 const Voting = ({ answer }) => {
     // debugger
@@ -55,6 +56,7 @@ const Voting = ({ answer }) => {
             }
             // debugger
             setVoteChanged(true)
+            dispatch(voteChangedActions.receiveVoteChanged())
         } else {
             alert('You must be logged in to vote')
         }
@@ -72,6 +74,7 @@ const Voting = ({ answer }) => {
                 dispatch(voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId))
             }
             setVoteChanged(true)
+            dispatch(voteChangedActions.receiveVoteChanged())
         } else {
             alert('You must be logged in to vote')
         }

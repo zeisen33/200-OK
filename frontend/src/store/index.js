@@ -6,6 +6,7 @@ import usersReducer from './users'
 import answersReducer from './answers'
 import searchReducer from './search'
 import votesReducer from './votes'
+import voteChangedReducer from './voteChanged'
 
 const rootReducer = combineReducers({
     session: sessionReducer,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     users: usersReducer,
     answers: answersReducer,
     search: searchReducer,
-    votes: votesReducer
+    votes: votesReducer,
+    voteChanged: voteChangedReducer
 })
 
 let enhancer;

@@ -10,6 +10,8 @@ const AnswersList = ({ questionId }) => {
     // console.log(props)
     // console.log(answers)
     // debugger
+
+    const voteChanged = useSelector(state => state.voteChanged)
     
     const answers = useSelector((state) => {
         // debugger
@@ -55,7 +57,7 @@ const AnswersList = ({ questionId }) => {
         return {...answer, sum}
     })
 
-    const sortedAnswersWithSums = answersWithSums.sort((a,b) => b.sum - a.sum)
+    const sortedAnswersWithSums = voteChanged ? answersWithSums : answersWithSums.sort((a,b) => b.sum - a.sum)
 
     // debugger
 
