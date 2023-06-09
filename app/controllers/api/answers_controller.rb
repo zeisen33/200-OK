@@ -3,10 +3,13 @@ class Api::AnswersController < ApplicationController
     
     def index
         @answers = Answer.all.includes(:answer_author, :question)
+        @answers.sort_by(|answer| -answer.voteCount)
+        debugger
         render :index
     end
 
     def show
+        debugger
         @answer = Answer.find_by(id: params[:id])
         # @answer_author = User.find(@answer.answer_author_id)
         render :show

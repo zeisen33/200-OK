@@ -7,4 +7,16 @@ class Answer < ApplicationRecord
     belongs_to :answer_author, foreign_key: :author_id, class_name: :User
     has_many :votes, foreign_key: :voted_answer_id, class_name: :AnswerVote, dependent: :destroy
     has_many :voters, through: :votes, source: :voter, dependent: :destroy
+
+    def voteCount
+        count = 0
+        self.votes.each do |vote|
+            if vote.direction == true
+                count += 1
+            elsif vote.direction == false
+                count -= 1
+            end
+        end
+        count
+    end
 end

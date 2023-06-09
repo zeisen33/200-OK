@@ -12,9 +12,26 @@ export const receiveAnswer = (payload) => {
 }
 
 export const receiveAnswers = (answers) => {
+    // debugger
+    const answersWithVotes = answers ? Object.values(answers) : []
+    const getSum = (answer) => {
+        const votes = answer.votes ? answer.votes : []
+        const upVotes = votes.filter(vote => vote.direction === true)
+        const downVotes = votes.filter(vote => vote.direction === false)
+        const score = upVotes.length - downVotes.length
+        return score
+    }
+
+    const answersWithSums = answersWithVotes.map(answer => {
+        const sum = getSum(answer)
+        return {...answer, sum}
+    })
+    // console.log(answersWithSums)
+    const sortedAnswers = answersWithSums.sort((a, b) => b.sum - a.sum)
+
     return ({
         type: RECEIVE_ANSWERS,
-        answers: answers
+        sortedAnswers: sortedAnswers
     })
 }
 
@@ -93,7 +110,7 @@ const answersReducer = (state={}, action) => {
             nextState[action.payload.answer.id] = action.payload.answer
             return nextState;
         case RECEIVE_ANSWERS:
-            nextState = { ...state, ...action.answers}
+            nextState = { ...state, ...action.sortedAnswers}
         case REMOVE_ANSWER:
             delete nextState[action.answerId]
             return nextState;

@@ -56,7 +56,7 @@ const Voting = ({ answer }) => {
             }
             // debugger
             setVoteChanged(true)
-            dispatch(voteChangedActions.receiveVoteChanged())
+            // setTimeout(dispatch(voteChangedActions.receiveVoteChanged(), 3000))
         } else {
             alert('You must be logged in to vote')
         }
@@ -64,13 +64,13 @@ const Voting = ({ answer }) => {
 
     const handleDown = (e) => {
         e.preventDefault()
-        debugger
+        // debugger
         if (voterId) {
             if (currDir !== 'none') {
-                debugger
+                // debugger
                 dispatch(voteActions.destroyVote(thisUsersVote.id, answerId))
             } else {
-                debugger
+                // debugger
                 dispatch(voteActions.createVote({voterId, votedAnswerId: answerId, direction: false}, answerId))
             }
             setVoteChanged(true)

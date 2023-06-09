@@ -1,4 +1,4 @@
-
+import { merge } from 'lodash'
 
 export const RECEIVE_VOTECHANGED = 'voteChanged'
 export const REMOVE_VOTECHANGED = 'removeVoteChanged'
@@ -18,8 +18,8 @@ export const removeVoteChanged = () => {
 }
 
 const voteChangedReducer = (state={status: false}, action) => {
-    Object.freeze(state)
-    let nextState = { ...state }
+    // Object.freeze(state)
+    let nextState = merge({}, state)
     switch (action.type) {
         case RECEIVE_VOTECHANGED:
             nextState["status"] = action.status

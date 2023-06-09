@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import * as userActions from '../../store/users'
 import { useDispatch, useSelector } from "react-redux"
 import * as voteActions from '../../store/votes'
+import * as voteChangedActions from '../../store/voteChanged'
 
 const AnswersList = ({ questionId }) => {
     const dispatch = useDispatch();
@@ -10,8 +11,12 @@ const AnswersList = ({ questionId }) => {
     // console.log(props)
     // console.log(answers)
     // debugger
+    useEffect(() => {
+        dispatch(voteChangedActions.removeVoteChanged())
+    }, [])
 
-    const voteChanged = useSelector(state => state.voteChanged)
+
+    const voteChanged = useSelector(state => state.voteChanged.status)
     
     const answers = useSelector((state) => {
         // debugger
@@ -44,20 +49,22 @@ const AnswersList = ({ questionId }) => {
     //     // debugger
     // }, [voteChanged, answer])
 
-    const getSum = (answer) => {
-        const votes = answer.answerVotes ? Object.values(answer.answerVotes) : []
-        const upVotes = votes.filter(vote => vote.direction === true)
-        const downVotes = votes.filter(vote => vote.direction === false)
-        const score = upVotes.length - downVotes.length
-        return score
-    }
+    // const getSum = (answer) => {
+    //     const votes = answer.answerVotes ? Object.values(answer.answerVotes) : []
+    //     const upVotes = votes.filter(vote => vote.direction === true)
+    //     const downVotes = votes.filter(vote => vote.direction === false)
+    //     const score = upVotes.length - downVotes.length
+    //     return score
+    // }
 
-    const answersWithSums = answersWithVotes.map(answer => {
-        const sum = getSum(answer)
-        return {...answer, sum}
-    })
+    // const answersWithSums = answersWithVotes.map(answer => {
+    //     const sum = getSum(answer)
+    //     return {...answer, sum}
+    // })
 
-    const sortedAnswersWithSums = voteChanged ? answersWithSums : answersWithSums.sort((a,b) => b.sum - a.sum)
+    // debugger
+    // Added voteChanged check
+    // const sortedAnswersWithSums = voteChanged ? answersWithSums : answersWithSums.sort((a,b) => b.sum - a.sum)
 
     // debugger
 
@@ -65,21 +72,21 @@ const AnswersList = ({ questionId }) => {
 
 
 
-    const sortedAnswers = Object.values(answers).sort((a,b) =>  a.voteSum - b.voteSum)
+    // const sortedAnswers = Object.values(answers).sort((a,b) =>  a.voteSum - b.voteSum)
     
     // const sortedAnswers = answers.sort((a,b) =>  b.voteSum - a.voteSum)
-    console.log(sortedAnswers)
+    // console.log(sortedAnswers)
 
     const answersMap = () => {
         // debugger
         return (
             <div>
                 {/* {answers.map((answer) => { */}
-                {sortedAnswersWithSums.map((answerWithSum) => {
+                {answers.map((answer) => {
                     // debugger
                     return (
                         <ul>
-                            <AnswersShow answer={answerWithSum.answer} />
+                            <AnswersShow answer={answer} />
                         </ul>
                     )
                 })}

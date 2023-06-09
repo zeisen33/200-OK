@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { merge } from 'lodash';
 
 export const RECEIVE_VOTE = 'createVote'
 export const RECEIVE_VOTES = 'receiveVotes'
@@ -37,14 +38,14 @@ export const fetchVotesByAnswerId = (answerId) => async (dispatch) => {
 
 
 export const createVote = (vote, answerId) => async (dispatch) => {
-    debugger
+    // debugger
     const res = await csrfFetch(`/api/answers/${answerId}/answer_votes`, {
         method: 'POST',
         body: JSON.stringify(vote)
     })
 
     const data = await res.json()
-    debugger
+    // debugger
     dispatch(receiveVote(data))
 }
 
@@ -74,8 +75,8 @@ export const fetchVoteByAnswerIdAndVoterId = async (answerId, voterId) => {
 
 const votesReducer = (state={}, action) => {
     // debugger
-    Object.freeze(state)
-    let nextState = { ...state }
+    // Object.freeze(state)
+    let nextState = merge({}, state)
     switch (action.type) {
         case RECEIVE_VOTES:
             // debugger
