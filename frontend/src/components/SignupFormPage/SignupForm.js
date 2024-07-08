@@ -159,7 +159,7 @@ function SignupFormPage() {
             </div>
             <div id='TextContainerSignup'>
             <span id='NoAccountSignup' >Already have an account? <a href='/login' className="blue" id='loginlink'>Log in</a></span>
-            <br/>
+            {/* <br/> */}
             <p id="TextParagraph">Are you a recruiter? Check out my links!
                 <a className='parLinks' href='https://www.linkedin.com/in/zane-eisen-121856bb/'>My LinkedIn</a>
                 <a className='parLinks' href='https://github.com/zeisen33'>My GitHub</a>
