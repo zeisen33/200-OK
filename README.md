@@ -1,6 +1,6 @@
-# WELCOME TO [200 OK](https://two00-ok.onrender.com)
+# WELCOME TO [200 OK](https://twohundredokay-bc58196d0f18.herokuapp.com/)
 
-### View the [Live Website!](https://two00-ok.onrender.com)
+### View the [Live Website!](https://twohundredokay-bc58196d0f18.herokuapp.com/)
 
 ## Introduction
 
