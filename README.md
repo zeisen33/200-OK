@@ -4,17 +4,17 @@
 
 ## Introduction
 
-[200 OK](https://two00-ok.onrender.com) is a clone of [Stack Overflow]([url](https://stackoverflow.com/)). Stack Overflow is a forum for asking and answering coding questions. Anyone can search for and view user submitted questions and their answers. 
+[200 OK](https://twohundredokay-bc58196d0f18.herokuapp.com/) is a clone of [Stack Overflow]([url](https://stackoverflow.com/)). Stack Overflow is a forum for asking and answering coding questions. Anyone can search for and view user submitted questions and their answers. 
 
-This free site was created in about two weeks. Javascript, React-Redux, HTML, and CSS were used for the frontend. The backend uses Ruby on Rails, with PostgreSQL as the database. The site is hosted on [Render.com](https://render.com/).
+This free site was created in about two weeks. Javascript, React-Redux, HTML, and CSS were used for the frontend. The backend uses Ruby on Rails, with PostgreSQL as the database. The site is hosted on [Heroku.com.](https://heroku.com).
 
-When you're facing a coding problem, remember that *everything is going to be [200 OK](https://two00-ok.onrender.com)!*
+When you're facing a coding problem, remember that *everything is going to be [200 OK](https://twohundredokay-bc58196d0f18.herokuapp.com/)!*
 
 ## [Features](https://github.com/zeisen33/200-OK/wiki/Feature-List)
 
 1. User Authentication
   
-  [200 OK](https://two00-ok.onrender.com) lets users read questions and their answers without logging in. However, asking or answering a question requires logging in with an email and password. 
+  [200 OK](https://twohundredokay-bc58196d0f18.herokuapp.com/) lets users read questions and their answers without logging in. However, asking or answering a question requires logging in with an email and password. 
 
 2. Questions
 
@@ -82,4 +82,4 @@ The signup page also has an option to log in as a demo user. The captcha is opti
 
 URI::MailTo::EMAIL_REGEXP is a method built in to Ruby on Rails that checks if a string is formatted as an email.
 
-THANK YOU FOR VISITING [200 OK](https://two00-ok.onrender.com)!
+THANK YOU FOR VISITING [200 OK](https://twohundredokay-bc58196d0f18.herokuapp.com/)!
