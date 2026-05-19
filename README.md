@@ -6,7 +6,7 @@
 
 [200 OK](https://two00-ok.onrender.com/) is a clone of [Stack Overflow]([url](https://stackoverflow.com/)). Stack Overflow is a forum for asking and answering coding questions. Anyone can search for and view user submitted questions and their answers. 
 
-This free site was created in about two weeks. Javascript, React-Redux, HTML, and CSS were used for the frontend. The backend uses Ruby on Rails, with PostgreSQL as the database. The site is hosted on [Heroku.com.](https://heroku.com).
+This free site was created in about two weeks. Javascript, React-Redux, HTML, and CSS were used for the frontend. The backend uses Ruby on Rails, with PostgreSQL as the database. The site is hosted on [Render](https://render.com/).
 
 When you're facing a coding problem, remember that *everything is going to be [200 OK](https://two00-ok.onrender.com/)!*
 
