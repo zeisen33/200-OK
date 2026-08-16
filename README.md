@@ -24,11 +24,11 @@ When you're facing a coding problem, remember that *everything is going to be [2
 
   Signed in users can answer questions. Answers consist of just a text body. The answering user can edit or delete their answer.
   
-4. Votes (pending)
+4. Votes
 
   Users can see how many votes questions and answers have. The idea is better questions and answers will be more highly voted. Only signed in users can vote. Votes can be either up or down. The voter can change or remove their vote.
   
-5. Search bar (pending)
+5. Search bar
 
   Anyone can use a search bar to look for questions that they care about. Search results are ordered by number of answers each question has.
     
